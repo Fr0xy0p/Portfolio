@@ -26,7 +26,90 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 6. Navigation Smooth Scroll & Active Indicator
   initNavigation();
+
+  // 7. Scroll Reveal Observer
+  initScrollReveal();
+
+  // 8. Cursor sparkle trail
+  initCursorSparkle();
 });
+
+/* ===================================================================
+   SCROLL REVEAL INTERSECTION OBSERVER
+   =================================================================== */
+function initScrollReveal() {
+  // Add reveal class to target elements
+  const targets = [
+    '.upper-profile-section',
+    '.github-card-wrapper',
+    '.project-card',
+    '.future-card',
+    '.trajectory-banner',
+    '.contact-method-card',
+    '.contact-form-col',
+  ];
+
+  targets.forEach(sel => {
+    document.querySelectorAll(sel).forEach((el, i) => {
+      el.classList.add('reveal');
+      el.style.transitionDelay = `${i * 80}ms`;
+    });
+  });
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+}
+
+/* ===================================================================
+   CURSOR SPARKLE TRAIL
+   =================================================================== */
+function initCursorSparkle() {
+  const symbols = ['✦', '✧', '◈', '✴', '◇', '⬡', '⟡'];
+  let lastX = -999, lastY = -999;
+
+  document.addEventListener('mousemove', (e) => {
+    const dx = e.clientX - lastX;
+    const dy = e.clientY - lastY;
+    if (Math.hypot(dx, dy) < 30) return; // throttle by distance
+    lastX = e.clientX; lastY = e.clientY;
+
+    if (Math.random() > 0.6) return; // only spawn 40% of moves
+
+    const spark = document.createElement('div');
+    spark.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+    Object.assign(spark.style, {
+      position: 'fixed',
+      left:  `${e.clientX}px`,
+      top:   `${e.clientY}px`,
+      color: Math.random() > 0.5 ? 'var(--neon-cyan)' : 'var(--neon-purple)',
+      fontSize: `${Math.random() * 8 + 10}px`,
+      pointerEvents: 'none',
+      zIndex: '9999',
+      fontWeight: 'bold',
+      transform: 'translate(-50%, -50%) scale(1)',
+      opacity: '0.9',
+      transition: 'transform 0.7s ease, opacity 0.7s ease',
+      textShadow: '0 0 8px currentColor',
+    });
+    document.body.appendChild(spark);
+
+    requestAnimationFrame(() => {
+      spark.style.transform = `translate(-50%, -${Math.random() * 50 + 30}px) scale(0.3)`;
+      spark.style.opacity = '0';
+    });
+
+    setTimeout(() => spark.remove(), 750);
+  });
+}
+
 
 /* ===================================================================
    1. MATHEMATICAL FLOATING PARTICLE CANVAS
