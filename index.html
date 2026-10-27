@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yuvraj Singh | Math Enthusiast & Quantitative AI Engineer</title>
+  <meta name="description" content="Portfolio of Yuvraj Singh - Math Enthusiast, Quantitative Developer & Machine Learning Engineer. Explore projects, GitHub activity, future aims, and connect.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Outfit:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons for modern UI -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Ambient Background Particle Canvas for Floating Math Symbols -->
+  <canvas id="math-canvas"></canvas>
+
+  <!-- Top Navigation Bar & Hero Intro (Name & Desired Position) -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <div class="brand-group">
+        <span class="brand-symbol">∑</span>
+        <div class="brand-text">
+          <span class="brand-name">Yuvraj Singh</span>
+          <span class="brand-tag">Quant & ML Research</span>
+        </div>
+      </div>
+      <nav class="nav-links">
+        <a href="#about" class="nav-link active">About</a>
+        <a href="#github-section" class="nav-link">Contributions</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#future-aim" class="nav-link">Future Aim</a>
+        <a href="#connect" class="nav-btn">Let's Connect</a>
+      </nav>
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Header Banner: Name & Desired Position -->
+  <div class="hero-header-banner">
+    <div class="container hero-banner-content">
+      <div class="status-pill">
+        <span class="pulse-dot"></span> Available for Fall 2026 / Spring 2027 Roles
+      </div>
+      <h1 class="hero-name">YUVRAJ SINGH</h1>
+      <div class="desired-position-box">
+        <span class="position-label">DESIRED POSITION:</span>
+        <h2 class="desired-position-title">Quantitative Developer & Machine Learning Research Engineer</h2>
+      </div>
+    </div>
+  </div>
+
+  <main class="main-content">
+    <!-- Section: Upper Side with Left Corner Interactive Image & Right Adjacent About Me -->
+    <section class="upper-profile-section" id="about">
+      <div class="container upper-grid">
+        
+        <!-- Left Side Corner: Interactive 3D Image Card -->
+        <div class="interactive-image-wrapper">
+          <div class="image-card-container" id="interactiveCard">
+            <div class="card-glow-layer"></div>
+            <div class="math-orbit-ring ring-1"></div>
+            <div class="math-orbit-ring ring-2"></div>
+            <div class="image-inner">
+              <img src="assets/images/profile.jpg" alt="Yuraj - Math Enthusiast" id="profileImage" class="profile-img">
+              <div class="image-overlay-badge">
+                <span class="badge-icon">⚡</span>
+                <span class="badge-text">Interactive 3D Tilt</span>
+              </div>
+            </div>
+            <!-- Interactive Floating Math Particles around Avatar -->
+            <div class="floating-badge badge-top-right">
+              <code>∫ e<sup>x</sup> dx</code>
+            </div>
+            <div class="floating-badge badge-bottom-left">
+              <code>∇f(x) = 0</code>
+            </div>
+          </div>
+          <div class="image-caption">
+            <span class="hint-text"><i class="fa-solid fa-hand-pointer"></i> Hover & move mouse to interact • Click for burst</span>
+          </div>
+        </div>
+
+        <!-- Right Adjacent Side: About Me Section -->
+        <div class="about-me-card">
+          <div class="about-header-tag">
+            <i class="fa-solid fa-user-astronaut"></i> ABOUT ME
+          </div>
+          <h2 class="about-name">YUVRAJ SINGH</h2>
+          
+          <div class="math-enthusiast-pill">
+            <span class="math-icon">π</span>
+            <span class="math-text">Math Enthusiast.</span>
+          </div>
+
+          <div class="aim-statement-card">
+            <div class="aim-tag">
+              <i class="fa-solid fa-bullseye"></i> MY AIM TO BECOME:
+            </div>
+            <p class="aim-text">
+              To become a <strong>Lead Quantitative Developer & Machine Learning Research Architect</strong> at the frontier of mathematical computing, high-frequency algorithms, and geometric deep learning. I aim to merge rigorous pure mathematics—topology, functional analysis, and stochastic calculus—with low-latency distributed software architectures to solve high-impact, real-world computational challenges.
+            </p>
+          </div>
+
+          <!-- Highlight metrics & skills -->
+          <div class="skills-highlight-grid">
+            <div class="skill-mini-badge">
+              <i class="fa-solid fa-chart-line"></i>
+              <div>
+                <strong>Stochastic Calculus</strong>
+                <span>Probability & Stats</span>
+              </div>
+            </div>
+            <div class="skill-mini-badge">
+              <i class="fa-solid fa-microchip"></i>
+              <div>
+                <strong>GPU & High-Perf C++</strong>
+                <span>CUDA & SIMD</span>
+              </div>
+            </div>
+            <div class="skill-mini-badge">
+              <i class="fa-solid fa-brain"></i>
+              <div>
+                <strong>Deep Learning</strong>
+                <span>Neural ODEs & GNNs</span>
+              </div>
+            </div>
+            <div class="skill-mini-badge">
+              <i class="fa-solid fa-square-root-variable"></i>
+              <div>
+                <strong>Topology & Linear Algebra</strong>
+                <span>Spectral Methods</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-actions">
+            <a href="#projects" class="btn btn-primary"><i class="fa-solid fa-code"></i> View Github Projects</a>
+            <a href="#connect" class="btn btn-secondary"><i class="fa-solid fa-paper-plane"></i> Get in Touch</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Section: Middle Portion - GitHub Contributions Table -->
+    <section class="github-section" id="github-section">
+      <div class="container">
+        <div class="section-heading-center">
+          <div class="section-subtitle"><i class="fa-brands fa-github"></i> OPEN SOURCE ACTIVITY</div>
+          <h2 class="section-title">GitHub Contributions Table</h2>
+          <p class="section-desc">Continuous daily commits, algorithmic problem-solving, and mathematical research codebases.</p>
+        </div>
+
+        <div class="github-card-wrapper">
+          <!-- Live GitHub user controller & Stats header -->
+          <div class="gh-top-bar">
+            <div class="gh-user-info">
+              <div class="gh-avatar">
+                <i class="fa-brands fa-github"></i>
+              </div>
+              <div class="gh-user-text">
+                <div class="gh-username-line">
+                  <span class="gh-username">@yuraj</span>
+                  <span class="gh-badge">Active Builder</span>
+                </div>
+                <span class="gh-stats-summary">1,542 contributions in the last year</span>
+              </div>
+            </div>
+
+            <div class="gh-metrics">
+              <div class="gh-metric-item">
+                <span class="metric-num">365</span>
+                <span class="metric-lbl">Days Active</span>
+              </div>
+              <div class="gh-metric-item">
+                <span class="metric-num">48</span>
+                <span class="metric-lbl">Max Streak</span>
+              </div>
+              <div class="gh-metric-item">
+                <span class="metric-num">18</span>
+                <span class="metric-lbl">Current Streak</span>
+              </div>
+            </div>
+
+            <!-- GitHub user switcher -->
+            <div class="gh-switch-form">
+              <label for="ghUsernameInput"><i class="fa-solid fa-magnifying-glass"></i></label>
+              <input type="text" id="ghUsernameInput" value="yuraj" placeholder="GitHub username">
+              <button id="ghFetchBtn" class="btn-refresh-gh" title="Refresh contributions">
+                <i class="fa-solid fa-rotate"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- The Activity Heatmap Grid -->
+          <div class="heatmap-container-outer">
+            <div class="heatmap-months-labels" id="heatmapMonths">
+              <!-- Dynamically populated months: Jan, Feb, Mar ... -->
+            </div>
+            
+            <div class="heatmap-main-row">
+              <div class="heatmap-days-labels">
+                <span>Mon</span>
+                <span>Wed</span>
+                <span>Fri</span>
+              </div>
+              <div class="heatmap-scroll-area">
+                <div class="contribution-grid" id="contributionGrid">
+                  <!-- 52 columns of 7 day squares dynamically generated -->
+                </div>
+              </div>
+            </div>
+
+            <div class="heatmap-footer">
+              <a href="https://github.com/yuraj" target="_blank" rel="noopener noreferrer" class="gh-external-link">
+                Learn how we count contributions <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+              <div class="legend-scale">
+                <span class="legend-text">Less</span>
+                <span class="legend-cell lvl-0"></span>
+                <span class="legend-cell lvl-1"></span>
+                <span class="legend-cell lvl-2"></span>
+                <span class="legend-cell lvl-3"></span>
+                <span class="legend-cell lvl-4"></span>
+                <span class="legend-text">More</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Dynamic Contribution Tooltip -->
+          <div id="heatmapTooltip" class="heatmap-tooltip"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section: My Projects Connected Through GitHub -->
+    <section class="projects-section" id="projects">
+      <div class="container">
+        <div class="section-heading-center">
+          <div class="section-subtitle"><i class="fa-solid fa-laptop-code"></i> CODE & RESEARCH</div>
+          <h2 class="section-title">My Projects Connected Through GitHub</h2>
+          <p class="section-desc">Mathematical formulations translated into clean, scalable open-source repositories.</p>
+        </div>
+
+        <!-- Category Filters -->
+        <div class="project-filters">
+          <button class="filter-btn active" data-filter="all">All Repositories</button>
+          <button class="filter-btn" data-filter="quant">Quantitative & Algorithmic</button>
+          <button class="filter-btn" data-filter="ml">Machine Learning & Math</button>
+          <button class="filter-btn" data-filter="systems">High-Perf Computing</button>
+        </div>
+
+        <div class="projects-grid">
+          
+          <!-- Project 1 -->
+          <article class="project-card" data-category="quant systems">
+            <div class="project-thumbnail-wrapper">
+              <img src="assets/images/project1.jpg" alt="EulerMatrix Engine" class="project-img">
+              <div class="project-overlay">
+                <a href="https://github.com/yuraj/EulerMatrix-Engine" target="_blank" rel="noopener noreferrer" class="preview-btn">
+                  <i class="fa-brands fa-github"></i> View GitHub Repo
+                </a>
+              </div>
+              <span class="project-type-tag">Quantitative Engine</span>
+            </div>
+            <div class="project-body">
+              <div class="project-header-meta">
+                <div class="repo-title-wrap">
+                  <i class="fa-regular fa-folder-open repo-icon"></i>
+                  <h3 class="project-title"><a href="https://github.com/yuraj/EulerMatrix-Engine" target="_blank">EulerMatrix-Engine</a></h3>
+                </div>
+                <div class="repo-stats">
+                  <span><i class="fa-regular fa-star"></i> 342</span>
+                  <span><i class="fa-solid fa-code-fork"></i> 89</span>
+                </div>
+              </div>
+              <p class="project-description">
+                Ultra-low latency numerical simulation and stochastic portfolio optimization engine written in C++20 and CUDA. Implements Heston model calibration, Monte Carlo jump diffusions, and fast spectral risk decomposition.
+              </p>
+              <div class="tech-stack-tags">
+                <span class="tech-pill">C++20</span>
+                <span class="tech-pill">CUDA</span>
+                <span class="tech-pill">Stochastic Calculus</span>
+                <span class="tech-pill">Eigen3</span>
+              </div>
+              <div class="project-card-footer">
+                <a href="https://github.com/yuraj/EulerMatrix-Engine" target="_blank" rel="noopener noreferrer" class="card-link">
+                  <i class="fa-brands fa-github"></i> github.com/yuraj/EulerMatrix-Engine
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2 -->
+          <article class="project-card" data-category="ml">
+            <div class="project-thumbnail-wrapper">
+              <img src="assets/images/project2.jpg" alt="Topological Manifold Neural ODE" class="project-img">
+              <div class="project-overlay">
+                <a href="https://github.com/yuraj/Topological-Neural-ODE" target="_blank" rel="noopener noreferrer" class="preview-btn">
+                  <i class="fa-brands fa-github"></i> View GitHub Repo
+                </a>
+              </div>
+              <span class="project-type-tag">Geometric Deep Learning</span>
+            </div>
+            <div class="project-body">
+              <div class="project-header-meta">
+                <div class="repo-title-wrap">
+                  <i class="fa-regular fa-folder-open repo-icon"></i>
+                  <h3 class="project-title"><a href="https://github.com/yuraj/Topological-Neural-ODE" target="_blank">Topological-Neural-ODE</a></h3>
+                </div>
+                <div class="repo-stats">
+                  <span><i class="fa-regular fa-star"></i> 278</span>
+                  <span><i class="fa-solid fa-code-fork"></i> 54</span>
+                </div>
+              </div>
+              <p class="project-description">
+                Geometric deep learning framework for continuous-depth dynamical systems on Riemannian manifolds. Leverages persistent homology and Calabi-Yau metric approximations to learn physical invariant representations.
+              </p>
+              <div class="tech-stack-tags">
+                <span class="tech-pill">Python</span>
+                <span class="tech-pill">PyTorch</span>
+                <span class="tech-pill">Differential Geometry</span>
+                <span class="tech-pill">Topology</span>
+              </div>
+              <div class="project-card-footer">
+                <a href="https://github.com/yuraj/Topological-Neural-ODE" target="_blank" rel="noopener noreferrer" class="card-link">
+                  <i class="fa-brands fa-github"></i> github.com/yuraj/Topological-Neural-ODE
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 3 -->
+          <article class="project-card" data-category="quant ml">
+            <div class="project-thumbnail-wrapper">
+              <div class="project-code-art">
+                <pre><code>// Fast Sparse Graph Spectral Decomp
+template &lt;typename Real&gt;
+class SpectralManifold {
+  Laplacian&lt;Real&gt; L;
+  Vector eigenvalues;
+  Matrix eigenvectors;
+};</code></pre>
+              </div>
+              <div class="project-overlay">
+                <a href="https://github.com/yuraj/SpectralGraph-Optimizer" target="_blank" rel="noopener noreferrer" class="preview-btn">
+                  <i class="fa-brands fa-github"></i> View GitHub Repo
+                </a>
+              </div>
+              <span class="project-type-tag">Algorithm Library</span>
+            </div>
+            <div class="project-body">
+              <div class="project-header-meta">
+                <div class="repo-title-wrap">
+                  <i class="fa-regular fa-folder-open repo-icon"></i>
+                  <h3 class="project-title"><a href="https://github.com/yuraj/SpectralGraph-Optimizer" target="_blank">SpectralGraph-Optimizer</a></h3>
+                </div>
+                <div class="repo-stats">
+                  <span><i class="fa-regular fa-star"></i> 194</span>
+                  <span><i class="fa-solid fa-code-fork"></i> 38</span>
+                </div>
+              </div>
+              <p class="project-description">
+                Combinatorial graph optimization package implementing Cheeger inequality partitions, spectral clustering, and Lanczos iterations with AVX-512 vectorization for high-throughput network analysis.
+              </p>
+              <div class="tech-stack-tags">
+                <span class="tech-pill">Rust</span>
+                <span class="tech-pill">Graph Theory</span>
+                <span class="tech-pill">SIMD</span>
+                <span class="tech-pill">Linear Algebra</span>
+              </div>
+              <div class="project-card-footer">
+                <a href="https://github.com/yuraj/SpectralGraph-Optimizer" target="_blank" rel="noopener noreferrer" class="card-link">
+                  <i class="fa-brands fa-github"></i> github.com/yuraj/SpectralGraph-Optimizer
+                </a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Section: Aim to Work in Future -->
+    <section class="future-aim-section" id="future-aim">
+      <div class="container">
+        <div class="section-heading-center">
+          <div class="section-subtitle"><i class="fa-solid fa-compass"></i> VISION & ROADMAP</div>
+          <h2 class="section-title">Aim to Work in Future</h2>
+          <p class="section-desc">The long-term research frontiers, target industries, and transformative mathematical systems I strive to engineer.</p>
+        </div>
+
+        <div class="future-grid">
+          
+          <div class="future-card highlight-border">
+            <div class="future-icon-box">
+              <i class="fa-solid fa-money-bill-trend-up"></i>
+            </div>
+            <h3 class="future-card-title">Quantitative Finance & Automated Market Systems</h3>
+            <p class="future-card-desc">
+              Pioneering mathematical execution algorithms that operate on microsecond scales. Striving to build non-linear stochastic volatility models, order-book liquidity mechanics, and automated risk hedges governed by strict mathematical theorems.
+            </p>
+            <ul class="future-points">
+              <li><i class="fa-solid fa-circle-check"></i> High-frequency statistical arbitrage & continuous-time martingales</li>
+              <li><i class="fa-solid fa-circle-check"></i> Deep reinforcement learning in non-stationary market regimes</li>
+              <li><i class="fa-solid fa-circle-check"></i> FPGA & hardware-accelerated financial compute pipelines</li>
+            </ul>
+          </div>
+
+          <div class="future-card">
+            <div class="future-icon-box">
+              <i class="fa-solid fa-atom"></i>
+            </div>
+            <h3 class="future-card-title">Geometric Machine Learning & Foundation Models</h3>
+            <p class="future-card-desc">
+              Extending artificial intelligence beyond Euclidean spaces. Aiming to pioneer deep neural architectures that respect Lie group symmetries, gauge equivariance, and differential manifolds for physical sciences and complex materials discovery.
+            </p>
+            <ul class="future-points">
+              <li><i class="fa-solid fa-circle-check"></i> Equivariant Graph Neural Networks for molecular dynamics</li>
+              <li><i class="fa-solid fa-circle-check"></i> Topological Data Analysis for latent manifold diagnostics</li>
+              <li><i class="fa-solid fa-circle-check"></i> Neural operators for solving Navier-Stokes and partial differential equations</li>
+            </ul>
+          </div>
+
+          <div class="future-card">
+            <div class="future-icon-box">
+              <i class="fa-solid fa-square-root-variable"></i>
+            </div>
+            <h3 class="future-card-title">Automated Theorem Proving & Formal Verification</h3>
+            <p class="future-card-desc">
+              Synthesizing generative AI with formal proof assistants like Lean 4 and Coq. Aiming to develop neuro-symbolic systems capable of discovering novel mathematical conjectures, validating mission-critical cryptographic code, and verifying complex mathematical proofs.
+            </p>
+            <ul class="future-points">
+              <li><i class="fa-solid fa-circle-check"></i> Interactive Theorem Proving (Lean 4 / Isabelle) integration</li>
+              <li><i class="fa-solid fa-circle-check"></i> Provably correct smart contract & cryptographic engine compilation</li>
+              <li><i class="fa-solid fa-circle-check"></i> Automated lemma discovery via tree-search & policy networks</li>
+            </ul>
+          </div>
+
+          <div class="future-card">
+            <div class="future-icon-box">
+              <i class="fa-solid fa-network-wired"></i>
+            </div>
+            <h3 class="future-card-title">Next-Gen High Performance Scientific Computing</h3>
+            <p class="future-card-desc">
+              Crafting distributed, cache-oblivious numerical linear algebra algorithms that achieve peak FLOP utilization across heterogeneous GPU/TPU clusters with fault-tolerant asynchronous execution.
+            </p>
+            <ul class="future-points">
+              <li><i class="fa-solid fa-circle-check"></i> Custom GPU kernel synthesis via Triton & Metal Shading Language</li>
+              <li><i class="fa-solid fa-circle-check"></i> Quantum-inspired tensor network simulations</li>
+              <li><i class="fa-solid fa-circle-check"></i> Scalable parallel computing with zero-overhead abstractions</li>
+            </ul>
+          </div>
+
+        </div>
+
+        <!-- Career Trajectory Timeline Banner -->
+        <div class="trajectory-banner">
+          <div class="trajectory-header">
+            <h4><i class="fa-solid fa-road"></i> Professional Growth Path</h4>
+          </div>
+          <div class="trajectory-steps">
+            <div class="traj-step">
+              <span class="traj-step-num">01</span>
+              <h5>Present</h5>
+              <p>Math Enthusiast & Algorithmic Builder</p>
+            </div>
+            <div class="traj-connector"><i class="fa-solid fa-arrow-right"></i></div>
+            <div class="traj-step">
+              <span class="traj-step-num">02</span>
+              <h5>Next Step</h5>
+              <p>Quantitative Developer & ML Systems Engineer</p>
+            </div>
+            <div class="traj-connector"><i class="fa-solid fa-arrow-right"></i></div>
+            <div class="traj-step current-goal">
+              <span class="traj-step-num">03</span>
+              <h5>Target Aim</h5>
+              <p>Principal Quantitative Architect & Research Lead</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Section: Let's Connect (Email, Phone, and Interactive Channels) -->
+    <section class="connect-section" id="connect">
+      <div class="container">
+        <div class="connect-card-outer">
+          <div class="connect-card-glow"></div>
+          
+          <div class="section-heading-center">
+            <div class="section-subtitle"><i class="fa-solid fa-handshake"></i> GET IN TOUCH</div>
+            <h2 class="section-title">Let's Connect</h2>
+            <p class="section-desc">Have an interesting mathematical problem, quantitative venture, or engineering role? Feel free to reach out directly.</p>
+          </div>
+
+          <div class="connect-grid">
+            
+            <!-- Direct Contact Channels (Email & Phone as requested) -->
+            <div class="direct-contact-col">
+              
+              <!-- Email Card with Copy Feature -->
+              <div class="contact-method-card">
+                <div class="contact-method-icon">
+                  <i class="fa-solid fa-envelope"></i>
+                </div>
+                <div class="contact-method-details">
+                  <span class="method-label">Direct Email</span>
+                  <a href="mailto:yuraj.math.dev@gmail.com" class="method-value" id="emailValue">yuraj.math.dev@gmail.com</a>
+                  <span class="method-sub">Click to email or copy to clipboard</span>
+                </div>
+                <button class="copy-action-btn" id="copyEmailBtn" data-clipboard="yuraj.math.dev@gmail.com" title="Copy Email">
+                  <i class="fa-regular fa-copy"></i>
+                  <span class="copy-tooltip">Copied!</span>
+                </button>
+              </div>
+
+              <!-- Phone Number Card with Copy Feature -->
+              <div class="contact-method-card">
+                <div class="contact-method-icon">
+                  <i class="fa-solid fa-phone"></i>
+                </div>
+                <div class="contact-method-details">
+                  <span class="method-label">Phone Number</span>
+                  <a href="tel:+15557892048" class="method-value" id="phoneValue">+1 (555) 789-2048</a>
+                  <span class="method-sub">Available for calls & WhatsApp / Signal</span>
+                </div>
+                <button class="copy-action-btn" id="copyPhoneBtn" data-clipboard="+15557892048" title="Copy Phone Number">
+                  <i class="fa-regular fa-copy"></i>
+                  <span class="copy-tooltip">Copied!</span>
+                </button>
+              </div>
+
+              <!-- Social Links -->
+              <div class="social-channels-box">
+                <span class="social-title">Follow & Connect On Platforms:</span>
+                <div class="social-links-row">
+                  <a href="https://github.com/yuraj" target="_blank" rel="noopener noreferrer" class="social-btn" title="GitHub">
+                    <i class="fa-brands fa-github"></i>
+                  </a>
+                  <a href="https://linkedin.com/in/yuraj" target="_blank" rel="noopener noreferrer" class="social-btn" title="LinkedIn">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                  </a>
+                  <a href="https://x.com/yuraj" target="_blank" rel="noopener noreferrer" class="social-btn" title="X / Twitter">
+                    <i class="fa-brands fa-x-twitter"></i>
+                  </a>
+                  <a href="https://scholar.google.com" target="_blank" rel="noopener noreferrer" class="social-btn" title="Google Scholar">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                  </a>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Quick Direct Message Form -->
+            <div class="contact-form-col">
+              <form class="contact-form" id="contactForm">
+                <h3 class="form-title"><i class="fa-solid fa-paper-plane"></i> Send a Direct Message</h3>
+                <div class="form-group">
+                  <label for="contactName">Your Name</label>
+                  <input type="text" id="contactName" required placeholder="e.g. Jane Doe">
+                </div>
+                <div class="form-group">
+                  <label for="contactEmail">Your Email</label>
+                  <input type="email" id="contactEmail" required placeholder="jane@example.com">
+                </div>
+                <div class="form-group">
+                  <label for="contactMessage">Message or Collaboration Idea</label>
+                  <textarea id="contactMessage" rows="4" required placeholder="Hello Yuraj, I saw your mathematical projects and would like to discuss..."></textarea>
+                </div>
+                <button type="submit" class="btn btn-submit" id="submitBtn">
+                  <span>Send Message</span>
+                  <i class="fa-solid fa-arrow-right"></i>
+                </button>
+                <div class="form-feedback" id="formFeedback"></div>
+              </form>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Modern Footer -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-left">
+        <span class="brand-symbol">∑</span>
+        <span>Crafted with pure HTML, CSS & JavaScript • Built for <strong>Yuvraj Singh</strong></span>
+      </div>
+      <div class="footer-right">
+        <span>&copy; <span id="yearSpan">2026</span> Yuvraj Singh. Math Enthusiast & Quantitative Research.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script -->
+  <script src="script.js"></script>
+</body>
+</html>
