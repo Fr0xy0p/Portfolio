@@ -315,297 +315,180 @@
 
         <div class="projects-list">
           
-          <!-- Project 01: EulerMatrix Engine -->
-          <article class="project-card">
+          <!-- Flagship Repository 01: shx -->
+          <article class="project-card featured-flagship-card">
             <div class="project-details">
               <div>
                 <div class="project-meta-top">
-                  <span class="project-status-tag">[ PROJECT 01 // REPOSITORY ]</span>
+                  <span class="project-status-tag">[ FLAGSHIP OPEN-SOURCE REPOSITORY ]</span>
                   <span class="meta-dot">·</span>
-                  <span class="project-category">High-Frequency Systems &mdash; C++20 &amp; CUDA</span>
+                  <span class="contrib-sync-status" id="shx-live-badge"><span class="sync-dot"></span> LIVE SYNCED</span>
                 </div>
 
-                <h3 class="project-title">EULERMATRIX ENGINE</h3>
+                <h3 class="project-title">SHX: AI-ASSISTED TERMINAL &amp; SHELL SYNTHESIS ENGINE</h3>
 
-                <p class="project-description">
-                  An ultra-low latency numerical simulation and stochastic portfolio optimization engine written in C++20 and CUDA. Calibrates continuous-time Heston stochastic volatility models, Monte Carlo jump diffusions, and fast spectral risk decomposition across multi-asset order books.
+                <p class="project-description" id="shx-repo-desc">
+                  An AI-assisted command-line interface built with Python, Typer, and Rich. It translates natural language into verified shell pipelines (Bash/Zsh), checks command safety before execution using Abstract Syntax Tree (AST) parsing with <code>bashlex</code> to intercept destructive primitives, and decodes cryptic Unix flags with context-aware system heuristics.
                 </p>
 
+                <!-- Architectural Capabilities -->
+                <div class="project-highlights">
+                  <div class="highlight-item">
+                    <span class="highlight-num">01 //</span>
+                    <div>
+                      <strong>Context-Aware Synthesis</strong>
+                      <p>Dynamically detects host OS (macOS BSD vs Linux GNU), active shell, current directory tree, and git working status before generating commands.</p>
+                    </div>
+                  </div>
+                  <div class="highlight-item">
+                    <span class="highlight-num">02 //</span>
+                    <div>
+                      <strong>AST Static Safety Guardrails</strong>
+                      <p>Parses commands with <code>bashlex</code> to block critical hazards (fork bombs, root wipes, raw disk writes) and warn on dangerous commands.</p>
+                    </div>
+                  </div>
+                  <div class="highlight-item">
+                    <span class="highlight-num">03 //</span>
+                    <div>
+                      <strong>Multi-Provider LLM Runtimes</strong>
+                      <p>High-speed translation engine supporting Google Gemini, Groq (Llama-3), OpenAI, and local offline Ollama models with automated fallbacks.</p>
+                    </div>
+                  </div>
+                </div>
+
                 <div class="tech-stack-row">
-                  <span class="tech-chip">C++20</span>
-                  <span class="tech-chip">CUDA</span>
-                  <span class="tech-chip">Stochastic Calculus</span>
-                  <span class="tech-chip">SIMD &amp; AVX-512</span>
+                  <span class="tech-chip">Python 3.10+</span>
+                  <span class="tech-chip">Typer &amp; Rich</span>
+                  <span class="tech-chip">AST (bashlex)</span>
+                  <span class="tech-chip">Google Gemini</span>
+                  <span class="tech-chip">Groq &amp; Ollama</span>
+                  <span class="tech-chip">Bash / Zsh</span>
+                  <span class="tech-chip">CLI Architecture</span>
+                </div>
+
+                <!-- Live GitHub Telemetry Grid -->
+                <div class="project-telemetry-grid">
+                  <div class="telemetry-metric-item">
+                    <span class="metric-label">STARS</span>
+                    <span class="metric-val" id="shx-stars">1</span>
+                  </div>
+                  <div class="telemetry-metric-item">
+                    <span class="metric-label">FORKS</span>
+                    <span class="metric-val" id="shx-forks">1</span>
+                  </div>
+                  <div class="telemetry-metric-item">
+                    <span class="metric-label">OPEN ISSUES</span>
+                    <span class="metric-val" id="shx-issues">1</span>
+                  </div>
+                  <div class="telemetry-metric-item">
+                    <span class="metric-label">LANGUAGE</span>
+                    <span class="metric-val" id="shx-language">Python (100%)</span>
+                  </div>
+                  <div class="telemetry-metric-item">
+                    <span class="metric-label">LATEST COMMIT</span>
+                    <span class="metric-val mono" id="shx-commit-hash">12aa45d</span>
+                  </div>
+                  <div class="telemetry-metric-item">
+                    <span class="metric-label">LAST PUSHED</span>
+                    <span class="metric-val" id="shx-last-pushed">October 31, 2026</span>
+                  </div>
+                </div>
+
+                <!-- Clone Command Bar -->
+                <div class="project-clone-bar">
+                  <div class="clone-code">
+                    <span class="clone-prompt">$</span>
+                    <span class="clone-cmd">git clone https://github.com/Fr0xy0p/Shx.git</span>
+                  </div>
+                  <button class="btn-copy-clone" id="copy-clone-btn" aria-label="Copy git clone command">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                      <rect x="9" y="9" width="13" height="13" rx="0" ry="0"/>
+                      <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+                    </svg>
+                    <span id="copy-clone-text">Copy</span>
+                  </button>
                 </div>
               </div>
 
-              <div class="project-actions">
-                <a href="https://github.com/Fr0xy0p" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
-                  <span>GitHub Repository</span>
+              <div class="project-actions" style="margin-top: 1.75rem;">
+                <a href="https://github.com/Fr0xy0p/Shx" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                  <span>View on GitHub</span>
+                  <span class="btn-arrow" aria-hidden="true">↗</span>
+                </a>
+                <a href="https://github.com/Fr0xy0p/Shx/issues" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                  <span>Issue Tracker</span>
                   <span class="btn-arrow" aria-hidden="true">↗</span>
                 </a>
               </div>
             </div>
 
+            <!-- Architectural Blueprint Box -->
             <div class="project-visual">
               <div class="figure-header">
-                <span>FIGURE 1.1: HESTON JUMP-DIFFUSION CUDA PIPELINE</span>
+                <span>FIGURE 1.1: SHX EXECUTION &amp; AST SAFETY PIPELINE</span>
               </div>
 
-              <!-- Inline Architectural Pipeline SVG Diagram -->
-              <svg class="project-figure-svg" viewBox="0 0 400 200" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Heston jump-diffusion pipeline diagram">
-                <rect x="10" y="20" width="75" height="36" rx="0" fill="var(--bg-surface-low)" stroke="var(--hairline-neutral-mid)"/>
-                <text x="20" y="42" fill="var(--text-primary)" font-family="'JetBrains Mono', monospace" font-size="8">W1, W2</text>
+              <!-- High-precision Architectural Pipeline SVG Diagram -->
+              <svg class="project-figure-svg" viewBox="0 0 420 320" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="shx execution and AST safety pipeline architecture diagram">
+                <!-- Background Grid -->
+                <defs>
+                  <pattern id="shxGrid" width="20" height="20" patternUnits="userSpaceOnUse">
+                    <path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(15,23,42,0.04)" stroke-width="0.8"/>
+                  </pattern>
+                </defs>
+                <rect width="420" height="320" fill="url(#shxGrid)"/>
 
-                <rect x="115" y="20" width="80" height="36" rx="0" fill="var(--bg-surface-low)" stroke="var(--hairline-neutral-mid)"/>
-                <text x="122" y="42" fill="var(--text-secondary)" font-family="'JetBrains Mono', monospace" font-size="8">CUDA_GRID</text>
+                <!-- Stage 1: Natural Language Request -->
+                <rect x="15" y="16" width="390" height="42" rx="0" fill="var(--bg-surface-low)" stroke="var(--hairline-neutral-mid)"/>
+                <text x="28" y="33" fill="var(--accent-blue)" font-family="'JetBrains Mono', monospace" font-size="7.5" font-weight="700">INPUT // NATURAL LANGUAGE PROMPT</text>
+                <text x="28" y="47" fill="var(--text-primary)" font-family="'JetBrains Mono', monospace" font-size="9">"find files &gt; 50MB and delete older than 7d"</text>
 
-                <rect x="225" y="20" width="75" height="36" rx="0" fill="var(--bg-surface-low)" stroke="var(--hairline-neutral-mid)"/>
-                <text x="232" y="42" fill="var(--text-secondary)" font-family="'JetBrains Mono', monospace" font-size="8">dV CIR STEP</text>
+                <!-- Connector Line -->
+                <line x1="210" y1="58" x2="210" y2="78" stroke="var(--accent-blue)" stroke-width="1.2" stroke-dasharray="2 2"/>
+                <polygon points="210,82 207,76 213,76" fill="var(--accent-blue)"/>
 
-                <rect x="330" y="20" width="60" height="36" rx="0" fill="var(--accent-blue)" stroke="var(--accent-electric)"/>
-                <text x="336" y="42" fill="#FFFFFF" font-family="'JetBrains Mono', monospace" font-size="8">S_t+dt</text>
+                <!-- Stage 2: Context Compilation & LLM Synthesis -->
+                <rect x="15" y="82" width="390" height="52" rx="0" fill="var(--bg-surface-low)" stroke="var(--hairline-neutral-mid)"/>
+                <text x="28" y="99" fill="var(--accent-blue)" font-family="'JetBrains Mono', monospace" font-size="7.5" font-weight="700">STAGE 01 // CONTEXT COMPILER &amp; LLM INFERENCE</text>
+                <text x="28" y="112" fill="var(--text-muted)" font-family="'JetBrains Mono', monospace" font-size="8">ENV HEURISTICS: macOS (BSD) · ZSH · DIRECTORY TREE · GIT STATUS</text>
+                <text x="28" y="125" fill="var(--text-secondary)" font-family="'JetBrains Mono', monospace" font-size="8">SYNTHESIZED: find . -type f -size +50M -mtime +7d -delete</text>
 
-                <path d="M85 38 L115 38" stroke="var(--accent-blue)" stroke-dasharray="3 2" stroke-width="1"/>
-                <path d="M195 38 L225 38" stroke="var(--accent-blue)" stroke-dasharray="3 2" stroke-width="1"/>
-                <path d="M300 38 L330 38" stroke="var="accent-blue" stroke-dasharray="3 2" stroke-width="1"/>
+                <!-- Connector Line -->
+                <line x1="210" y1="134" x2="210" y2="154" stroke="var(--accent-blue)" stroke-width="1.2" stroke-dasharray="2 2"/>
+                <polygon points="210,158 207,152 213,152" fill="var(--accent-blue)"/>
 
-                <text x="16" y="78" fill="var(--text-muted)" font-family="'JetBrains Mono', monospace" font-size="7">BROWNIAN</text>
-                <text x="120" y="78" fill="var(--text-muted)" font-family="'JetBrains Mono', monospace" font-size="7">1024 THREADS</text>
-                <text x="230" y="78" fill="var(--text-muted)" font-family="'JetBrains Mono', monospace" font-size="7">CIR VARIANCE</text>
-                <text x="336" y="78" fill="var(--text-muted)" font-family="'JetBrains Mono', monospace" font-size="7">PRICE OUT</text>
+                <!-- Stage 3: AST Safety Verification (bashlex) -->
+                <rect x="15" y="158" width="390" height="62" rx="0" fill="var(--bg-surface-lowest)" stroke="var(--accent-blue)" stroke-width="1.5"/>
+                <text x="28" y="176" fill="var(--accent-blue)" font-family="'JetBrains Mono', monospace" font-size="8" font-weight="700">STAGE 02 // AST STATIC SAFETY GUARD (bashlex)</text>
+                <text x="28" y="191" fill="var(--text-muted)" font-family="'JetBrains Mono', monospace" font-size="8">ABSTRACT SYNTAX TREE VALIDATION &amp; RECURSIVE HEURISTICS</text>
+                
+                <!-- Security Status Badges inside Diagram -->
+                <rect x="28" y="200" width="95" height="14" fill="rgba(34,197,94,0.12)" stroke="rgba(34,197,94,0.4)"/>
+                <text x="35" y="210" fill="#15803d" font-family="'JetBrains Mono', monospace" font-size="7" font-weight="700">✓ SAFE EXECUTION</text>
 
-                <rect x="10" y="100" width="380" height="44" rx="0" fill="var(--bg-surface-lowest)" stroke="var(--hairline-neutral)"/>
-                <text x="20" y="118" fill="var(--accent-blue)" font-family="'JetBrains Mono', monospace" font-size="7">STOCHASTIC VOLATILITY FORMULATION:</text>
-                <text x="20" y="134" fill="var(--text-primary)" font-family="'JetBrains Mono', monospace" font-size="8.5">dS_t = μ S_t dt + √V_t S_t dW_1,t  |  dV_t = κ(θ - V_t)dt + σ √V_t dW_2,t</text>
+                <rect x="132" y="200" width="120" height="14" fill="rgba(239,68,68,0.08)" stroke="rgba(239,68,68,0.3)"/>
+                <text x="139" y="210" fill="#b91c1c" font-family="'JetBrains Mono', monospace" font-size="7" font-weight="700">✗ BLOCKED: rm -rf /</text>
 
-                <text x="10" y="172" fill="var(--text-muted)" font-family="'JetBrains Mono', monospace" font-size="7">BENCHMARK: 2.1 μs LATENCY · 42x CUDA SPEEDUP VS NUMPY · 99.9% CALIBRATION ACCURACY</text>
+                <rect x="260" y="200" width="135" height="14" fill="rgba(239,68,68,0.08)" stroke="rgba(239,68,68,0.3)"/>
+                <text x="267" y="210" fill="#b91c1c" font-family="'JetBrains Mono', monospace" font-size="7" font-weight="700">✗ BLOCKED: :(){ :|:&amp; };:</text>
+
+                <!-- Connector Line -->
+                <line x1="210" y1="220" x2="210" y2="240" stroke="var(--accent-blue)" stroke-width="1.2" stroke-dasharray="2 2"/>
+                <polygon points="210,244 207,238 213,238" fill="var(--accent-blue)"/>
+
+                <!-- Stage 4: Rich Terminal UI & Interactive Explainer -->
+                <rect x="15" y="244" width="390" height="46" rx="0" fill="var(--bg-surface-low)" stroke="var(--hairline-neutral-mid)"/>
+                <text x="28" y="261" fill="var(--accent-blue)" font-family="'JetBrains Mono', monospace" font-size="7.5" font-weight="700">OUTPUT // RICH TERMINAL EXECUTION &amp; EXPLAINER</text>
+                <text x="28" y="275" fill="var(--text-primary)" font-family="'JetBrains Mono', monospace" font-size="8">EXPLANATION: Recursively search current dir (.) for regular files (-type f)</text>
+                <text x="28" y="284" fill="var(--text-secondary)" font-family="'JetBrains Mono', monospace" font-size="7.5">CONFIRMATION: Execute? [y/N]  &gt;  Sub-millisecond verification complete</text>
               </svg>
 
               <div class="figure-footer">
-                <span>INPUT: HESTON PARAMETERS (κ, θ, σ, ρ)</span>
-                <span>THROUGHPUT: 10M PATHS / SEC</span>
+                <span>AST ABSTRACT SYNTAX TREE</span>
+                <span>SUB-SECOND POSIX SYNTHESIS</span>
               </div>
             </div>
           </article>
-
-          <!-- Project 02: DeepVol Neural Volatility -->
-          <article class="project-card">
-            <div class="project-details">
-              <div>
-                <div class="project-meta-top">
-                  <span class="project-status-tag">[ PROJECT 02 // REPOSITORY ]</span>
-                  <span class="meta-dot">·</span>
-                  <span class="project-category">Geometric Deep Learning &mdash; PyTorch</span>
-                </div>
-
-                <h3 class="project-title">DEEPVOL NEURAL SURFACE</h3>
-
-                <p class="project-description">
-                  Continuous-depth neural ordinary differential equations on Riemannian manifolds to model arbitrage-free implied volatility surfaces and jump-diffusion trajectories with high sample efficiency and zero calendar arbitrage violations.
-                </p>
-
-                <div class="tech-stack-row">
-                  <span class="tech-chip">Python</span>
-                  <span class="tech-chip">PyTorch</span>
-                  <span class="tech-chip">Neural ODEs</span>
-                  <span class="tech-chip">Differential Geometry</span>
-                </div>
-              </div>
-
-              <div class="project-actions">
-                <a href="https://github.com/Fr0xy0p" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
-                  <span>GitHub Repository</span>
-                  <span class="btn-arrow" aria-hidden="true">↗</span>
-                </a>
-              </div>
-            </div>
-
-            <div class="project-visual">
-              <div class="figure-header">
-                <span>FIGURE 2.1: CONTINUOUS-DEPTH NEURAL ODE ON RIEMANNIAN MANIFOLD</span>
-              </div>
-
-              <svg class="project-figure-svg" viewBox="0 0 400 200" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="DeepVol Neural ODE diagram">
-                <rect x="10" y="20" width="80" height="36" rx="0" fill="var(--bg-surface-low)" stroke="var(--hairline-neutral-mid)"/>
-                <text x="16" y="42" fill="var(--text-primary)" font-family="'JetBrains Mono', monospace" font-size="8">STRIKE K, T</text>
-
-                <rect x="120" y="20" width="85" height="36" rx="0" fill="var(--bg-surface-low)" stroke="var(--hairline-neutral-mid)"/>
-                <text x="126" y="42" fill="var(--text-secondary)" font-family="'JetBrains Mono', monospace" font-size="8">ADJOINT ODE</text>
-
-                <rect x="235" y="20" width="75" height="36" rx="0" fill="var(--bg-surface-low)" stroke="var(--hairline-neutral-mid)"/>
-                <text x="240" y="42" fill="var(--text-secondary)" font-family="'JetBrains Mono', monospace" font-size="8">MARTINGALE</text>
-
-                <rect x="340" y="20" width="50" height="36" rx="0" fill="var(--accent-blue)" stroke="var(--accent-electric)"/>
-                <text x="348" y="42" fill="#FFFFFF" font-family="'JetBrains Mono', monospace" font-size="8">σ_IV</text>
-
-                <path d="M90 38 L120 38" stroke="var(--accent-blue)" stroke-dasharray="3 2" stroke-width="1"/>
-                <path d="M205 38 L235 38" stroke="var="accent-blue" stroke-dasharray="3 2" stroke-width="1"/>
-                <path d="M310 38 L340 38" stroke="var="accent-blue" stroke-dasharray="3 2" stroke-width="1"/>
-
-                <text x="18" y="78" fill="var(--text-muted)" font-family="'JetBrains Mono', monospace" font-size="7">INPUT LATENT</text>
-                <text x="128" y="78" fill="var(--text-muted)" font-family="'JetBrains Mono', monospace" font-size="7">DOPRI5 SOLVER</text>
-                <text x="240" y="78" fill="var(--text-muted)" font-family="'JetBrains Mono', monospace" font-size="7">NO-ARBITRAGE</text>
-                <text x="344" y="78" fill="var(--text-muted)" font-family="'JetBrains Mono', monospace" font-size="7">SURFACE</text>
-
-                <rect x="10" y="100" width="380" height="44" rx="0" fill="var(--bg-surface-lowest)" stroke="var(--hairline-neutral)"/>
-                <text x="20" y="118" fill="var(--accent-blue)" font-family="'JetBrains Mono', monospace" font-size="7">CONTINUOUS DYNAMICAL SYSTEM:</text>
-                <text x="20" y="134" fill="var(--text-primary)" font-family="'JetBrains Mono', monospace" font-size="8.5">z(T) = z(0) + ∫[0..T] f_θ(z(t), t) dt   subject to  ∂C/∂T ≥ 0, ∂²C/∂K² ≥ 0</text>
-
-                <text x="10" y="172" fill="var(--text-muted)" font-family="'JetBrains Mono', monospace" font-size="7">METRICS: 0.0014 MAE · 99.8% STATIC ARBITRAGE SATISFACTION · 1.2M LEARNABLE PARAMETERS</text>
-              </svg>
-
-              <div class="figure-footer">
-                <span>INPUT: S&amp;P 500 OPTION CHAIN</span>
-                <span>OUTPUT: ARBITRAGE-FREE SURFACE</span>
-              </div>
-            </div>
-          </article>
-
-          <!-- Project 03: ArbPulse Stat-Arb -->
-          <article class="project-card">
-            <div class="project-details">
-              <div>
-                <div class="project-meta-top">
-                  <span class="project-status-tag">[ PROJECT 03 // REPOSITORY ]</span>
-                  <span class="meta-dot">·</span>
-                  <span class="project-category">Statistical Arbitrage &mdash; Python</span>
-                </div>
-
-                <h3 class="project-title">ARBPULSE STAT-ARB ENGINE</h3>
-
-                <p class="project-description">
-                  An algorithmic trading framework modeling continuous-time Ornstein-Uhlenbeck mean-reverting asset spreads with recursive Kalman filtering for dynamic beta hedging, Engle-Granger cointegration tests, and event-driven backtesting execution.
-                </p>
-
-                <div class="tech-stack-row">
-                  <span class="tech-chip">Python</span>
-                  <span class="tech-chip">NumPy</span>
-                  <span class="tech-chip">Kalman Filter</span>
-                  <span class="tech-chip">Cointegration Tests</span>
-                </div>
-              </div>
-
-              <div class="project-actions">
-                <a href="https://github.com/Fr0xy0p" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
-                  <span>GitHub Repository</span>
-                  <span class="btn-arrow" aria-hidden="true">↗</span>
-                </a>
-              </div>
-            </div>
-
-            <div class="project-visual">
-              <div class="figure-header">
-                <span>FIGURE 3.1: ORNSTEIN-UHLENBECK SPREAD &amp; DYNAMIC KALMAN FILTER</span>
-              </div>
-
-              <svg class="project-figure-svg" viewBox="0 0 400 200" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="ArbPulse Kalman pipeline diagram">
-                <rect x="10" y="20" width="80" height="36" rx="0" fill="var(--bg-surface-low)" stroke="var(--hairline-neutral-mid)"/>
-                <text x="16" y="42" fill="var(--text-primary)" font-family="'JetBrains Mono', monospace" font-size="8">ASSETS X, Y</text>
-
-                <rect x="120" y="20" width="80" height="36" rx="0" fill="var(--bg-surface-low)" stroke="var(--hairline-neutral-mid)"/>
-                <text x="126" y="42" fill="var(--text-secondary)" font-family="'JetBrains Mono', monospace" font-size="8">KALMAN β_t</text>
-
-                <rect x="230" y="20" width="80" height="36" rx="0" fill="var(--bg-surface-low)" stroke="var(--hairline-neutral-mid)"/>
-                <text x="236" y="42" fill="var(--text-secondary)" font-family="'JetBrains Mono', monospace" font-size="8">OU SPREAD</text>
-
-                <rect x="340" y="20" width="50" height="36" rx="0" fill="var(--accent-blue)" stroke="var(--accent-electric)"/>
-                <text x="348" y="42" fill="#FFFFFF" font-family="'JetBrains Mono', monospace" font-size="8">α_EXEC</text>
-
-                <path d="M90 38 L120 38" stroke="var(--accent-blue)" stroke-dasharray="3 2" stroke-width="1"/>
-                <path d="M200 38 L230 38" stroke="var="accent-blue" stroke-dasharray="3 2" stroke-width="1"/>
-                <path d="M310 38 L340 38" stroke="var="accent-blue" stroke-dasharray="3 2" stroke-width="1"/>
-
-                <text x="16" y="78" fill="var(--text-muted)" font-family="'JetBrains Mono', monospace" font-size="7">TICK FEED</text>
-                <text x="126" y="78" fill="var(--text-muted)" font-family="'JetBrains Mono', monospace" font-size="7">DYNAMIC HEDGE</text>
-                <text x="234" y="78" fill="var(--text-muted)" font-family="'JetBrains Mono', monospace" font-size="7">MEAN REVERSION</text>
-                <text x="344" y="78" fill="var(--text-muted)" font-family="'JetBrains Mono', monospace" font-size="7">ORDER FLOW</text>
-
-                <rect x="10" y="100" width="380" height="44" rx="0" fill="var(--bg-surface-lowest)" stroke="var(--hairline-neutral)"/>
-                <text x="20" y="118" fill="var(--accent-blue)" font-family="'JetBrains Mono', monospace" font-size="7">MEAN REVERSION DYNAMICS:</text>
-                <text x="20" y="134" fill="var(--text-primary)" font-family="'JetBrains Mono', monospace" font-size="8.5">dX_t = θ(μ - X_t)dt + σ dW_t  where X_t = log(Y_t) - β_t log(X_t)</text>
-
-                <text x="10" y="172" fill="var(--text-muted)" font-family="'JetBrains Mono', monospace" font-size="7">METRICS: 2.84 SHARPE RATIO · 4.2% MAX DRAWDOWN · 71.4% DAILY TRADE WIN RATE</text>
-              </svg>
-
-              <div class="figure-footer">
-                <span>INPUT: REALTIME ETF SPREAD PAIR</span>
-                <span>STATUS: COINTEGRATED (p &lt; 0.002)</span>
-              </div>
-            </div>
-          </article>
-
-          <!-- Project 04: AlgoCore Lab -->
-          <article class="project-card">
-            <div class="project-details">
-              <div>
-                <div class="project-meta-top">
-                  <span class="project-status-tag">[ PROJECT 04 // REPOSITORY ]</span>
-                  <span class="meta-dot">·</span>
-                  <span class="project-category">Competitive Programming &mdash; C++20</span>
-                </div>
-
-                <h3 class="project-title">ALGOCORE BENCHMARK LAB</h3>
-
-                <p class="project-description">
-                  A curated laboratory containing 400+ mathematical proofs, benchmarked data structures (Segment Trees with Lazy Propagation, Fenwick Trees, Treaps, Fast Fourier Transform), and optimized competitive programming solutions with zero dynamic heap allocations.
-                </p>
-
-                <div class="tech-stack-row">
-                  <span class="tech-chip">C++20</span>
-                  <span class="tech-chip">Segment Trees</span>
-                  <span class="tech-chip">AVX2 Vectorization</span>
-                  <span class="tech-chip">Graph Algorithms</span>
-                </div>
-              </div>
-
-              <div class="project-actions">
-                <a href="https://github.com/Fr0xy0p" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
-                  <span>GitHub Repository</span>
-                  <span class="btn-arrow" aria-hidden="true">↗</span>
-                </a>
-              </div>
-            </div>
-
-            <div class="project-visual">
-              <div class="figure-header">
-                <span>FIGURE 4.1: SEGMENT TREE WITH LAZY RANGE PROPAGATION</span>
-              </div>
-
-              <svg class="project-figure-svg" viewBox="0 0 400 200" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Segment tree diagram">
-                <circle cx="200" cy="30" r="14" fill="var(--accent-blue)" stroke="var(--accent-electric)"/>
-                <text x="196" y="34" fill="#FFFFFF" font-family="'JetBrains Mono', monospace" font-size="8">∑</text>
-
-                <line x1="190" y1="40" x2="130" y2="75" stroke="var(--accent-blue)" stroke-width="1.5"/>
-                <line x1="210" y1="40" x2="270" y2="75" stroke="var(--accent-blue)" stroke-width="1.5"/>
-
-                <circle cx="130" cy="80" r="12" fill="var(--bg-surface-low)" stroke="var(--hairline-neutral-mid)"/>
-                <text x="124" y="84" fill="var(--text-primary)" font-family="'JetBrains Mono', monospace" font-size="8">L_0</text>
-
-                <circle cx="270" cy="80" r="12" fill="var(--bg-surface-low)" stroke="var(--hairline-neutral-mid)"/>
-                <text x="264" y="84" fill="var(--text-primary)" font-family="'JetBrains Mono', monospace" font-size="8">R_0</text>
-
-                <line x1="120" y1="90" x2="90" y2="120" stroke="var(--hairline-neutral-mid)" stroke-width="1"/>
-                <line x1="140" y1="90" x2="170" y2="120" stroke="var(--hairline-neutral-mid)" stroke-width="1"/>
-                <line x1="260" y1="90" x2="230" y2="120" stroke="var(--hairline-neutral-mid)" stroke-width="1"/>
-                <line x1="280" y1="90" x2="310" y2="120" stroke="var(--hairline-neutral-mid)" stroke-width="1"/>
-
-                <circle cx="90" cy="125" r="8" fill="var(--bg-surface-high)"/>
-                <circle cx="170" cy="125" r="8" fill="var(--bg-surface-high)"/>
-                <circle cx="230" cy="125" r="8" fill="var(--bg-surface-high)"/>
-                <circle cx="310" cy="125" r="8" fill="var(--accent-blue)"/>
-
-                <text x="10" y="165" fill="var(--accent-blue)" font-family="'JetBrains Mono', monospace" font-size="7.5">ASYMPTOTIC COMPLEXITY:</text>
-                <text x="10" y="182" fill="var(--text-secondary)" font-family="'JetBrains Mono', monospace" font-size="7.5">POINT UPDATE: O(log N) · RANGE QUERY: O(log N) · MEMORY: 4N STATIC NODES (0 HEAP ALLOCS)</text>
-              </svg>
-
-              <div class="figure-footer">
-                <span>400+ BENCHMARKED SOLUTIONS</span>
-                <span>CACHE CONSCIOUS LAYOUT</span>
-              </div>
-            </div>
-          </article>
-
         </div>
       </div>
     </section>

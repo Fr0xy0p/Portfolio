@@ -1097,6 +1097,141 @@ button {
   color: var(--text-muted);
 }
 
+/* Featured Flagship Project Enhancements */
+.project-highlights {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  margin-bottom: 1.75rem;
+  padding: 1.25rem;
+  background-color: var(--bg-surface-low);
+  border: 1px solid var(--hairline-neutral);
+}
+
+.highlight-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.highlight-num {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--accent-blue);
+  flex-shrink: 0;
+  margin-top: 0.15rem;
+}
+
+.highlight-item strong {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--text-pure);
+  margin-bottom: 0.2rem;
+}
+
+.highlight-item p {
+  font-size: 0.825rem;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* Live GitHub Telemetry Grid inside Project Card */
+.project-telemetry-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+  padding: 1rem 1.25rem;
+  background-color: var(--bg-surface-lowest);
+  border: 1px solid var(--hairline-neutral);
+  margin-bottom: 1.25rem;
+}
+
+@media (max-width: 640px) {
+  .project-telemetry-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.telemetry-metric-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.metric-label {
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+}
+
+.metric-val {
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--text-pure);
+}
+
+.metric-val.mono {
+  color: var(--accent-blue);
+}
+
+/* Clone Command Bar */
+.project-clone-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 0.85rem;
+  background-color: var(--bg-surface-low);
+  border: 1px solid var(--hairline-neutral);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  gap: 0.75rem;
+}
+
+.clone-code {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.clone-prompt {
+  color: var(--accent-blue);
+  font-weight: 700;
+}
+
+.clone-cmd {
+  color: var(--text-primary);
+}
+
+.btn-copy-clone {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.25rem 0.6rem;
+  background-color: var(--bg-surface-lowest);
+  border: 1px solid var(--hairline-neutral);
+  border-radius: 4px;
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.btn-copy-clone:hover {
+  background-color: var(--accent-blue);
+  color: #FFFFFF;
+  border-color: var(--accent-blue);
+}
+
 /* --- 12. SECTION 04: TECHNICAL FOUNDATION (SKILLS) --- */
 .languages-block {
   margin-bottom: 3.5rem;

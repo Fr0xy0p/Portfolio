@@ -376,4 +376,123 @@
     });
   }
 
+  // --------------------------------------------------------------------------
+  // 9. Real-Time Flagship Repository Telemetry Sync (Fr0xy0p/Shx)
+  // --------------------------------------------------------------------------
+  (function syncLiveShxRepo() {
+    const starsElem = document.getElementById('shx-stars');
+    const forksElem = document.getElementById('shx-forks');
+    const issuesElem = document.getElementById('shx-issues');
+    const langElem = document.getElementById('shx-language');
+    const commitHashElem = document.getElementById('shx-commit-hash');
+    const lastPushedElem = document.getElementById('shx-last-pushed');
+    const badgeElem = document.getElementById('shx-live-badge');
+    const descElem = document.getElementById('shx-repo-desc');
+
+    const repoUser = 'Fr0xy0p';
+    const repoName = 'Shx';
+    const cacheKey = `gh_repo_${repoUser}_${repoName}`;
+
+    function formatRelativeTime(dateString) {
+      if (!dateString) return 'Recent';
+      const date = new Date(dateString);
+      const now = new Date();
+      const diffSec = Math.floor((now - date) / 1000);
+
+      if (diffSec < 60) return 'Just now';
+      if (diffSec < 3600) return `${Math.floor(diffSec / 60)}m ago`;
+      if (diffSec < 86400) return `${Math.floor(diffSec / 3600)}h ago`;
+      if (diffSec < 604800) return `${Math.floor(diffSec / 86400)}d ago`;
+
+      const options = { month: 'short', day: 'numeric', year: 'numeric' };
+      return date.toLocaleDateString('en-US', options);
+    }
+
+    function applyRepoData(repo, commit) {
+      if (repo) {
+        if (starsElem && typeof repo.stargazers_count === 'number') {
+          starsElem.textContent = repo.stargazers_count.toLocaleString();
+        }
+        if (forksElem && typeof repo.forks_count === 'number') {
+          forksElem.textContent = repo.forks_count.toLocaleString();
+        }
+        if (issuesElem && typeof repo.open_issues_count === 'number') {
+          issuesElem.textContent = repo.open_issues_count.toLocaleString();
+        }
+        if (langElem && repo.language) {
+          langElem.textContent = `${repo.language} (100%)`;
+        }
+        if (lastPushedElem && repo.pushed_at) {
+          lastPushedElem.textContent = formatRelativeTime(repo.pushed_at);
+          lastPushedElem.title = new Date(repo.pushed_at).toLocaleString();
+        }
+        if (descElem && repo.description && repo.description.trim().length > 0) {
+          descElem.textContent = repo.description;
+        }
+      }
+
+      if (commit && commit.sha) {
+        if (commitHashElem) {
+          commitHashElem.textContent = commit.sha.slice(0, 7);
+          if (commit.commit && commit.commit.message) {
+            commitHashElem.title = `Latest commit: ${commit.commit.message}`;
+          }
+        }
+      }
+
+      if (badgeElem) {
+        badgeElem.innerHTML = `<span class="sync-dot"></span> LIVE SYNCED`;
+      }
+    }
+
+    // 1. Check LocalStorage Cache for instant paint
+    try {
+      const cached = localStorage.getItem(cacheKey);
+      if (cached) {
+        const { repo, commit } = JSON.parse(cached);
+        applyRepoData(repo, commit);
+      }
+    } catch (e) {}
+
+    // 2. Fetch Live from GitHub API (Zero Rate Limit with cache)
+    Promise.all([
+      fetch(`https://api.github.com/repos/${repoUser}/${repoName}`).then(r => r.ok ? r.json() : null),
+      fetch(`https://api.github.com/repos/${repoUser}/${repoName}/commits?per_page=1`).then(r => r.ok ? r.json() : null)
+    ])
+    .then(([repo, commits]) => {
+      const commit = Array.isArray(commits) && commits.length > 0 ? commits[0] : null;
+      applyRepoData(repo, commit);
+      try {
+        localStorage.setItem(cacheKey, JSON.stringify({ repo, commit }));
+      } catch (e) {}
+    })
+    .catch(err => {
+      console.warn('Live Shx repository sync notification:', err);
+      if (badgeElem) {
+        badgeElem.innerHTML = `<span class="sync-dot" style="animation:none;"></span> SYNCED`;
+      }
+    });
+
+    // 3. 1-Click Clone Command Copy Action
+    const copyCloneBtn = document.getElementById('copy-clone-btn');
+    const copyCloneText = document.getElementById('copy-clone-text');
+    if (copyCloneBtn && copyCloneText) {
+      copyCloneBtn.addEventListener('click', () => {
+        const cloneCmd = `git clone https://github.com/${repoUser}/${repoName}.git`;
+        navigator.clipboard.writeText(cloneCmd).then(() => {
+          copyCloneText.textContent = 'Copied!';
+          copyCloneBtn.style.backgroundColor = 'var(--status-emerald)';
+          copyCloneBtn.style.borderColor = 'var(--status-emerald)';
+          copyCloneBtn.style.color = '#FFFFFF';
+          setTimeout(() => {
+            copyCloneText.textContent = 'Copy';
+            copyCloneBtn.style.backgroundColor = '';
+            copyCloneBtn.style.borderColor = '';
+            copyCloneBtn.style.color = '';
+          }, 2000);
+        });
+      });
+    }
+  })();
+
 })();
