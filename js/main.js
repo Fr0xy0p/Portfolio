@@ -144,7 +144,7 @@
   setInterval(updateTelemetryClock, 1000);
 
   // --------------------------------------------------------------------------
-  // 5. Interactive GitHub Contribution Tooltip
+  // 5. Interactive GitHub Contribution Tooltip & Real-Time Profile Sync
   // --------------------------------------------------------------------------
   const contribCells = document.querySelectorAll('.contrib-day-cell');
   if (contribCells.length > 0) {
@@ -170,6 +170,150 @@
         tooltip.classList.remove('visible');
       });
     });
+
+    // Real-Time Direct GitHub Contribution Sync
+    (function syncLiveGitHubContributions(username) {
+      const titleElem = document.getElementById('contrib-total-title');
+      const statsElem = document.getElementById('contrib-stats-row');
+      const syncStatusElem = document.getElementById('contrib-sync-status');
+
+      const monthNames = [
+        'January', 'February', 'March', 'April', 'May', 'June',
+        'July', 'August', 'September', 'October', 'November', 'December'
+      ];
+
+      function formatDateStr(dateStr) {
+        const parts = dateStr.split('-');
+        if (parts.length !== 3) return dateStr;
+        const y = parseInt(parts[0], 10);
+        const m = parseInt(parts[1], 10) - 1;
+        const d = parseInt(parts[2], 10);
+        return `${monthNames[m]} ${d}, ${y}`;
+      }
+
+      function applyData(data) {
+        if (!data || !Array.isArray(data.contributions)) return;
+
+        const contribMap = new Map();
+        let totalContribs = 0;
+        let activeDaysCount = 0;
+        let runningStreak = 0;
+        let maxStreak = 0;
+        let currentStreak = 0;
+
+        const sortedList = [...data.contributions].sort((a, b) => a.date.localeCompare(b.date));
+
+        for (const item of sortedList) {
+          contribMap.set(item.date, item);
+          const count = item.count || 0;
+          totalContribs += count;
+
+          if (count > 0) {
+            activeDaysCount++;
+            runningStreak++;
+            if (runningStreak > maxStreak) {
+              maxStreak = runningStreak;
+            }
+          } else {
+            runningStreak = 0;
+          }
+        }
+
+        // Current streak ending today
+        const todayStr = new Date().toISOString().slice(0, 10);
+        for (let i = sortedList.length - 1; i >= 0; i--) {
+          if (sortedList[i].count > 0) {
+            currentStreak++;
+          } else {
+            if (i === sortedList.length - 1 && sortedList[i].date === todayStr) {
+              continue;
+            }
+            break;
+          }
+        }
+
+        const displayTotal = data.total && typeof data.total.lastYear === 'number'
+          ? data.total.lastYear
+          : totalContribs;
+
+        // 1. Update Title
+        if (titleElem) {
+          titleElem.textContent = `${displayTotal} contributions in the last year`;
+        }
+
+        // 2. Update Cells in DOM
+        contribCells.forEach(cell => {
+          const date = cell.getAttribute('data-date');
+          if (!date) return;
+
+          const info = contribMap.get(date);
+          if (info) {
+            const count = info.count || 0;
+            const level = typeof info.level === 'number' ? info.level : 0;
+
+            cell.className = `contrib-day-cell level-${level}`;
+            cell.setAttribute('data-level', level);
+
+            let tipText = '';
+            if (count === 0) {
+              tipText = `No contributions on ${formatDateStr(date)}`;
+            } else if (count === 1) {
+              tipText = `1 contribution on ${formatDateStr(date)}`;
+            } else {
+              tipText = `${count} contributions on ${formatDateStr(date)}`;
+            }
+            cell.setAttribute('data-tip', tipText);
+          }
+        });
+
+        // 3. Update Summary Stats Row
+        if (statsElem) {
+          statsElem.innerHTML = `
+            <span class="stat-item"><span class="stat-val">${displayTotal}</span> TOTAL</span>
+            <span class="stat-sep">·</span>
+            <span class="stat-item"><span class="stat-val">${activeDaysCount}</span> ACTIVE DAYS</span>
+            <span class="stat-sep">·</span>
+            <span class="stat-item"><span class="stat-val">${maxStreak} DAYS</span> MAX STREAK</span>
+            <span class="stat-sep">·</span>
+            <span class="stat-item"><span class="stat-val">${currentStreak} DAY${currentStreak === 1 ? '' : 'S'}</span> CURRENT</span>
+          `;
+        }
+
+        // 4. Update Sync Indicator
+        if (syncStatusElem) {
+          syncStatusElem.innerHTML = `<span class="sync-dot"></span> LIVE SYNCED`;
+        }
+      }
+
+      // Check LocalStorage cache first for instant paint
+      const cacheKey = `gh_contribs_${username}`;
+      try {
+        const cached = localStorage.getItem(cacheKey);
+        if (cached) {
+          applyData(JSON.parse(cached));
+        }
+      } catch (e) {}
+
+      // Fetch live directly from open CORS proxy
+      const apiUrl = `https://github-contributions-api.jogruber.de/v4/${username}?y=last`;
+      fetch(apiUrl)
+        .then(res => {
+          if (!res.ok) throw new Error(`HTTP ${res.status}`);
+          return res.json();
+        })
+        .then(data => {
+          applyData(data);
+          try {
+            localStorage.setItem(cacheKey, JSON.stringify(data));
+          } catch (e) {}
+        })
+        .catch(err => {
+          console.warn('Live GitHub contribution sync notification:', err);
+          if (syncStatusElem) {
+            syncStatusElem.innerHTML = `<span class="sync-dot" style="animation:none;"></span> SYNCED`;
+          }
+        });
+    })('Fr0xy0p');
   }
 
   // --------------------------------------------------------------------------

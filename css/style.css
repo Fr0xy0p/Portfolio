@@ -1278,7 +1278,45 @@ button {
 .contrib-header-actions {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.65rem;
+}
+
+.contrib-sync-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  color: #1a7f37;
+  padding: 0.2rem 0.55rem;
+  background-color: rgba(26, 127, 55, 0.08);
+  border: 1px solid rgba(26, 127, 55, 0.2);
+  border-radius: 20px;
+}
+
+[data-theme="dark"] .contrib-sync-status {
+  color: #3fb950;
+  background-color: rgba(63, 185, 80, 0.12);
+  border-color: rgba(63, 185, 80, 0.25);
+}
+
+.sync-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #1a7f37;
+  display: inline-block;
+  animation: syncPulse 2s infinite ease-in-out;
+}
+
+[data-theme="dark"] .sync-dot {
+  background-color: #3fb950;
+}
+
+@keyframes syncPulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.4); opacity: 0.55; }
 }
 
 .contrib-year-badge {
