@@ -489,6 +489,180 @@
               </div>
             </div>
           </article>
+
+          <!-- Flagship Repository 02: Automated-code-reviewer -->
+          <article class="project-card featured-flagship-card">
+            <div class="project-details">
+              <div>
+                <div class="project-meta-top">
+                  <span class="project-status-tag">[ FLAGSHIP OPEN-SOURCE REPOSITORY // 02 ]</span>
+                  <span class="meta-dot">·</span>
+                  <span class="contrib-sync-status" id="reviewer-live-badge"><span class="sync-dot"></span> LIVE SYNCED</span>
+                </div>
+
+                <h3 class="project-title">AUTOMATED CODE REVIEWER &amp; ASYMPTOTIC COMPLEXITY PROFILER</h3>
+
+                <p class="project-description" id="reviewer-repo-desc">
+                  An intelligent, multi-language static analysis suite and CI tool inspecting Python, C, and C++ code. Computes McCabe cyclomatic complexity, predicts theoretical Big-O asymptotic bounds, detects raw pointer leaks and memory hazards, and generates adversarial edge-case test vectors with Socratic AI debugging guidance.
+                </p>
+
+                <!-- Architectural Capabilities -->
+                <div class="project-highlights">
+                  <div class="highlight-item">
+                    <span class="highlight-num">01 //</span>
+                    <div>
+                      <strong>Multi-Language AST &amp; Static Lexer</strong>
+                      <p>Python <code>ast</code> parsing coupled with C/C++ structural tokenization to inspect recursion branching, memory leaks (<code>malloc</code> without <code>free</code>), and unsafe legacy functions.</p>
+                    </div>
+                  </div>
+                  <div class="highlight-item">
+                    <span class="highlight-num">02 //</span>
+                    <div>
+                      <strong>Big-O Asymptotic Complexity Profiling</strong>
+                      <p>Infers runtime bounds from O(1) to O(2^N), benchmarked against strict competitive programming CPU operation budgets (10^7 - 10^8 ops/s) with scale bottleneck detection.</p>
+                    </div>
+                  </div>
+                  <div class="highlight-item">
+                    <span class="highlight-num">03 //</span>
+                    <div>
+                      <strong>Adversarial Edge-Case Generation</strong>
+                      <p>Synthesizes boundary test vectors (integer overflows, empty collections, recursion limits) and provides Socratic hints without spoiling solutions.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="tech-stack-row">
+                  <span class="tech-chip">Python 3.10+</span>
+                  <span class="tech-chip">C &amp; C++ Static Analysis</span>
+                  <span class="tech-chip">AST (ast.walk)</span>
+                  <span class="tech-chip">Big-O Inference</span>
+                  <span class="tech-chip">Cyclomatic Complexity</span>
+                  <span class="tech-chip">Adversarial Testing</span>
+                  <span class="tech-chip">GitHub Actions CI</span>
+                </div>
+
+                <!-- Live GitHub Telemetry Grid -->
+                <div class="project-telemetry-grid">
+                  <div class="telemetry-metric-item">
+                    <span class="metric-label">STARS</span>
+                    <span class="metric-val" id="reviewer-stars">0</span>
+                  </div>
+                  <div class="telemetry-metric-item">
+                    <span class="metric-label">FORKS</span>
+                    <span class="metric-val" id="reviewer-forks">0</span>
+                  </div>
+                  <div class="telemetry-metric-item">
+                    <span class="metric-label">OPEN ISSUES</span>
+                    <span class="metric-val" id="reviewer-issues">0</span>
+                  </div>
+                  <div class="telemetry-metric-item">
+                    <span class="metric-label">LANGUAGE</span>
+                    <span class="metric-val" id="reviewer-language">Python (100%)</span>
+                  </div>
+                  <div class="telemetry-metric-item">
+                    <span class="metric-label">LATEST COMMIT</span>
+                    <span class="metric-val mono" id="reviewer-commit-hash">5bd1a4c</span>
+                  </div>
+                  <div class="telemetry-metric-item">
+                    <span class="metric-label">LAST PUSHED</span>
+                    <span class="metric-val" id="reviewer-last-pushed">October 31, 2026</span>
+                  </div>
+                </div>
+
+                <!-- Clone Command Bar -->
+                <div class="project-clone-bar">
+                  <div class="clone-code">
+                    <span class="clone-prompt">$</span>
+                    <span class="clone-cmd">git clone https://github.com/Fr0xy0p/Automated-code-reviewer.git</span>
+                  </div>
+                  <button class="btn-copy-clone" id="copy-reviewer-clone-btn" aria-label="Copy git clone command">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                      <rect x="9" y="9" width="13" height="13" rx="0" ry="0"/>
+                      <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+                    </svg>
+                    <span id="copy-reviewer-clone-text">Copy</span>
+                  </button>
+                </div>
+              </div>
+
+              <div class="project-actions" style="margin-top: 1.75rem;">
+                <a href="https://github.com/Fr0xy0p/Automated-code-reviewer" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                  <span>View on GitHub</span>
+                  <span class="btn-arrow" aria-hidden="true">↗</span>
+                </a>
+                <a href="https://github.com/Fr0xy0p/Automated-code-reviewer/issues" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                  <span>Issue Tracker</span>
+                  <span class="btn-arrow" aria-hidden="true">↗</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Architectural Blueprint Box -->
+            <div class="project-visual">
+              <div class="figure-header">
+                <span>FIGURE 2.1: AST METRIC EXTRACTION &amp; BIG-O PROFILER</span>
+              </div>
+
+              <!-- High-precision Architectural Pipeline SVG Diagram -->
+              <svg class="project-figure-svg" viewBox="0 0 420 320" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Automated code reviewer AST metric extraction and Big-O profiler architecture diagram">
+                <defs>
+                  <pattern id="reviewerGrid" width="20" height="20" patternUnits="userSpaceOnUse">
+                    <path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(15,23,42,0.04)" stroke-width="0.8"/>
+                  </pattern>
+                </defs>
+                <rect width="420" height="320" fill="url(#reviewerGrid)"/>
+
+                <!-- Stage 1: Source Submission Input -->
+                <rect x="15" y="16" width="390" height="42" rx="0" fill="var(--bg-surface-low)" stroke="var(--hairline-neutral-mid)"/>
+                <text x="28" y="33" fill="var(--accent-blue)" font-family="'JetBrains Mono', monospace" font-size="7.5" font-weight="700">INPUT // CODE SUBMISSION (PYTHON / C / C++)</text>
+                <text x="28" y="47" fill="var(--text-primary)" font-family="'JetBrains Mono', monospace" font-size="9">source: def binary_search(arr, target): ...</text>
+
+                <!-- Connector -->
+                <line x1="210" y1="58" x2="210" y2="78" stroke="var(--accent-blue)" stroke-width="1.2" stroke-dasharray="2 2"/>
+                <polygon points="210,82 207,76 213,76" fill="var(--accent-blue)"/>
+
+                <!-- Stage 2: AST Static Lexer & Metric Extraction -->
+                <rect x="15" y="82" width="390" height="52" rx="0" fill="var(--bg-surface-low)" stroke="var(--hairline-neutral-mid)"/>
+                <text x="28" y="99" fill="var(--accent-blue)" font-family="'JetBrains Mono', monospace" font-size="7.5" font-weight="700">STAGE 01 // MULTI-LANGUAGE AST STRUCTURAL PARSER</text>
+                <text x="28" y="112" fill="var(--text-muted)" font-family="'JetBrains Mono', monospace" font-size="8">METRICS: McCABE CYCLOMATIC = 3 · NESTING DEPTH = 1 · RECURSION = 0</text>
+                <text x="28" y="125" fill="var(--text-secondary)" font-family="'JetBrains Mono', monospace" font-size="8">SAFETY: 0 MEMORY LEAKS · 0 RAW DEREFERENCES · SAFE BOUNDS</text>
+
+                <!-- Connector -->
+                <line x1="210" y1="134" x2="210" y2="154" stroke="var(--accent-blue)" stroke-width="1.2" stroke-dasharray="2 2"/>
+                <polygon points="210,158 207,152 213,152" fill="var(--accent-blue)"/>
+
+                <!-- Stage 3: Asymptotic Big-O Inference -->
+                <rect x="15" y="158" width="390" height="62" rx="0" fill="var(--bg-surface-lowest)" stroke="var(--accent-blue)" stroke-width="1.5"/>
+                <text x="28" y="176" fill="var(--accent-blue)" font-family="'JetBrains Mono', monospace" font-size="8" font-weight="700">STAGE 02 // ASYMPTOTIC BIG-O COMPLEXITY INFERENCE</text>
+                <text x="28" y="191" fill="var(--text-muted)" font-family="'JetBrains Mono', monospace" font-size="8">THEORETICAL BOUND: O(log N) TIME · O(1) AUXILIARY MEMORY</text>
+                
+                <!-- Performance verification badges -->
+                <rect x="28" y="200" width="115" height="14" fill="rgba(34,197,94,0.12)" stroke="rgba(34,197,94,0.4)"/>
+                <text x="35" y="210" fill="#15803d" font-family="'JetBrains Mono', monospace" font-size="7" font-weight="700">✓ N=10^6 &lt; 1.0s BUDGET</text>
+
+                <rect x="152" y="200" width="115" height="14" fill="rgba(34,197,94,0.12)" stroke="rgba(34,197,94,0.4)"/>
+                <text x="159" y="210" fill="#15803d" font-family="'JetBrains Mono', monospace" font-size="7" font-weight="700">✓ 17 OPERATIONS/EXEC</text>
+
+                <rect x="276" y="200" width="118" height="14" fill="rgba(10,38,238,0.08)" stroke="rgba(10,38,238,0.25)"/>
+                <text x="283" y="210" fill="var(--accent-blue)" font-family="'JetBrains Mono', monospace" font-size="7" font-weight="700">★ OPTIMAL CLASS: O(log N)</text>
+
+                <!-- Connector -->
+                <line x1="210" y1="220" x2="210" y2="240" stroke="var(--accent-blue)" stroke-width="1.2" stroke-dasharray="2 2"/>
+                <polygon points="210,244 207,238 213,238" fill="var(--accent-blue)"/>
+
+                <!-- Stage 4: Adversarial Test Generation & Pair-Programming -->
+                <rect x="15" y="244" width="390" height="46" rx="0" fill="var(--bg-surface-low)" stroke="var(--hairline-neutral-mid)"/>
+                <text x="28" y="261" fill="var(--accent-blue)" font-family="'JetBrains Mono', monospace" font-size="7.5" font-weight="700">OUTPUT // ADVERSARIAL TEST SUITE &amp; SOCRATIC AI PAIR-PROGRAMMER</text>
+                <text x="28" y="275" fill="var(--text-primary)" font-family="'JetBrains Mono', monospace" font-size="8">VECTORS: [] (Empty), [42] (Singleton), [-2^31, 2^31-1] (Overflow Bound)</text>
+                <text x="28" y="284" fill="var(--text-secondary)" font-family="'JetBrains Mono', monospace" font-size="7.5">SOCRATIC GUIDANCE: Corner-case probe verifies middle integer overflow mid = (l+r)/2</text>
+              </svg>
+
+              <div class="figure-footer">
+                <span>McCABE CYCLOMATIC COMPLIANCE</span>
+                <span>BIG-O PROFILED · CI/CD READY</span>
+              </div>
+            </div>
+          </article>
         </div>
       </div>
     </section>

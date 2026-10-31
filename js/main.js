@@ -377,20 +377,33 @@
   }
 
   // --------------------------------------------------------------------------
-  // 9. Real-Time Flagship Repository Telemetry Sync (Fr0xy0p/Shx)
+  // 9. Real-Time Repository Telemetry Sync (Fr0xy0p/Shx & Fr0xy0p/Automated-code-reviewer)
   // --------------------------------------------------------------------------
-  (function syncLiveShxRepo() {
-    const starsElem = document.getElementById('shx-stars');
-    const forksElem = document.getElementById('shx-forks');
-    const issuesElem = document.getElementById('shx-issues');
-    const langElem = document.getElementById('shx-language');
-    const commitHashElem = document.getElementById('shx-commit-hash');
-    const lastPushedElem = document.getElementById('shx-last-pushed');
-    const badgeElem = document.getElementById('shx-live-badge');
-    const descElem = document.getElementById('shx-repo-desc');
+  function setupLiveRepoSync(config) {
+    const {
+      repoUser,
+      repoName,
+      starsId,
+      forksId,
+      issuesId,
+      langId,
+      commitHashId,
+      lastPushedId,
+      badgeId,
+      descId,
+      copyBtnId,
+      copyTextId
+    } = config;
 
-    const repoUser = 'Fr0xy0p';
-    const repoName = 'Shx';
+    const starsElem = document.getElementById(starsId);
+    const forksElem = document.getElementById(forksId);
+    const issuesElem = document.getElementById(issuesId);
+    const langElem = document.getElementById(langId);
+    const commitHashElem = document.getElementById(commitHashId);
+    const lastPushedElem = document.getElementById(lastPushedId);
+    const badgeElem = document.getElementById(badgeId);
+    const descElem = document.getElementById(descId);
+
     const cacheKey = `gh_repo_${repoUser}_${repoName}`;
 
     function formatRelativeTime(dateString) {
@@ -467,32 +480,64 @@
       } catch (e) {}
     })
     .catch(err => {
-      console.warn('Live Shx repository sync notification:', err);
+      console.warn(`Live ${repoName} repository sync notification:`, err);
       if (badgeElem) {
         badgeElem.innerHTML = `<span class="sync-dot" style="animation:none;"></span> SYNCED`;
       }
     });
 
     // 3. 1-Click Clone Command Copy Action
-    const copyCloneBtn = document.getElementById('copy-clone-btn');
-    const copyCloneText = document.getElementById('copy-clone-text');
-    if (copyCloneBtn && copyCloneText) {
-      copyCloneBtn.addEventListener('click', () => {
+    const copyBtn = document.getElementById(copyBtnId);
+    const copyText = document.getElementById(copyTextId);
+    if (copyBtn && copyText) {
+      copyBtn.addEventListener('click', () => {
         const cloneCmd = `git clone https://github.com/${repoUser}/${repoName}.git`;
         navigator.clipboard.writeText(cloneCmd).then(() => {
-          copyCloneText.textContent = 'Copied!';
-          copyCloneBtn.style.backgroundColor = 'var(--status-emerald)';
-          copyCloneBtn.style.borderColor = 'var(--status-emerald)';
-          copyCloneBtn.style.color = '#FFFFFF';
+          copyText.textContent = 'Copied!';
+          copyBtn.style.backgroundColor = 'var(--status-emerald)';
+          copyBtn.style.borderColor = 'var(--status-emerald)';
+          copyBtn.style.color = '#FFFFFF';
           setTimeout(() => {
-            copyCloneText.textContent = 'Copy';
-            copyCloneBtn.style.backgroundColor = '';
-            copyCloneBtn.style.borderColor = '';
-            copyCloneBtn.style.color = '';
+            copyText.textContent = 'Copy';
+            copyBtn.style.backgroundColor = '';
+            copyBtn.style.borderColor = '';
+            copyBtn.style.color = '';
           }, 2000);
         });
       });
     }
-  })();
+  }
+
+  // Initialize live sync for Shx
+  setupLiveRepoSync({
+    repoUser: 'Fr0xy0p',
+    repoName: 'Shx',
+    starsId: 'shx-stars',
+    forksId: 'shx-forks',
+    issuesId: 'shx-issues',
+    langId: 'shx-language',
+    commitHashId: 'shx-commit-hash',
+    lastPushedId: 'shx-last-pushed',
+    badgeId: 'shx-live-badge',
+    descId: 'shx-repo-desc',
+    copyBtnId: 'copy-clone-btn',
+    copyTextId: 'copy-clone-text'
+  });
+
+  // Initialize live sync for Automated-code-reviewer
+  setupLiveRepoSync({
+    repoUser: 'Fr0xy0p',
+    repoName: 'Automated-code-reviewer',
+    starsId: 'reviewer-stars',
+    forksId: 'reviewer-forks',
+    issuesId: 'reviewer-issues',
+    langId: 'reviewer-language',
+    commitHashId: 'reviewer-commit-hash',
+    lastPushedId: 'reviewer-last-pushed',
+    badgeId: 'reviewer-live-badge',
+    descId: 'reviewer-repo-desc',
+    copyBtnId: 'copy-reviewer-clone-btn',
+    copyTextId: 'copy-reviewer-clone-text'
+  });
 
 })();
