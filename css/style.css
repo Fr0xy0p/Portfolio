@@ -487,6 +487,9 @@ button {
 }
 
 .brand-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
   font-size: 1.125rem;
   font-weight: 800;
   letter-spacing: -0.02em;
@@ -494,8 +497,18 @@ button {
   transition: opacity var(--transition-fast);
 }
 
+.brand-logo-mark {
+  border-radius: 5px;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.brand-link:hover .brand-logo-mark {
+  transform: scale(1.08);
+}
+
 .brand-link:hover {
-  opacity: 0.8;
+  opacity: 0.85;
 }
 
 .badge-status-chip {

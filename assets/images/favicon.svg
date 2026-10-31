@@ -1,20 +1,20 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-  <defs>
-    <linearGradient id="quantGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#7C5CFF"/>
-      <stop offset="100%" stop-color="#00F0FF"/>
-    </linearGradient>
-    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="3" result="blur" />
-      <feMerge>
-        <feMergeNode in="blur" />
-        <feMergeNode in="SourceGraphic" />
-      </feMerge>
-    </filter>
-  </defs>
-  <rect width="100" height="100" rx="22" fill="#0A0C14"/>
-  <rect x="2" y="2" width="96" height="96" rx="20" fill="none" stroke="url(#quantGrad)" stroke-width="2" opacity="0.4"/>
-  <!-- Sigma & Delta quant symbol -->
-  <path d="M 30 28 L 70 28 L 50 50 L 70 72 L 30 72 L 35 64 L 54 64 L 42 50 L 54 36 L 35 36 Z" fill="url(#quantGrad)" filter="url(#glow)"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Swiss Architectural Cobalt Canvas -->
+  <rect width="64" height="64" rx="14" fill="#0A26EE"/>
+  <rect x="2.5" y="2.5" width="59" height="59" rx="11.5" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="1.5"/>
+  
+  <!-- Architectural Crosshair Guides -->
+  <line x1="8" y1="32" x2="13" y2="32" stroke="rgba(255,255,255,0.4)" stroke-width="1.2"/>
+  <line x1="51" y1="32" x2="56" y2="32" stroke="rgba(255,255,255,0.4)" stroke-width="1.2"/>
+  
+  <!-- Geometric YS Monogram in Pure Precision Vectors -->
+  <!-- Y -->
+  <path d="M 16 20 L 25 32 L 25 44" fill="none" stroke="#FFFFFF" stroke-width="4.5" stroke-linecap="square" stroke-linejoin="miter"/>
+  <path d="M 34 20 L 25 32" fill="none" stroke="#FFFFFF" stroke-width="4.5" stroke-linecap="square" stroke-linejoin="miter"/>
+  
+  <!-- S -->
+  <path d="M 48 21.5 C 47 20 44 19 41.5 19 C 38 19 35.5 21 35.5 24 C 35.5 27.5 38.5 29 42 30.5 C 46 32 49 34 49 38 C 49 42 45.5 45 41 45 C 37 45 34 42.5 33.5 39.5" fill="none" stroke="#FFFFFF" stroke-width="4.5" stroke-linecap="square" stroke-linejoin="round"/>
+  
+  <!-- Active Telemetry Status Dot -->
+  <circle cx="51" cy="13" r="3" fill="#00F5D4"/>
 </svg>
-
