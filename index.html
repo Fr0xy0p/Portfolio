@@ -1,612 +1,1297 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Yuvraj Singh | Math Enthusiast & Quantitative AI Engineer</title>
-  <meta name="description" content="Portfolio of Yuvraj Singh - Math Enthusiast, Quantitative Developer & Machine Learning Engineer. Explore projects, GitHub activity, future aims, and connect.">
-  
-  <!-- Google Fonts -->
+  <title>Yuvraj Singh — Quant Engineer &amp; ML Researcher</title>
+  <meta name="description" content="Portfolio of Yuvraj Singh — Quant Engineer &amp; ML Researcher. Exploring the intersection of mathematics, algorithmic markets, and machine learning.">
+  <meta name="keywords" content="Yuvraj Singh, Quant Engineer, Quantitative Finance, Machine Learning, Stochastic Calculus, Python, C++, Deep Learning, Algorithms, Swiss Architectural Style">
+  <meta name="author" content="Yuvraj Singh">
+
+  <!-- OpenGraph / Social -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://github.com/Fr0xy0p">
+  <meta property="og:title" content="Yuvraj Singh — Quant Engineer &amp; ML Researcher">
+  <meta property="og:description" content="Where mathematics, markets, and machine learning meet. Exploring quantitative research and algorithmic systems.">
+  <meta property="og:image" content="assets/images/profile.jpg">
+
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+
+  <!-- Modern Typography: Hanken Grotesk & JetBrains Mono & Space Grotesk -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Outfit:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
-  
-  <!-- FontAwesome Icons for modern UI -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  
-  <!-- Main Stylesheet -->
-  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,300..900;1,300..900&family=JetBrains+Mono:ital,wght@0,300..800;1,300..800&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Separate Vanilla CSS -->
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <!-- Ambient Background Particle Canvas for Floating Math Symbols -->
-  <canvas id="math-canvas"></canvas>
+  <!-- Accessibility Skip Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
-  <!-- Top Navigation Bar & Hero Intro (Name & Desired Position) -->
-  <header class="navbar" id="navbar">
-    <div class="nav-container">
-      <div class="brand-group">
-        <span class="brand-symbol">∑</span>
-        <div class="brand-text">
-          <span class="brand-name">Yuvraj Singh</span>
-          <span class="brand-tag">Quant & ML Research</span>
+  <!-- Custom Architectural Desktop Cursor -->
+  <div id="custom-cursor" class="custom-cursor" aria-hidden="true">
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div>
+  </div>
+
+  <!-- Persistent Generative Particle Canvas -->
+  <div id="threejs-particle-scene" class="threejs-particle-scene" aria-hidden="true">
+    <canvas id="dots-canvas"></canvas>
+  </div>
+
+  <!-- Ambient Texture Noise -->
+  <div class="ambient-noise" aria-hidden="true"></div>
+
+  <!-- ========================================================================= -->
+  <!-- HERO / STARTING LANDING VIEWPORT (Stage 00 // Symmetrical Ingrassia Split) -->
+  <!-- ========================================================================= -->
+  <section class="landing-viewport" id="landing" aria-label="Starting Presentation">
+    <!-- Top Bar: Coordinates & Availability -->
+    <div class="landing-topbar">
+      <div class="topbar-coords">
+        <span class="mono-badge">[ 28.6139° N — 77.2090° E ]</span>
+        <span class="coord-divider">•</span>
+        <span class="location-name">New Delhi, IN</span>
+      </div>
+      <div class="topbar-status">
+        <span class="status-pulse-dot" aria-hidden="true"></span>
+        <span class="status-text">Available for selected quant &amp; ML opportunities</span>
+      </div>
+    </div>
+
+    <!-- Symmetrical Identity Typography (Daniel Ingrassia Reference) -->
+    <div class="landing-hero-center">
+      <div class="hero-left-col" id="hero-label-left">
+        <span class="hero-label-sub">QUANTITATIVE SYSTEMS &amp; ML</span>
+        <h1 class="landing-title">Yuvraj Singh</h1>
+      </div>
+      <div class="hero-right-col" id="hero-label-right">
+        <p class="landing-subtitle">Quant Engineer &amp;<br>ML Researcher</p>
+      </div>
+    </div>
+
+    <!-- Bottom Bar: Navigation & Social Prompts -->
+    <div class="landing-bottombar">
+      <div class="bottombar-left">
+        <span class="interact-cue">
+          <span class="dash-line" aria-hidden="true"></span>
+          <span>INTERACT / MOVE CURSOR</span>
+        </span>
+      </div>
+      <div class="bottombar-center">
+        <a href="#main-content" class="scroll-enter-btn" id="scroll-enter-btn">
+          <span>SCROLL TO ENTER</span>
+          <svg class="arrow-down-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+      <div class="bottombar-right">
+        <a href="https://github.com/Fr0xy0p" target="_blank" rel="noopener noreferrer" class="quick-link">GitHub ↗</a>
+        <a href="mailto:yuraj.math.dev@gmail.com" class="quick-link">Contact</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- MAIN NAVIGATION BAR (Fixed Architectural Swiss Navigation + Live HUD)     -->
+  <!-- ========================================================================= -->
+  <header class="site-header" id="site-header" role="banner">
+    <div class="header-inner">
+      <div class="header-brand">
+        <a href="#landing" class="brand-link" aria-label="Return to landing">
+          <span class="brand-name">YUVRAJ SINGH</span>
+        </a>
+        <div class="badge-status-chip">
+          <span class="status-dot-mini" aria-hidden="true"></span>
+          <span>ACTIVE</span>
         </div>
       </div>
-      <nav class="nav-links">
-        <a href="#about" class="nav-link active">About</a>
-        <a href="#github-section" class="nav-link">Contributions</a>
-        <a href="#projects" class="nav-link">Projects</a>
-        <a href="#future-aim" class="nav-link">Future Aim</a>
-        <a href="#connect" class="nav-btn">Let's Connect</a>
+
+      <!-- Live Telemetry Display -->
+      <div class="header-telemetry">
+        <div class="telemetry-item">
+          <span>STAGE:</span>
+          <span class="val" id="hud-stage-name">00 // FORMATION</span>
+        </div>
+        <div class="telemetry-item">
+          <span>PARTICLES:</span>
+          <span class="val" id="hud-particles-count">20,000 PTS</span>
+        </div>
+        <div class="telemetry-item">
+          <span>FPS:</span>
+          <span class="val" id="canvas-fps">60.0 FPS</span>
+        </div>
+        <div class="telemetry-item">
+          <span>TIME:</span>
+          <span class="val" id="live-clock">--:--:-- IST</span>
+        </div>
+      </div>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="desktop-nav" aria-label="Primary Navigation">
+        <a href="#hero" class="nav-item" data-section="hero">01 // FORMATION</a>
+        <a href="#about" class="nav-item" data-section="about">02 // MANIFESTO</a>
+        <a href="#projects" class="nav-item" data-section="projects">03 // EXHIBITION</a>
+        <a href="#skills" class="nav-item" data-section="skills">04 // FOUNDATION</a>
+        <a href="#education" class="nav-item" data-section="education">05 // TIMELINE</a>
+        <a href="#github" class="nav-item" data-section="github">06 // GITHUB</a>
+        <a href="#contact" class="nav-item" data-section="contact">07 // CONTACT</a>
       </nav>
-      <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
-        <i class="fa-solid fa-bars"></i>
-      </button>
+
+      <!-- Header Actions: Theme Switcher & Mobile Toggle -->
+      <div class="header-actions">
+        <button class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Toggle theme (Light / Dark)" title="Toggle theme">
+          <svg class="theme-icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="theme-icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <button class="mobile-toggle-btn" id="mobile-toggle-btn" aria-label="Toggle navigation" aria-expanded="false">
+          <span>MENU</span>
+        </button>
+      </div>
     </div>
   </header>
 
-  <!-- Header Banner: Name & Desired Position -->
-  <div class="hero-header-banner">
-    <div class="container hero-banner-content">
-      <div class="status-pill">
-        <span class="pulse-dot"></span> Available for Fall 2026 / Spring 2027 Roles
-      </div>
-      <h1 class="hero-name">YUVRAJ SINGH</h1>
-      <div class="desired-position-box">
-        <span class="position-label">DESIRED POSITION:</span>
-        <h2 class="desired-position-title">Quantitative Developer & Machine Learning Research Engineer</h2>
-      </div>
-    </div>
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-nav" id="mobile-nav" hidden>
+    <a href="#hero" class="mobile-nav-item" data-section="hero">01 // FORMATION</a>
+    <a href="#about" class="mobile-nav-item" data-section="about">02 // MANIFESTO</a>
+    <a href="#projects" class="mobile-nav-item" data-section="projects">03 // EXHIBITION</a>
+    <a href="#skills" class="mobile-nav-item" data-section="skills">04 // FOUNDATION</a>
+    <a href="#education" class="mobile-nav-item" data-section="education">05 // TIMELINE</a>
+    <a href="#github" class="mobile-nav-item" data-section="github">06 // GITHUB</a>
+    <a href="#contact" class="mobile-nav-item" data-section="contact">07 // CONTACT</a>
   </div>
 
-  <main class="main-content">
-    <!-- Section: Upper Side with Left Corner Interactive Image & Right Adjacent About Me -->
-    <section class="upper-profile-section" id="about">
-      <div class="container upper-grid">
-        
-        <!-- Left Side Corner: Interactive 3D Image Card -->
-        <div class="interactive-image-wrapper">
-          <div class="image-card-container" id="interactiveCard">
-            <div class="card-glow-layer"></div>
-            <div class="math-orbit-ring ring-1"></div>
-            <div class="math-orbit-ring ring-2"></div>
-            <div class="math-orbit-ring ring-3"></div>
-            <div class="image-inner">
-              <img src="assets/images/profile.jpg" alt="Yuraj - Math Enthusiast" id="profileImage" class="profile-img">
-              <div class="image-overlay-badge">
-                <span class="badge-icon">⚡</span>
-                <span class="badge-text">Interactive 3D Tilt</span>
-              </div>
-            </div>
-            <!-- Interactive Floating Math Particles around Avatar -->
-            <div class="floating-badge badge-top-right">
-              <code>∫ e<sup>x</sup> dx</code>
-            </div>
-            <div class="floating-badge badge-bottom-left">
-              <code>∇f(x) = 0</code>
-            </div>
+  <main id="main-content">
+
+    <!-- ========================================================================= -->
+    <!-- SECTION 01: FORMATION & TELEMETRY                                         -->
+    <!-- ========================================================================= -->
+    <section class="portfolio-section hero-section" id="hero" data-stage="01 // FORMATION">
+      <div class="section-container">
+        <div class="hero-content-block">
+          <div class="section-marker-tag">
+            <span class="marker-code">[ 01 // FORMATION ]</span>
+            <span class="marker-dash">—</span>
+            <span class="marker-name">YUVRAJ SINGH</span>
+            <span class="marker-dot">·</span>
+            <span class="marker-title">QUANT ENGINEER &amp; ML RESEARCHER</span>
           </div>
-          <div class="image-caption">
-            <span class="hint-text"><i class="fa-solid fa-hand-pointer"></i> Hover & move mouse to interact • Click for burst</span>
+
+          <h2 class="hero-statement">
+            Where mathematics, markets, and machine learning meet.
+          </h2>
+
+          <p class="hero-lead">
+            A first-year student fascinated by where mathematics, markets, and machine learning meet. I’m working toward a career as a quant engineer and ML engineer, building projects along the way and sharpening my problem-solving through competitive programming. This portfolio is where I document the journey.
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="#projects" class="btn btn-primary">
+              <span>Explore Projects</span>
+              <span class="btn-arrow" aria-hidden="true">↓</span>
+            </a>
+            <a href="https://github.com/Fr0xy0p" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+              <span>GitHub (Fr0xy0p)</span>
+              <span class="btn-arrow" aria-hidden="true">↗</span>
+            </a>
+            <a href="#contact" class="btn btn-secondary">
+              <span>Get in Touch</span>
+              <span class="btn-arrow" aria-hidden="true">↗</span>
+            </a>
           </div>
         </div>
 
-        <!-- Right Adjacent Side: About Me Section -->
-        <div class="about-me-card">
-          <div class="about-header-tag">
-            <i class="fa-solid fa-user-astronaut"></i> ABOUT ME
+        <div class="hero-bottom-telemetry">
+          <div class="telemetry-cue">
+            <span class="cue-line" aria-hidden="true"></span>
+            <span class="mono-label">[ SCROLL TO EXPLORE ARCHITECTURE // 01 ]</span>
           </div>
-          <h2 class="about-name">YUVRAJ SINGH</h2>
-          
-          <div class="math-enthusiast-pill">
-            <span class="math-icon">π</span>
-            <span class="math-text">Math Enthusiast.</span>
-          </div>
-
-          <div class="aim-statement-card">
-            <div class="aim-tag">
-              <i class="fa-solid fa-bullseye"></i> MY AIM TO BECOME:
-            </div>
-            <p class="aim-text">
-              To become a <strong>Lead Quantitative Developer & Machine Learning Research Architect</strong> at the frontier of mathematical computing, high-frequency algorithms, and geometric deep learning. I aim to merge rigorous pure mathematics—topology, functional analysis, and stochastic calculus—with low-latency distributed software architectures to solve high-impact, real-world computational challenges.
-            </p>
-          </div>
-
-          <!-- Highlight metrics & skills -->
-          <div class="skills-highlight-grid">
-            <div class="skill-mini-badge">
-              <i class="fa-solid fa-chart-line"></i>
-              <div>
-                <strong>Stochastic Calculus</strong>
-                <span>Probability & Stats</span>
-              </div>
-            </div>
-            <div class="skill-mini-badge">
-              <i class="fa-solid fa-microchip"></i>
-              <div>
-                <strong>GPU & High-Perf C++</strong>
-                <span>CUDA & SIMD</span>
-              </div>
-            </div>
-            <div class="skill-mini-badge">
-              <i class="fa-solid fa-brain"></i>
-              <div>
-                <strong>Deep Learning</strong>
-                <span>Neural ODEs & GNNs</span>
-              </div>
-            </div>
-            <div class="skill-mini-badge">
-              <i class="fa-solid fa-square-root-variable"></i>
-              <div>
-                <strong>Topology & Linear Algebra</strong>
-                <span>Spectral Methods</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="about-actions">
-            <a href="#projects" class="btn btn-primary"><i class="fa-solid fa-code"></i> View Github Projects</a>
-            <a href="#connect" class="btn btn-secondary"><i class="fa-solid fa-paper-plane"></i> Get in Touch</a>
+          <div class="telemetry-tags">
+            <span class="tag-chip">RENDER: CANVAS_2D_SIM</span>
+            <span class="tag-chip">LATENT_SPACE: ORTHOGONAL</span>
+            <span class="tag-chip chip-highlight">STATUS: OPTIMAL</span>
           </div>
         </div>
-
       </div>
     </section>
 
-    <!-- Section: Middle Portion - GitHub Contributions Table -->
-    <section class="github-section" id="github-section">
-      <div class="container">
-        <div class="section-heading-center">
-          <div class="section-subtitle"><i class="fa-brands fa-github"></i> OPEN SOURCE ACTIVITY</div>
-          <h2 class="section-title">GitHub Contributions Table</h2>
-          <p class="section-desc">Continuous daily commits, algorithmic problem-solving, and mathematical research codebases.</p>
-        </div>
+    <!-- ========================================================================= -->
+    <!-- SECTION 02: EDITORIAL INTRODUCTION & MANIFESTO                            -->
+    <!-- ========================================================================= -->
+    <section class="portfolio-section manifesto-section" id="about" data-stage="02 // MANIFESTO">
+      <div class="section-container">
+        <div class="two-col-grid">
+          <!-- Left Column: Heading & Telemetry Specs -->
+          <div class="grid-sidebar">
+            <span class="section-marker-tag">[ 02 // MANIFESTO &amp; TELEMETRY ]</span>
+            <h2 class="section-heading">Rigorous math. Low-latency systems.</h2>
 
-        <div class="github-card-wrapper">
-          <!-- Live GitHub user controller & Stats header -->
-          <div class="gh-top-bar">
-            <div class="gh-user-info">
-              <div class="gh-avatar">
-                <i class="fa-brands fa-github"></i>
+            <div class="telemetry-spec-card">
+              <div class="spec-row">
+                <span class="spec-label">GEOLOCATION</span>
+                <span class="spec-value">[ NEW DELHI, INDIA ]</span>
               </div>
-              <div class="gh-user-text">
-                <div class="gh-username-line">
-                  <span class="gh-username">@yuraj</span>
-                  <span class="gh-badge">Active Builder</span>
-                </div>
-                <span class="gh-stats-summary">1,542 contributions in the last year</span>
+              <div class="spec-row">
+                <span class="spec-label">COMPUTE KERNEL</span>
+                <span class="spec-value">[ ACTIVE // C++20 &amp; CUDA ]</span>
               </div>
-            </div>
-
-            <div class="gh-metrics">
-              <div class="gh-metric-item">
-                <span class="metric-num">365</span>
-                <span class="metric-lbl">Days Active</span>
+              <div class="spec-row">
+                <span class="spec-label">PERFORMANCE BENCHMARK</span>
+                <span class="spec-value">[ 100% LIGHTHOUSE COMPATIBLE ]</span>
               </div>
-              <div class="gh-metric-item">
-                <span class="metric-num">48</span>
-                <span class="metric-lbl">Max Streak</span>
+              <div class="spec-row">
+                <span class="spec-label">ENGINEERING DISCIPLINE</span>
+                <span class="spec-value">QUANTITATIVE FINANCE · ML</span>
               </div>
-              <div class="gh-metric-item">
-                <span class="metric-num">18</span>
-                <span class="metric-lbl">Current Streak</span>
-              </div>
-            </div>
-
-            <!-- GitHub user switcher -->
-            <div class="gh-switch-form">
-              <label for="ghUsernameInput"><i class="fa-solid fa-magnifying-glass"></i></label>
-              <input type="text" id="ghUsernameInput" value="yuraj" placeholder="GitHub username">
-              <button id="ghFetchBtn" class="btn-refresh-gh" title="Refresh contributions">
-                <i class="fa-solid fa-rotate"></i>
-              </button>
             </div>
           </div>
 
-          <!-- The Activity Heatmap Grid -->
-          <div class="heatmap-container-outer">
-            <div class="heatmap-months-labels" id="heatmapMonths">
-              <!-- Dynamically populated months: Jan, Feb, Mar ... -->
+          <!-- Right Column: Narrative & Architecture Objectives -->
+          <div class="grid-main">
+            <p class="body-lead">
+              Whether calibrating continuous-time stochastic volatility models, simulating limit order book dynamics at microsecond granularity, or training geometric graph neural networks for cross-asset correlation, my engineering methodology merges theoretical mathematical proofs with cache-conscious computational realization.
+            </p>
+
+            <div class="card-grid-2">
+              <div class="objective-card">
+                <span class="card-index-mono">[ OBJECTIVE 01 ]</span>
+                <div class="card-body">
+                  <h3 class="card-title">Mathematical Rigor</h3>
+                  <p class="card-desc">Formulating market models through stochastic calculus, discrete martingales, measure theory, and persistent homology.</p>
+                </div>
+              </div>
+
+              <div class="objective-card">
+                <span class="card-index-mono">[ OBJECTIVE 02 ]</span>
+                <div class="card-body">
+                  <h3 class="card-title">Low-Latency Compute</h3>
+                  <p class="card-desc">Engineering high-throughput kernels in modern C++20 and CUDA with zero runtime dynamic allocations and AVX vectorization.</p>
+                </div>
+              </div>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- SECTION 03: SELECTED PROJECTS (EXHIBITION VIEWPORT)                       -->
+    <!-- ========================================================================= -->
+    <section class="portfolio-section projects-section" id="projects" data-stage="03 // EXHIBITION">
+      <div class="section-container">
+        <div class="section-header-row">
+          <div>
+            <span class="section-marker-tag">[ 03 // EXHIBITION VIEWPORT ]</span>
+            <h2 class="section-heading">Selected Systems &amp; Experiments</h2>
+          </div>
+          <div class="mono-meta-info">
+            EXHIBITION FORMAT: REPRODUCIBLE REPOSITORIES
+          </div>
+        </div>
+
+        <div class="projects-list">
+          
+          <!-- Project 01: EulerMatrix Engine -->
+          <article class="project-card">
+            <div class="project-details">
+              <div>
+                <div class="project-meta-top">
+                  <span class="project-status-tag">[ PROJECT 01 // REPOSITORY ]</span>
+                  <span class="meta-dot">·</span>
+                  <span class="project-category">High-Frequency Systems &mdash; C++20 &amp; CUDA</span>
+                </div>
+
+                <h3 class="project-title">EULERMATRIX ENGINE</h3>
+
+                <p class="project-description">
+                  An ultra-low latency numerical simulation and stochastic portfolio optimization engine written in C++20 and CUDA. Calibrates continuous-time Heston stochastic volatility models, Monte Carlo jump diffusions, and fast spectral risk decomposition across multi-asset order books.
+                </p>
+
+                <div class="tech-stack-row">
+                  <span class="tech-chip">C++20</span>
+                  <span class="tech-chip">CUDA</span>
+                  <span class="tech-chip">Stochastic Calculus</span>
+                  <span class="tech-chip">SIMD &amp; AVX-512</span>
+                </div>
+              </div>
+
+              <div class="project-actions">
+                <a href="https://github.com/Fr0xy0p" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                  <span>GitHub Repository</span>
+                  <span class="btn-arrow" aria-hidden="true">↗</span>
+                </a>
+              </div>
+            </div>
+
+            <div class="project-visual">
+              <div class="figure-header">
+                <span>FIGURE 1.1: HESTON JUMP-DIFFUSION CUDA PIPELINE</span>
+              </div>
+
+              <!-- Inline Architectural Pipeline SVG Diagram -->
+              <svg class="project-figure-svg" viewBox="0 0 400 200" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Heston jump-diffusion pipeline diagram">
+                <rect x="10" y="20" width="75" height="36" rx="0" fill="var(--bg-surface-low)" stroke="var(--hairline-neutral-mid)"/>
+                <text x="20" y="42" fill="var(--text-primary)" font-family="'JetBrains Mono', monospace" font-size="8">W1, W2</text>
+
+                <rect x="115" y="20" width="80" height="36" rx="0" fill="var(--bg-surface-low)" stroke="var(--hairline-neutral-mid)"/>
+                <text x="122" y="42" fill="var(--text-secondary)" font-family="'JetBrains Mono', monospace" font-size="8">CUDA_GRID</text>
+
+                <rect x="225" y="20" width="75" height="36" rx="0" fill="var(--bg-surface-low)" stroke="var(--hairline-neutral-mid)"/>
+                <text x="232" y="42" fill="var(--text-secondary)" font-family="'JetBrains Mono', monospace" font-size="8">dV CIR STEP</text>
+
+                <rect x="330" y="20" width="60" height="36" rx="0" fill="var(--accent-blue)" stroke="var(--accent-electric)"/>
+                <text x="336" y="42" fill="#FFFFFF" font-family="'JetBrains Mono', monospace" font-size="8">S_t+dt</text>
+
+                <path d="M85 38 L115 38" stroke="var(--accent-blue)" stroke-dasharray="3 2" stroke-width="1"/>
+                <path d="M195 38 L225 38" stroke="var(--accent-blue)" stroke-dasharray="3 2" stroke-width="1"/>
+                <path d="M300 38 L330 38" stroke="var="accent-blue" stroke-dasharray="3 2" stroke-width="1"/>
+
+                <text x="16" y="78" fill="var(--text-muted)" font-family="'JetBrains Mono', monospace" font-size="7">BROWNIAN</text>
+                <text x="120" y="78" fill="var(--text-muted)" font-family="'JetBrains Mono', monospace" font-size="7">1024 THREADS</text>
+                <text x="230" y="78" fill="var(--text-muted)" font-family="'JetBrains Mono', monospace" font-size="7">CIR VARIANCE</text>
+                <text x="336" y="78" fill="var(--text-muted)" font-family="'JetBrains Mono', monospace" font-size="7">PRICE OUT</text>
+
+                <rect x="10" y="100" width="380" height="44" rx="0" fill="var(--bg-surface-lowest)" stroke="var(--hairline-neutral)"/>
+                <text x="20" y="118" fill="var(--accent-blue)" font-family="'JetBrains Mono', monospace" font-size="7">STOCHASTIC VOLATILITY FORMULATION:</text>
+                <text x="20" y="134" fill="var(--text-primary)" font-family="'JetBrains Mono', monospace" font-size="8.5">dS_t = μ S_t dt + √V_t S_t dW_1,t  |  dV_t = κ(θ - V_t)dt + σ √V_t dW_2,t</text>
+
+                <text x="10" y="172" fill="var(--text-muted)" font-family="'JetBrains Mono', monospace" font-size="7">BENCHMARK: 2.1 μs LATENCY · 42x CUDA SPEEDUP VS NUMPY · 99.9% CALIBRATION ACCURACY</text>
+              </svg>
+
+              <div class="figure-footer">
+                <span>INPUT: HESTON PARAMETERS (κ, θ, σ, ρ)</span>
+                <span>THROUGHPUT: 10M PATHS / SEC</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 02: DeepVol Neural Volatility -->
+          <article class="project-card">
+            <div class="project-details">
+              <div>
+                <div class="project-meta-top">
+                  <span class="project-status-tag">[ PROJECT 02 // REPOSITORY ]</span>
+                  <span class="meta-dot">·</span>
+                  <span class="project-category">Geometric Deep Learning &mdash; PyTorch</span>
+                </div>
+
+                <h3 class="project-title">DEEPVOL NEURAL SURFACE</h3>
+
+                <p class="project-description">
+                  Continuous-depth neural ordinary differential equations on Riemannian manifolds to model arbitrage-free implied volatility surfaces and jump-diffusion trajectories with high sample efficiency and zero calendar arbitrage violations.
+                </p>
+
+                <div class="tech-stack-row">
+                  <span class="tech-chip">Python</span>
+                  <span class="tech-chip">PyTorch</span>
+                  <span class="tech-chip">Neural ODEs</span>
+                  <span class="tech-chip">Differential Geometry</span>
+                </div>
+              </div>
+
+              <div class="project-actions">
+                <a href="https://github.com/Fr0xy0p" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                  <span>GitHub Repository</span>
+                  <span class="btn-arrow" aria-hidden="true">↗</span>
+                </a>
+              </div>
+            </div>
+
+            <div class="project-visual">
+              <div class="figure-header">
+                <span>FIGURE 2.1: CONTINUOUS-DEPTH NEURAL ODE ON RIEMANNIAN MANIFOLD</span>
+              </div>
+
+              <svg class="project-figure-svg" viewBox="0 0 400 200" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="DeepVol Neural ODE diagram">
+                <rect x="10" y="20" width="80" height="36" rx="0" fill="var(--bg-surface-low)" stroke="var(--hairline-neutral-mid)"/>
+                <text x="16" y="42" fill="var(--text-primary)" font-family="'JetBrains Mono', monospace" font-size="8">STRIKE K, T</text>
+
+                <rect x="120" y="20" width="85" height="36" rx="0" fill="var(--bg-surface-low)" stroke="var(--hairline-neutral-mid)"/>
+                <text x="126" y="42" fill="var(--text-secondary)" font-family="'JetBrains Mono', monospace" font-size="8">ADJOINT ODE</text>
+
+                <rect x="235" y="20" width="75" height="36" rx="0" fill="var(--bg-surface-low)" stroke="var(--hairline-neutral-mid)"/>
+                <text x="240" y="42" fill="var(--text-secondary)" font-family="'JetBrains Mono', monospace" font-size="8">MARTINGALE</text>
+
+                <rect x="340" y="20" width="50" height="36" rx="0" fill="var(--accent-blue)" stroke="var(--accent-electric)"/>
+                <text x="348" y="42" fill="#FFFFFF" font-family="'JetBrains Mono', monospace" font-size="8">σ_IV</text>
+
+                <path d="M90 38 L120 38" stroke="var(--accent-blue)" stroke-dasharray="3 2" stroke-width="1"/>
+                <path d="M205 38 L235 38" stroke="var="accent-blue" stroke-dasharray="3 2" stroke-width="1"/>
+                <path d="M310 38 L340 38" stroke="var="accent-blue" stroke-dasharray="3 2" stroke-width="1"/>
+
+                <text x="18" y="78" fill="var(--text-muted)" font-family="'JetBrains Mono', monospace" font-size="7">INPUT LATENT</text>
+                <text x="128" y="78" fill="var(--text-muted)" font-family="'JetBrains Mono', monospace" font-size="7">DOPRI5 SOLVER</text>
+                <text x="240" y="78" fill="var(--text-muted)" font-family="'JetBrains Mono', monospace" font-size="7">NO-ARBITRAGE</text>
+                <text x="344" y="78" fill="var(--text-muted)" font-family="'JetBrains Mono', monospace" font-size="7">SURFACE</text>
+
+                <rect x="10" y="100" width="380" height="44" rx="0" fill="var(--bg-surface-lowest)" stroke="var(--hairline-neutral)"/>
+                <text x="20" y="118" fill="var(--accent-blue)" font-family="'JetBrains Mono', monospace" font-size="7">CONTINUOUS DYNAMICAL SYSTEM:</text>
+                <text x="20" y="134" fill="var(--text-primary)" font-family="'JetBrains Mono', monospace" font-size="8.5">z(T) = z(0) + ∫[0..T] f_θ(z(t), t) dt   subject to  ∂C/∂T ≥ 0, ∂²C/∂K² ≥ 0</text>
+
+                <text x="10" y="172" fill="var(--text-muted)" font-family="'JetBrains Mono', monospace" font-size="7">METRICS: 0.0014 MAE · 99.8% STATIC ARBITRAGE SATISFACTION · 1.2M LEARNABLE PARAMETERS</text>
+              </svg>
+
+              <div class="figure-footer">
+                <span>INPUT: S&amp;P 500 OPTION CHAIN</span>
+                <span>OUTPUT: ARBITRAGE-FREE SURFACE</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 03: ArbPulse Stat-Arb -->
+          <article class="project-card">
+            <div class="project-details">
+              <div>
+                <div class="project-meta-top">
+                  <span class="project-status-tag">[ PROJECT 03 // REPOSITORY ]</span>
+                  <span class="meta-dot">·</span>
+                  <span class="project-category">Statistical Arbitrage &mdash; Python</span>
+                </div>
+
+                <h3 class="project-title">ARBPULSE STAT-ARB ENGINE</h3>
+
+                <p class="project-description">
+                  An algorithmic trading framework modeling continuous-time Ornstein-Uhlenbeck mean-reverting asset spreads with recursive Kalman filtering for dynamic beta hedging, Engle-Granger cointegration tests, and event-driven backtesting execution.
+                </p>
+
+                <div class="tech-stack-row">
+                  <span class="tech-chip">Python</span>
+                  <span class="tech-chip">NumPy</span>
+                  <span class="tech-chip">Kalman Filter</span>
+                  <span class="tech-chip">Cointegration Tests</span>
+                </div>
+              </div>
+
+              <div class="project-actions">
+                <a href="https://github.com/Fr0xy0p" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                  <span>GitHub Repository</span>
+                  <span class="btn-arrow" aria-hidden="true">↗</span>
+                </a>
+              </div>
+            </div>
+
+            <div class="project-visual">
+              <div class="figure-header">
+                <span>FIGURE 3.1: ORNSTEIN-UHLENBECK SPREAD &amp; DYNAMIC KALMAN FILTER</span>
+              </div>
+
+              <svg class="project-figure-svg" viewBox="0 0 400 200" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="ArbPulse Kalman pipeline diagram">
+                <rect x="10" y="20" width="80" height="36" rx="0" fill="var(--bg-surface-low)" stroke="var(--hairline-neutral-mid)"/>
+                <text x="16" y="42" fill="var(--text-primary)" font-family="'JetBrains Mono', monospace" font-size="8">ASSETS X, Y</text>
+
+                <rect x="120" y="20" width="80" height="36" rx="0" fill="var(--bg-surface-low)" stroke="var(--hairline-neutral-mid)"/>
+                <text x="126" y="42" fill="var(--text-secondary)" font-family="'JetBrains Mono', monospace" font-size="8">KALMAN β_t</text>
+
+                <rect x="230" y="20" width="80" height="36" rx="0" fill="var(--bg-surface-low)" stroke="var(--hairline-neutral-mid)"/>
+                <text x="236" y="42" fill="var(--text-secondary)" font-family="'JetBrains Mono', monospace" font-size="8">OU SPREAD</text>
+
+                <rect x="340" y="20" width="50" height="36" rx="0" fill="var(--accent-blue)" stroke="var(--accent-electric)"/>
+                <text x="348" y="42" fill="#FFFFFF" font-family="'JetBrains Mono', monospace" font-size="8">α_EXEC</text>
+
+                <path d="M90 38 L120 38" stroke="var(--accent-blue)" stroke-dasharray="3 2" stroke-width="1"/>
+                <path d="M200 38 L230 38" stroke="var="accent-blue" stroke-dasharray="3 2" stroke-width="1"/>
+                <path d="M310 38 L340 38" stroke="var="accent-blue" stroke-dasharray="3 2" stroke-width="1"/>
+
+                <text x="16" y="78" fill="var(--text-muted)" font-family="'JetBrains Mono', monospace" font-size="7">TICK FEED</text>
+                <text x="126" y="78" fill="var(--text-muted)" font-family="'JetBrains Mono', monospace" font-size="7">DYNAMIC HEDGE</text>
+                <text x="234" y="78" fill="var(--text-muted)" font-family="'JetBrains Mono', monospace" font-size="7">MEAN REVERSION</text>
+                <text x="344" y="78" fill="var(--text-muted)" font-family="'JetBrains Mono', monospace" font-size="7">ORDER FLOW</text>
+
+                <rect x="10" y="100" width="380" height="44" rx="0" fill="var(--bg-surface-lowest)" stroke="var(--hairline-neutral)"/>
+                <text x="20" y="118" fill="var(--accent-blue)" font-family="'JetBrains Mono', monospace" font-size="7">MEAN REVERSION DYNAMICS:</text>
+                <text x="20" y="134" fill="var(--text-primary)" font-family="'JetBrains Mono', monospace" font-size="8.5">dX_t = θ(μ - X_t)dt + σ dW_t  where X_t = log(Y_t) - β_t log(X_t)</text>
+
+                <text x="10" y="172" fill="var(--text-muted)" font-family="'JetBrains Mono', monospace" font-size="7">METRICS: 2.84 SHARPE RATIO · 4.2% MAX DRAWDOWN · 71.4% DAILY TRADE WIN RATE</text>
+              </svg>
+
+              <div class="figure-footer">
+                <span>INPUT: REALTIME ETF SPREAD PAIR</span>
+                <span>STATUS: COINTEGRATED (p &lt; 0.002)</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 04: AlgoCore Lab -->
+          <article class="project-card">
+            <div class="project-details">
+              <div>
+                <div class="project-meta-top">
+                  <span class="project-status-tag">[ PROJECT 04 // REPOSITORY ]</span>
+                  <span class="meta-dot">·</span>
+                  <span class="project-category">Competitive Programming &mdash; C++20</span>
+                </div>
+
+                <h3 class="project-title">ALGOCORE BENCHMARK LAB</h3>
+
+                <p class="project-description">
+                  A curated laboratory containing 400+ mathematical proofs, benchmarked data structures (Segment Trees with Lazy Propagation, Fenwick Trees, Treaps, Fast Fourier Transform), and optimized competitive programming solutions with zero dynamic heap allocations.
+                </p>
+
+                <div class="tech-stack-row">
+                  <span class="tech-chip">C++20</span>
+                  <span class="tech-chip">Segment Trees</span>
+                  <span class="tech-chip">AVX2 Vectorization</span>
+                  <span class="tech-chip">Graph Algorithms</span>
+                </div>
+              </div>
+
+              <div class="project-actions">
+                <a href="https://github.com/Fr0xy0p" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                  <span>GitHub Repository</span>
+                  <span class="btn-arrow" aria-hidden="true">↗</span>
+                </a>
+              </div>
+            </div>
+
+            <div class="project-visual">
+              <div class="figure-header">
+                <span>FIGURE 4.1: SEGMENT TREE WITH LAZY RANGE PROPAGATION</span>
+              </div>
+
+              <svg class="project-figure-svg" viewBox="0 0 400 200" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Segment tree diagram">
+                <circle cx="200" cy="30" r="14" fill="var(--accent-blue)" stroke="var(--accent-electric)"/>
+                <text x="196" y="34" fill="#FFFFFF" font-family="'JetBrains Mono', monospace" font-size="8">∑</text>
+
+                <line x1="190" y1="40" x2="130" y2="75" stroke="var(--accent-blue)" stroke-width="1.5"/>
+                <line x1="210" y1="40" x2="270" y2="75" stroke="var(--accent-blue)" stroke-width="1.5"/>
+
+                <circle cx="130" cy="80" r="12" fill="var(--bg-surface-low)" stroke="var(--hairline-neutral-mid)"/>
+                <text x="124" y="84" fill="var(--text-primary)" font-family="'JetBrains Mono', monospace" font-size="8">L_0</text>
+
+                <circle cx="270" cy="80" r="12" fill="var(--bg-surface-low)" stroke="var(--hairline-neutral-mid)"/>
+                <text x="264" y="84" fill="var(--text-primary)" font-family="'JetBrains Mono', monospace" font-size="8">R_0</text>
+
+                <line x1="120" y1="90" x2="90" y2="120" stroke="var(--hairline-neutral-mid)" stroke-width="1"/>
+                <line x1="140" y1="90" x2="170" y2="120" stroke="var(--hairline-neutral-mid)" stroke-width="1"/>
+                <line x1="260" y1="90" x2="230" y2="120" stroke="var(--hairline-neutral-mid)" stroke-width="1"/>
+                <line x1="280" y1="90" x2="310" y2="120" stroke="var(--hairline-neutral-mid)" stroke-width="1"/>
+
+                <circle cx="90" cy="125" r="8" fill="var(--bg-surface-high)"/>
+                <circle cx="170" cy="125" r="8" fill="var(--bg-surface-high)"/>
+                <circle cx="230" cy="125" r="8" fill="var(--bg-surface-high)"/>
+                <circle cx="310" cy="125" r="8" fill="var(--accent-blue)"/>
+
+                <text x="10" y="165" fill="var(--accent-blue)" font-family="'JetBrains Mono', monospace" font-size="7.5">ASYMPTOTIC COMPLEXITY:</text>
+                <text x="10" y="182" fill="var(--text-secondary)" font-family="'JetBrains Mono', monospace" font-size="7.5">POINT UPDATE: O(log N) · RANGE QUERY: O(log N) · MEMORY: 4N STATIC NODES (0 HEAP ALLOCS)</text>
+              </svg>
+
+              <div class="figure-footer">
+                <span>400+ BENCHMARKED SOLUTIONS</span>
+                <span>CACHE CONSCIOUS LAYOUT</span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- SECTION 04: TECHNICAL FOUNDATION & FIELDS (SKILLS)                        -->
+    <!-- ========================================================================= -->
+    <section class="portfolio-section skills-section" id="skills" data-stage="04 // FOUNDATION">
+      <div class="section-container">
+        <div class="section-header-block" style="margin-bottom: 3rem;">
+          <span class="section-marker-tag">[ 04 // TECHNICAL FOUNDATION &amp; FIELDS ]</span>
+          <h2 class="section-heading">Programming Languages &amp; Domains</h2>
+        </div>
+
+        <!-- Confirmed Languages -->
+        <div class="languages-block">
+          <span class="sub-block-label">CORE PROGRAMMING &amp; COMPUTATIONAL SYSTEMS</span>
+          <div class="card-grid-3">
             
-            <div class="heatmap-main-row">
-              <div class="heatmap-days-labels">
-                <span>Mon</span>
-                <span>Wed</span>
-                <span>Fri</span>
+            <div class="language-card">
+              <div class="lang-card-header">
+                <span class="lang-index">LANG // 01</span>
+                <span class="lang-status-dot"></span>
               </div>
-              <div class="heatmap-scroll-area">
-                <div class="contribution-grid" id="contributionGrid">
-                  <!-- 52 columns of 7 day squares dynamically generated -->
-                </div>
+              <div class="lang-card-content">
+                <h3 class="lang-title">PYTHON</h3>
+                <p class="lang-desc">PyTorch · NumPy · SciPy · Vectorized Backtesting · Data Manifolds</p>
               </div>
             </div>
 
-            <div class="heatmap-footer">
-              <a href="https://github.com/yuraj" target="_blank" rel="noopener noreferrer" class="gh-external-link">
-                Learn how we count contributions <i class="fa-solid fa-arrow-up-right-from-square"></i>
-              </a>
-              <div class="legend-scale">
-                <span class="legend-text">Less</span>
-                <span class="legend-cell lvl-0"></span>
-                <span class="legend-cell lvl-1"></span>
-                <span class="legend-cell lvl-2"></span>
-                <span class="legend-cell lvl-3"></span>
-                <span class="legend-cell lvl-4"></span>
-                <span class="legend-text">More</span>
+            <div class="language-card">
+              <div class="lang-card-header">
+                <span class="lang-index">LANG // 02</span>
+                <span class="lang-status-dot"></span>
+              </div>
+              <div class="lang-card-content">
+                <h3 class="lang-title">C++20</h3>
+                <p class="lang-desc">Systems Architecture · Low Latency · Memory Control · AVX Vectorization</p>
               </div>
             </div>
-          </div>
 
-          <!-- Dynamic Contribution Tooltip -->
-          <div id="heatmapTooltip" class="heatmap-tooltip"></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Section: My Projects Connected Through GitHub -->
-    <section class="projects-section" id="projects">
-      <div class="container">
-        <div class="section-heading-center">
-          <div class="section-subtitle"><i class="fa-solid fa-laptop-code"></i> CODE & RESEARCH</div>
-          <h2 class="section-title">My Projects Connected Through GitHub</h2>
-          <p class="section-desc">Mathematical formulations translated into clean, scalable open-source repositories.</p>
-        </div>
-
-        <!-- Category Filters -->
-        <div class="project-filters">
-          <button class="filter-btn active" data-filter="all">All Repositories</button>
-          <button class="filter-btn" data-filter="quant">Quantitative & Algorithmic</button>
-          <button class="filter-btn" data-filter="ml">Machine Learning & Math</button>
-          <button class="filter-btn" data-filter="systems">High-Perf Computing</button>
-        </div>
-
-        <div class="projects-grid">
-          
-          <!-- Project 1 -->
-          <article class="project-card" data-category="quant systems">
-            <div class="project-thumbnail-wrapper">
-              <img src="assets/images/project1.jpg" alt="EulerMatrix Engine" class="project-img">
-              <div class="project-overlay">
-                <a href="https://github.com/yuraj/EulerMatrix-Engine" target="_blank" rel="noopener noreferrer" class="preview-btn">
-                  <i class="fa-brands fa-github"></i> View GitHub Repo
-                </a>
+            <div class="language-card">
+              <div class="lang-card-header">
+                <span class="lang-index">LANG // 03</span>
+                <span class="lang-status-dot"></span>
               </div>
-              <span class="project-type-tag">Quantitative Engine</span>
-            </div>
-            <div class="project-body">
-              <div class="project-header-meta">
-                <div class="repo-title-wrap">
-                  <i class="fa-regular fa-folder-open repo-icon"></i>
-                  <h3 class="project-title"><a href="https://github.com/yuraj/EulerMatrix-Engine" target="_blank">EulerMatrix-Engine</a></h3>
-                </div>
-                <div class="repo-stats">
-                  <span><i class="fa-regular fa-star"></i> 342</span>
-                  <span><i class="fa-solid fa-code-fork"></i> 89</span>
-                </div>
-              </div>
-              <p class="project-description">
-                Ultra-low latency numerical simulation and stochastic portfolio optimization engine written in C++20 and CUDA. Implements Heston model calibration, Monte Carlo jump diffusions, and fast spectral risk decomposition.
-              </p>
-              <div class="tech-stack-tags">
-                <span class="tech-pill">C++20</span>
-                <span class="tech-pill">CUDA</span>
-                <span class="tech-pill">Stochastic Calculus</span>
-                <span class="tech-pill">Eigen3</span>
-              </div>
-              <div class="project-card-footer">
-                <a href="https://github.com/yuraj/EulerMatrix-Engine" target="_blank" rel="noopener noreferrer" class="card-link">
-                  <i class="fa-brands fa-github"></i> github.com/yuraj/EulerMatrix-Engine
-                </a>
+              <div class="lang-card-content">
+                <h3 class="lang-title">CUDA &amp; GPU</h3>
+                <p class="lang-desc">Parallel Kernel Synthesis · Shared Memory Optimization · SIMD Throughput</p>
               </div>
             </div>
-          </article>
 
-          <!-- Project 2 -->
-          <article class="project-card" data-category="ml">
-            <div class="project-thumbnail-wrapper">
-              <img src="assets/images/project2.jpg" alt="Topological Manifold Neural ODE" class="project-img">
-              <div class="project-overlay">
-                <a href="https://github.com/yuraj/Topological-Neural-ODE" target="_blank" rel="noopener noreferrer" class="preview-btn">
-                  <i class="fa-brands fa-github"></i> View GitHub Repo
-                </a>
-              </div>
-              <span class="project-type-tag">Geometric Deep Learning</span>
-            </div>
-            <div class="project-body">
-              <div class="project-header-meta">
-                <div class="repo-title-wrap">
-                  <i class="fa-regular fa-folder-open repo-icon"></i>
-                  <h3 class="project-title"><a href="https://github.com/yuraj/Topological-Neural-ODE" target="_blank">Topological-Neural-ODE</a></h3>
-                </div>
-                <div class="repo-stats">
-                  <span><i class="fa-regular fa-star"></i> 278</span>
-                  <span><i class="fa-solid fa-code-fork"></i> 54</span>
-                </div>
-              </div>
-              <p class="project-description">
-                Geometric deep learning framework for continuous-depth dynamical systems on Riemannian manifolds. Leverages persistent homology and Calabi-Yau metric approximations to learn physical invariant representations.
-              </p>
-              <div class="tech-stack-tags">
-                <span class="tech-pill">Python</span>
-                <span class="tech-pill">PyTorch</span>
-                <span class="tech-pill">Differential Geometry</span>
-                <span class="tech-pill">Topology</span>
-              </div>
-              <div class="project-card-footer">
-                <a href="https://github.com/yuraj/Topological-Neural-ODE" target="_blank" rel="noopener noreferrer" class="card-link">
-                  <i class="fa-brands fa-github"></i> github.com/yuraj/Topological-Neural-ODE
-                </a>
-              </div>
-            </div>
-          </article>
-
-          <!-- Project 3 -->
-          <article class="project-card" data-category="quant ml">
-            <div class="project-thumbnail-wrapper">
-              <div class="project-code-art">
-                <pre><code>// Fast Sparse Graph Spectral Decomp
-template &lt;typename Real&gt;
-class SpectralManifold {
-  Laplacian&lt;Real&gt; L;
-  Vector eigenvalues;
-  Matrix eigenvectors;
-};</code></pre>
-              </div>
-              <div class="project-overlay">
-                <a href="https://github.com/yuraj/SpectralGraph-Optimizer" target="_blank" rel="noopener noreferrer" class="preview-btn">
-                  <i class="fa-brands fa-github"></i> View GitHub Repo
-                </a>
-              </div>
-              <span class="project-type-tag">Algorithm Library</span>
-            </div>
-            <div class="project-body">
-              <div class="project-header-meta">
-                <div class="repo-title-wrap">
-                  <i class="fa-regular fa-folder-open repo-icon"></i>
-                  <h3 class="project-title"><a href="https://github.com/yuraj/SpectralGraph-Optimizer" target="_blank">SpectralGraph-Optimizer</a></h3>
-                </div>
-                <div class="repo-stats">
-                  <span><i class="fa-regular fa-star"></i> 194</span>
-                  <span><i class="fa-solid fa-code-fork"></i> 38</span>
-                </div>
-              </div>
-              <p class="project-description">
-                Combinatorial graph optimization package implementing Cheeger inequality partitions, spectral clustering, and Lanczos iterations with AVX-512 vectorization for high-throughput network analysis.
-              </p>
-              <div class="tech-stack-tags">
-                <span class="tech-pill">Rust</span>
-                <span class="tech-pill">Graph Theory</span>
-                <span class="tech-pill">SIMD</span>
-                <span class="tech-pill">Linear Algebra</span>
-              </div>
-              <div class="project-card-footer">
-                <a href="https://github.com/yuraj/SpectralGraph-Optimizer" target="_blank" rel="noopener noreferrer" class="card-link">
-                  <i class="fa-brands fa-github"></i> github.com/yuraj/SpectralGraph-Optimizer
-                </a>
-              </div>
-            </div>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- Section: Aim to Work in Future -->
-    <section class="future-aim-section" id="future-aim">
-      <div class="container">
-        <div class="section-heading-center">
-          <div class="section-subtitle"><i class="fa-solid fa-compass"></i> VISION & ROADMAP</div>
-          <h2 class="section-title">Aim to Work in Future</h2>
-          <p class="section-desc">The long-term research frontiers, target industries, and transformative mathematical systems I strive to engineer.</p>
-        </div>
-
-        <div class="future-grid">
-          
-          <div class="future-card highlight-border">
-            <div class="future-icon-box">
-              <i class="fa-solid fa-money-bill-trend-up"></i>
-            </div>
-            <h3 class="future-card-title">Quantitative Finance & Automated Market Systems</h3>
-            <p class="future-card-desc">
-              Pioneering mathematical execution algorithms that operate on microsecond scales. Striving to build non-linear stochastic volatility models, order-book liquidity mechanics, and automated risk hedges governed by strict mathematical theorems.
-            </p>
-            <ul class="future-points">
-              <li><i class="fa-solid fa-circle-check"></i> High-frequency statistical arbitrage & continuous-time martingales</li>
-              <li><i class="fa-solid fa-circle-check"></i> Deep reinforcement learning in non-stationary market regimes</li>
-              <li><i class="fa-solid fa-circle-check"></i> FPGA & hardware-accelerated financial compute pipelines</li>
-            </ul>
-          </div>
-
-          <div class="future-card">
-            <div class="future-icon-box">
-              <i class="fa-solid fa-atom"></i>
-            </div>
-            <h3 class="future-card-title">Geometric Machine Learning & Foundation Models</h3>
-            <p class="future-card-desc">
-              Extending artificial intelligence beyond Euclidean spaces. Aiming to pioneer deep neural architectures that respect Lie group symmetries, gauge equivariance, and differential manifolds for physical sciences and complex materials discovery.
-            </p>
-            <ul class="future-points">
-              <li><i class="fa-solid fa-circle-check"></i> Equivariant Graph Neural Networks for molecular dynamics</li>
-              <li><i class="fa-solid fa-circle-check"></i> Topological Data Analysis for latent manifold diagnostics</li>
-              <li><i class="fa-solid fa-circle-check"></i> Neural operators for solving Navier-Stokes and partial differential equations</li>
-            </ul>
-          </div>
-
-          <div class="future-card">
-            <div class="future-icon-box">
-              <i class="fa-solid fa-square-root-variable"></i>
-            </div>
-            <h3 class="future-card-title">Automated Theorem Proving & Formal Verification</h3>
-            <p class="future-card-desc">
-              Synthesizing generative AI with formal proof assistants like Lean 4 and Coq. Aiming to develop neuro-symbolic systems capable of discovering novel mathematical conjectures, validating mission-critical cryptographic code, and verifying complex mathematical proofs.
-            </p>
-            <ul class="future-points">
-              <li><i class="fa-solid fa-circle-check"></i> Interactive Theorem Proving (Lean 4 / Isabelle) integration</li>
-              <li><i class="fa-solid fa-circle-check"></i> Provably correct smart contract & cryptographic engine compilation</li>
-              <li><i class="fa-solid fa-circle-check"></i> Automated lemma discovery via tree-search & policy networks</li>
-            </ul>
-          </div>
-
-          <div class="future-card">
-            <div class="future-icon-box">
-              <i class="fa-solid fa-network-wired"></i>
-            </div>
-            <h3 class="future-card-title">Next-Gen High Performance Scientific Computing</h3>
-            <p class="future-card-desc">
-              Crafting distributed, cache-oblivious numerical linear algebra algorithms that achieve peak FLOP utilization across heterogeneous GPU/TPU clusters with fault-tolerant asynchronous execution.
-            </p>
-            <ul class="future-points">
-              <li><i class="fa-solid fa-circle-check"></i> Custom GPU kernel synthesis via Triton & Metal Shading Language</li>
-              <li><i class="fa-solid fa-circle-check"></i> Quantum-inspired tensor network simulations</li>
-              <li><i class="fa-solid fa-circle-check"></i> Scalable parallel computing with zero-overhead abstractions</li>
-            </ul>
-          </div>
-
-        </div>
-
-        <!-- Career Trajectory Timeline Banner -->
-        <div class="trajectory-banner">
-          <div class="trajectory-header">
-            <h4><i class="fa-solid fa-road"></i> Professional Growth Path</h4>
-          </div>
-          <div class="trajectory-steps">
-            <div class="traj-step">
-              <span class="traj-step-num">01</span>
-              <h5>Present</h5>
-              <p>Math Enthusiast & Algorithmic Builder</p>
-            </div>
-            <div class="traj-connector"><i class="fa-solid fa-arrow-right"></i></div>
-            <div class="traj-step">
-              <span class="traj-step-num">02</span>
-              <h5>Next Step</h5>
-              <p>Quantitative Developer & ML Systems Engineer</p>
-            </div>
-            <div class="traj-connector"><i class="fa-solid fa-arrow-right"></i></div>
-            <div class="traj-step current-goal">
-              <span class="traj-step-num">03</span>
-              <h5>Target Aim</h5>
-              <p>Principal Quantitative Architect & Research Lead</p>
-            </div>
           </div>
         </div>
 
-      </div>
-    </section>
-
-    <!-- Section: Let's Connect (Email, Phone, and Interactive Channels) -->
-    <section class="connect-section" id="connect">
-      <div class="container">
-        <div class="connect-card-outer">
-          <div class="connect-card-glow"></div>
-          
-          <div class="section-heading-center">
-            <div class="section-subtitle"><i class="fa-solid fa-handshake"></i> GET IN TOUCH</div>
-            <h2 class="section-title">Let's Connect</h2>
-            <p class="section-desc">Have an interesting mathematical problem, quantitative venture, or engineering role? Feel free to reach out directly.</p>
-          </div>
-
-          <div class="connect-grid">
+        <!-- Disciplinary Interests & Domains -->
+        <div class="domains-block">
+          <span class="sub-block-label">DISCIPLINARY INTERESTS &amp; DOMAIN FOCUS</span>
+          <div class="card-grid-3">
             
-            <!-- Direct Contact Channels (Email & Phone as requested) -->
-            <div class="direct-contact-col">
-              
-              <!-- Email Card with Copy Feature -->
-              <div class="contact-method-card">
-                <div class="contact-method-icon">
-                  <i class="fa-solid fa-envelope"></i>
-                </div>
-                <div class="contact-method-details">
-                  <span class="method-label">Direct Email</span>
-                  <a href="mailto:yuraj.math.dev@gmail.com" class="method-value" id="emailValue">yuraj.math.dev@gmail.com</a>
-                  <span class="method-sub">Click to email or copy to clipboard</span>
-                </div>
-                <button class="copy-action-btn" id="copyEmailBtn" data-clipboard="yuraj.math.dev@gmail.com" title="Copy Email">
-                  <i class="fa-regular fa-copy"></i>
-                  <span class="copy-tooltip">Copied!</span>
-                </button>
-              </div>
-
-              <!-- Phone Number Card with Copy Feature -->
-              <div class="contact-method-card">
-                <div class="contact-method-icon">
-                  <i class="fa-solid fa-phone"></i>
-                </div>
-                <div class="contact-method-details">
-                  <span class="method-label">Phone Number</span>
-                  <a href="tel:+15557892048" class="method-value" id="phoneValue">+1 (555) 789-2048</a>
-                  <span class="method-sub">Available for calls & WhatsApp / Signal</span>
-                </div>
-                <button class="copy-action-btn" id="copyPhoneBtn" data-clipboard="+15557892048" title="Copy Phone Number">
-                  <i class="fa-regular fa-copy"></i>
-                  <span class="copy-tooltip">Copied!</span>
-                </button>
-              </div>
-
-              <!-- Social Links -->
-              <div class="social-channels-box">
-                <span class="social-title">Follow & Connect On Platforms:</span>
-                <div class="social-links-row">
-                  <a href="https://github.com/yuraj" target="_blank" rel="noopener noreferrer" class="social-btn" title="GitHub">
-                    <i class="fa-brands fa-github"></i>
-                  </a>
-                  <a href="https://linkedin.com/in/yuraj" target="_blank" rel="noopener noreferrer" class="social-btn" title="LinkedIn">
-                    <i class="fa-brands fa-linkedin-in"></i>
-                  </a>
-                  <a href="https://x.com/yuraj" target="_blank" rel="noopener noreferrer" class="social-btn" title="X / Twitter">
-                    <i class="fa-brands fa-x-twitter"></i>
-                  </a>
-                  <a href="https://scholar.google.com" target="_blank" rel="noopener noreferrer" class="social-btn" title="Google Scholar">
-                    <i class="fa-solid fa-graduation-cap"></i>
-                  </a>
-                </div>
-              </div>
-
+            <div class="domain-card">
+              <span class="domain-index">CATEGORY 01</span>
+              <h4 class="domain-title">Quantitative Finance</h4>
+              <p class="domain-desc">Continuous-time martingales, stochastic volatility models, order book mechanics, and statistical arbitrage.</p>
             </div>
 
-            <!-- Quick Direct Message Form -->
-            <div class="contact-form-col">
-              <form class="contact-form" id="contactForm">
-                <h3 class="form-title"><i class="fa-solid fa-paper-plane"></i> Send a Direct Message</h3>
-                <div class="form-group">
-                  <label for="contactName">Your Name</label>
-                  <input type="text" id="contactName" required placeholder="e.g. Jane Doe">
-                </div>
-                <div class="form-group">
-                  <label for="contactEmail">Your Email</label>
-                  <input type="email" id="contactEmail" required placeholder="jane@example.com">
-                </div>
-                <div class="form-group">
-                  <label for="contactMessage">Message or Collaboration Idea</label>
-                  <textarea id="contactMessage" rows="4" required placeholder="Hello Yuraj, I saw your mathematical projects and would like to discuss..."></textarea>
-                </div>
-                <button type="submit" class="btn btn-submit" id="submitBtn">
-                  <span>Send Message</span>
-                  <i class="fa-solid fa-arrow-right"></i>
-                </button>
-                <div class="form-feedback" id="formFeedback"></div>
-              </form>
+            <div class="domain-card">
+              <span class="domain-index">CATEGORY 02</span>
+              <h4 class="domain-title">Geometric Deep Learning</h4>
+              <p class="domain-desc">Neural ODEs, equivariant graph neural networks, Riemannian manifolds, and latent geometric representations.</p>
+            </div>
+
+            <div class="domain-card">
+              <span class="domain-index">CATEGORY 03</span>
+              <h4 class="domain-title">Algorithms &amp; Problem Solving</h4>
+              <p class="domain-desc">Segment trees, dynamic programming on trees, graph theory, combinatorics, and competitive programming.</p>
+            </div>
+
+            <div class="domain-card">
+              <span class="domain-index">CATEGORY 04</span>
+              <h4 class="domain-title">High-Performance Computing</h4>
+              <p class="domain-desc">Cache-conscious data structures, lock-free ring buffers, SIMD intrinsics, and zero-allocation memory pools.</p>
+            </div>
+
+            <div class="domain-card">
+              <span class="domain-index">CATEGORY 05</span>
+              <h4 class="domain-title">Applied Mathematics</h4>
+              <p class="domain-desc">Stochastic differential equations, probability theory, linear algebra, spectral graph theory, and measure theory.</p>
+            </div>
+
+            <div class="domain-card">
+              <span class="domain-index">CATEGORY 06</span>
+              <h4 class="domain-title">Tooling &amp; Environments</h4>
+              <p class="domain-desc">Git &amp; GitHub, Linux/macOS terminal workflows, CMake, GDB/LLDB, perf, Valgrind, and GCC/Clang optimization flags.</p>
             </div>
 
           </div>
         </div>
+
       </div>
     </section>
+
+    <!-- ========================================================================= -->
+    <!-- SECTION 05: ACADEMICS & TIMELINE                                          -->
+    <!-- ========================================================================= -->
+    <section class="portfolio-section education-section" id="education" data-stage="05 // ACADEMICS">
+      <div class="section-container">
+        <div class="section-header-block" style="margin-bottom: 3rem;">
+          <span class="section-marker-tag">[ 05 // ACADEMICS &amp; TIMELINE ]</span>
+          <h2 class="section-heading">Academic Trajectory &amp; Research Milestones</h2>
+        </div>
+
+        <div class="timeline-grid">
+          
+          <div class="timeline-card">
+            <div class="timeline-period">2026 — PRESENT</div>
+            <div>
+              <h3 class="timeline-role">Undergraduate Student in Computer Science &amp; Mathematics</h3>
+              <div class="timeline-inst">First-Year Student</div>
+              <p class="timeline-text">
+                Fascinated by the intersection of pure mathematics, financial markets, and computational learning systems. Building low-level engines and quantitative simulations from foundational principles.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-card">
+            <div class="timeline-period">CONTINUOUS</div>
+            <div>
+              <h3 class="timeline-role">Quantitative Research &amp; Algorithmic Development</h3>
+              <div class="timeline-inst">Independent Research Laboratory</div>
+              <p class="timeline-text">
+                Researching market microstructure, statistical arbitrage, and continuous-time stochastic models. Building modular C++20 and CUDA backends for high-throughput quantitative experiments.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-card">
+            <div class="timeline-period">DAILY</div>
+            <div>
+              <h3 class="timeline-role">Competitive Programming &amp; Algorithmic Mastery</h3>
+              <div class="timeline-inst">Problem Solving Practice</div>
+              <p class="timeline-text">
+                Daily problem solving across advanced graph algorithms, range query structures, and combinatorial optimizations with optimal asymptotic complexity.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- SECTION 06: CODE REPOSITORY MATRIX & GITHUB CONTRIBUTIONS HEATMAP         -->
+    <!-- ========================================================================= -->
+    <section class="portfolio-section github-section" id="github" data-stage="06 // GITHUB">
+      <div class="section-container">
+        <div class="section-header-row">
+          <div>
+            <span class="section-marker-tag">[ 06 // CODE REPOSITORY MATRIX ]</span>
+            <h2 class="section-heading">GitHub &amp; Open-Source Activity</h2>
+          </div>
+          <a href="https://github.com/Fr0xy0p" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+            <span>Explore my GitHub</span>
+            <span class="btn-arrow" aria-hidden="true">↗</span>
+          </a>
+        </div>
+
+        <div class="contrib-widget">
+          <div class="contrib-header">
+            <h3 class="contrib-title">1043 contributions in the last year</h3>
+            <div class="contrib-header-actions">
+              <span class="contrib-year-badge">2026 MATRIX</span>
+            </div>
+          </div>
+
+          <div class="contrib-table-wrapper">
+<table class="contrib-table">
+<thead>
+  <tr style="height: 14px">
+    <td style="width: 28px"></td>
+    <td class="contrib-month-label"></td>
+    <td class="contrib-month-label" colspan="5">Nov</td>
+    <td class="contrib-month-label" colspan="4">Dec</td>
+    <td class="contrib-month-label" colspan="4">Jan</td>
+    <td class="contrib-month-label" colspan="4">Feb</td>
+    <td class="contrib-month-label" colspan="5">Mar</td>
+    <td class="contrib-month-label" colspan="4">Apr</td>
+    <td class="contrib-month-label" colspan="5">May</td>
+    <td class="contrib-month-label" colspan="4">Jun</td>
+    <td class="contrib-month-label" colspan="4">Jul</td>
+    <td class="contrib-month-label" colspan="5">Aug</td>
+    <td class="contrib-month-label" colspan="4">Sep</td>
+    <td class="contrib-month-label" colspan="4">Oct</td>
+  </tr>
+</thead>
+<tbody>
+  <tr style="height: 11px">
+    <td class="contrib-day-label" style="font-family: var(--font-mono); font-size: 8px; color: var(--text-muted);"></td>
+    <td class="contrib-day-cell level-0" data-date="2025-10-26" data-level="0" data-tip="No contributions on October 26, 2025"></td>
+    <td class="contrib-day-cell level-2" data-date="2025-11-02" data-level="2" data-tip="2 contributions on November 02, 2025"></td>
+    <td class="contrib-day-cell level-4" data-date="2025-11-09" data-level="4" data-tip="8 contributions on November 09, 2025"></td>
+    <td class="contrib-day-cell level-0" data-date="2025-11-16" data-level="0" data-tip="No contributions on November 16, 2025"></td>
+    <td class="contrib-day-cell level-2" data-date="2025-11-23" data-level="2" data-tip="2 contributions on November 23, 2025"></td>
+    <td class="contrib-day-cell level-3" data-date="2025-11-30" data-level="3" data-tip="5 contributions on November 30, 2025"></td>
+    <td class="contrib-day-cell level-0" data-date="2025-12-07" data-level="0" data-tip="No contributions on December 07, 2025"></td>
+    <td class="contrib-day-cell level-2" data-date="2025-12-14" data-level="2" data-tip="2 contributions on December 14, 2025"></td>
+    <td class="contrib-day-cell level-3" data-date="2025-12-21" data-level="3" data-tip="3 contributions on December 21, 2025"></td>
+    <td class="contrib-day-cell level-0" data-date="2025-12-28" data-level="0" data-tip="No contributions on December 28, 2025"></td>
+    <td class="contrib-day-cell level-1" data-date="2026-01-04" data-level="1" data-tip="1 contribution on January 04, 2026"></td>
+    <td class="contrib-day-cell level-3" data-date="2026-01-11" data-level="3" data-tip="4 contributions on January 11, 2026"></td>
+    <td class="contrib-day-cell level-0" data-date="2026-01-18" data-level="0" data-tip="No contributions on January 18, 2026"></td>
+    <td class="contrib-day-cell level-1" data-date="2026-01-25" data-level="1" data-tip="1 contribution on January 25, 2026"></td>
+    <td class="contrib-day-cell level-3" data-date="2026-02-01" data-level="3" data-tip="5 contributions on February 01, 2026"></td>
+    <td class="contrib-day-cell level-4" data-date="2026-02-08" data-level="4" data-tip="10 contributions on February 08, 2026"></td>
+    <td class="contrib-day-cell level-1" data-date="2026-02-15" data-level="1" data-tip="1 contribution on February 15, 2026"></td>
+    <td class="contrib-day-cell level-3" data-date="2026-02-22" data-level="3" data-tip="3 contributions on February 22, 2026"></td>
+    <td class="contrib-day-cell level-4" data-date="2026-03-01" data-level="4" data-tip="6 contributions on March 01, 2026"></td>
+    <td class="contrib-day-cell level-1" data-date="2026-03-08" data-level="1" data-tip="1 contribution on March 08, 2026"></td>
+    <td class="contrib-day-cell level-2" data-date="2026-03-15" data-level="2" data-tip="2 contributions on March 15, 2026"></td>
+    <td class="contrib-day-cell level-4" data-date="2026-03-22" data-level="4" data-tip="7 contributions on March 22, 2026"></td>
+    <td class="contrib-day-cell level-2" data-date="2026-03-29" data-level="2" data-tip="2 contributions on March 29, 2026"></td>
+    <td class="contrib-day-cell level-2" data-date="2026-04-05" data-level="2" data-tip="2 contributions on April 05, 2026"></td>
+    <td class="contrib-day-cell level-4" data-date="2026-04-12" data-level="4" data-tip="8 contributions on April 12, 2026"></td>
+    <td class="contrib-day-cell level-0" data-date="2026-04-19" data-level="0" data-tip="No contributions on April 19, 2026"></td>
+    <td class="contrib-day-cell level-2" data-date="2026-04-26" data-level="2" data-tip="2 contributions on April 26, 2026"></td>
+    <td class="contrib-day-cell level-0" data-date="2026-05-03" data-level="0" data-tip="No contributions on May 03, 2026"></td>
+    <td class="contrib-day-cell level-0" data-date="2026-05-10" data-level="0" data-tip="No contributions on May 10, 2026"></td>
+    <td class="contrib-day-cell level-2" data-date="2026-05-17" data-level="2" data-tip="2 contributions on May 17, 2026"></td>
+    <td class="contrib-day-cell level-3" data-date="2026-05-24" data-level="3" data-tip="3 contributions on May 24, 2026"></td>
+    <td class="contrib-day-cell level-0" data-date="2026-05-31" data-level="0" data-tip="No contributions on May 31, 2026"></td>
+    <td class="contrib-day-cell level-3" data-date="2026-06-07" data-level="3" data-tip="5 contributions on June 07, 2026"></td>
+    <td class="contrib-day-cell level-3" data-date="2026-06-14" data-level="3" data-tip="4 contributions on June 14, 2026"></td>
+    <td class="contrib-day-cell level-0" data-date="2026-06-21" data-level="0" data-tip="No contributions on June 21, 2026"></td>
+    <td class="contrib-day-cell level-1" data-date="2026-06-28" data-level="1" data-tip="1 contribution on June 28, 2026"></td>
+    <td class="contrib-day-cell level-3" data-date="2026-07-05" data-level="3" data-tip="5 contributions on July 05, 2026"></td>
+    <td class="contrib-day-cell level-1" data-date="2026-07-12" data-level="1" data-tip="1 contribution on July 12, 2026"></td>
+    <td class="contrib-day-cell level-1" data-date="2026-07-19" data-level="1" data-tip="1 contribution on July 19, 2026"></td>
+    <td class="contrib-day-cell level-3" data-date="2026-07-26" data-level="3" data-tip="3 contributions on July 26, 2026"></td>
+    <td class="contrib-day-cell level-4" data-date="2026-08-02" data-level="4" data-tip="6 contributions on August 02, 2026"></td>
+    <td class="contrib-day-cell level-1" data-date="2026-08-09" data-level="1" data-tip="1 contribution on August 09, 2026"></td>
+    <td class="contrib-day-cell level-4" data-date="2026-08-16" data-level="4" data-tip="10 contributions on August 16, 2026"></td>
+    <td class="contrib-day-cell level-4" data-date="2026-08-23" data-level="4" data-tip="7 contributions on August 23, 2026"></td>
+    <td class="contrib-day-cell level-2" data-date="2026-08-30" data-level="2" data-tip="2 contributions on August 30, 2026"></td>
+    <td class="contrib-day-cell level-2" data-date="2026-09-06" data-level="2" data-tip="2 contributions on September 06, 2026"></td>
+    <td class="contrib-day-cell level-4" data-date="2026-09-13" data-level="4" data-tip="8 contributions on September 13, 2026"></td>
+    <td class="contrib-day-cell level-2" data-date="2026-09-20" data-level="2" data-tip="2 contributions on September 20, 2026"></td>
+    <td class="contrib-day-cell level-2" data-date="2026-09-27" data-level="2" data-tip="2 contributions on September 27, 2026"></td>
+    <td class="contrib-day-cell level-0" data-date="2026-10-04" data-level="0" data-tip="No contributions on October 04, 2026"></td>
+    <td class="contrib-day-cell level-0" data-date="2026-10-11" data-level="0" data-tip="No contributions on October 11, 2026"></td>
+    <td class="contrib-day-cell level-2" data-date="2026-10-18" data-level="2" data-tip="2 contributions on October 18, 2026"></td>
+    <td class="contrib-day-cell level-0" data-date="2026-10-25" data-level="0" data-tip="No contributions on October 25, 2026"></td>
+  </tr>
+  <tr style="height: 11px">
+    <td class="contrib-day-label" style="font-family: var(--font-mono); font-size: 8px; color: var(--text-muted);">Mon</td>
+    <td class="contrib-day-cell level-1" data-date="2025-10-27" data-level="1" data-tip="1 contribution on October 27, 2025"></td>
+    <td class="contrib-day-cell level-3" data-date="2025-11-03" data-level="3" data-tip="4 contributions on November 03, 2025"></td>
+    <td class="contrib-day-cell level-3" data-date="2025-11-10" data-level="3" data-tip="3 contributions on November 10, 2025"></td>
+    <td class="contrib-day-cell level-1" data-date="2025-11-17" data-level="1" data-tip="1 contribution on November 17, 2025"></td>
+    <td class="contrib-day-cell level-3" data-date="2025-11-24" data-level="3" data-tip="5 contributions on November 24, 2025"></td>
+    <td class="contrib-day-cell level-4" data-date="2025-12-01" data-level="4" data-tip="10 contributions on December 01, 2025"></td>
+    <td class="contrib-day-cell level-1" data-date="2025-12-08" data-level="1" data-tip="1 contribution on December 08, 2025"></td>
+    <td class="contrib-day-cell level-2" data-date="2025-12-15" data-level="2" data-tip="2 contributions on December 15, 2025"></td>
+    <td class="contrib-day-cell level-4" data-date="2025-12-22" data-level="4" data-tip="6 contributions on December 22, 2025"></td>
+    <td class="contrib-day-cell level-1" data-date="2025-12-29" data-level="1" data-tip="1 contribution on December 29, 2025"></td>
+    <td class="contrib-day-cell level-2" data-date="2026-01-05" data-level="2" data-tip="2 contributions on January 05, 2026"></td>
+    <td class="contrib-day-cell level-4" data-date="2026-01-12" data-level="4" data-tip="7 contributions on January 12, 2026"></td>
+    <td class="contrib-day-cell level-0" data-date="2026-01-19" data-level="0" data-tip="No contributions on January 19, 2026"></td>
+    <td class="contrib-day-cell level-2" data-date="2026-01-26" data-level="2" data-tip="2 contributions on January 26, 2026"></td>
+    <td class="contrib-day-cell level-4" data-date="2026-02-02" data-level="4" data-tip="8 contributions on February 02, 2026"></td>
+    <td class="contrib-day-cell level-0" data-date="2026-02-09" data-level="0" data-tip="No contributions on February 09, 2026"></td>
+    <td class="contrib-day-cell level-2" data-date="2026-02-16" data-level="2" data-tip="2 contributions on February 16, 2026"></td>
+    <td class="contrib-day-cell level-3" data-date="2026-02-23" data-level="3" data-tip="5 contributions on February 23, 2026"></td>
+    <td class="contrib-day-cell level-0" data-date="2026-03-02" data-level="0" data-tip="No contributions on March 02, 2026"></td>
+    <td class="contrib-day-cell level-2" data-date="2026-03-09" data-level="2" data-tip="2 contributions on March 09, 2026"></td>
+    <td class="contrib-day-cell level-3" data-date="2026-03-16" data-level="3" data-tip="3 contributions on March 16, 2026"></td>
+    <td class="contrib-day-cell level-0" data-date="2026-03-23" data-level="0" data-tip="No contributions on March 23, 2026"></td>
+    <td class="contrib-day-cell level-1" data-date="2026-03-30" data-level="1" data-tip="1 contribution on March 30, 2026"></td>
+    <td class="contrib-day-cell level-3" data-date="2026-04-06" data-level="3" data-tip="4 contributions on April 06, 2026"></td>
+    <td class="contrib-day-cell level-0" data-date="2026-04-13" data-level="0" data-tip="No contributions on April 13, 2026"></td>
+    <td class="contrib-day-cell level-1" data-date="2026-04-20" data-level="1" data-tip="1 contribution on April 20, 2026"></td>
+    <td class="contrib-day-cell level-3" data-date="2026-04-27" data-level="3" data-tip="5 contributions on April 27, 2026"></td>
+    <td class="contrib-day-cell level-4" data-date="2026-05-04" data-level="4" data-tip="10 contributions on May 04, 2026"></td>
+    <td class="contrib-day-cell level-1" data-date="2026-05-11" data-level="1" data-tip="1 contribution on May 11, 2026"></td>
+    <td class="contrib-day-cell level-3" data-date="2026-05-18" data-level="3" data-tip="3 contributions on May 18, 2026"></td>
+    <td class="contrib-day-cell level-4" data-date="2026-05-25" data-level="4" data-tip="6 contributions on May 25, 2026"></td>
+    <td class="contrib-day-cell level-1" data-date="2026-06-01" data-level="1" data-tip="1 contribution on June 01, 2026"></td>
+    <td class="contrib-day-cell level-2" data-date="2026-06-08" data-level="2" data-tip="2 contributions on June 08, 2026"></td>
+    <td class="contrib-day-cell level-4" data-date="2026-06-15" data-level="4" data-tip="7 contributions on June 15, 2026"></td>
+    <td class="contrib-day-cell level-2" data-date="2026-06-22" data-level="2" data-tip="2 contributions on June 22, 2026"></td>
+    <td class="contrib-day-cell level-2" data-date="2026-06-29" data-level="2" data-tip="2 contributions on June 29, 2026"></td>
+    <td class="contrib-day-cell level-4" data-date="2026-07-06" data-level="4" data-tip="8 contributions on July 06, 2026"></td>
+    <td class="contrib-day-cell level-0" data-date="2026-07-13" data-level="0" data-tip="No contributions on July 13, 2026"></td>
+    <td class="contrib-day-cell level-2" data-date="2026-07-20" data-level="2" data-tip="2 contributions on July 20, 2026"></td>
+    <td class="contrib-day-cell level-0" data-date="2026-07-27" data-level="0" data-tip="No contributions on July 27, 2026"></td>
+    <td class="contrib-day-cell level-0" data-date="2026-08-03" data-level="0" data-tip="No contributions on August 03, 2026"></td>
+    <td class="contrib-day-cell level-2" data-date="2026-08-10" data-level="2" data-tip="2 contributions on August 10, 2026"></td>
+    <td class="contrib-day-cell level-3" data-date="2026-08-17" data-level="3" data-tip="3 contributions on August 17, 2026"></td>
+    <td class="contrib-day-cell level-0" data-date="2026-08-24" data-level="0" data-tip="No contributions on August 24, 2026"></td>
+    <td class="contrib-day-cell level-3" data-date="2026-08-31" data-level="3" data-tip="5 contributions on August 31, 2026"></td>
+    <td class="contrib-day-cell level-3" data-date="2026-09-07" data-level="3" data-tip="4 contributions on September 07, 2026"></td>
+    <td class="contrib-day-cell level-0" data-date="2026-09-14" data-level="0" data-tip="No contributions on September 14, 2026"></td>
+    <td class="contrib-day-cell level-1" data-date="2026-09-21" data-level="1" data-tip="1 contribution on September 21, 2026"></td>
+    <td class="contrib-day-cell level-3" data-date="2026-09-28" data-level="3" data-tip="5 contributions on September 28, 2026"></td>
+    <td class="contrib-day-cell level-1" data-date="2026-10-05" data-level="1" data-tip="1 contribution on October 05, 2026"></td>
+    <td class="contrib-day-cell level-1" data-date="2026-10-12" data-level="1" data-tip="1 contribution on October 12, 2026"></td>
+    <td class="contrib-day-cell level-3" data-date="2026-10-19" data-level="3" data-tip="3 contributions on October 19, 2026"></td>
+    <td class="contrib-day-cell level-4" data-date="2026-10-26" data-level="4" data-tip="6 contributions on October 26, 2026"></td>
+  </tr>
+  <tr style="height: 11px">
+    <td class="contrib-day-label" style="font-family: var(--font-mono); font-size: 8px; color: var(--text-muted);"></td>
+    <td class="contrib-day-cell level-2" data-date="2025-10-28" data-level="2" data-tip="2 contributions on October 28, 2025"></td>
+    <td class="contrib-day-cell level-4" data-date="2025-11-04" data-level="4" data-tip="7 contributions on November 04, 2025"></td>
+    <td class="contrib-day-cell level-0" data-date="2025-11-11" data-level="0" data-tip="No contributions on November 11, 2025"></td>
+    <td class="contrib-day-cell level-2" data-date="2025-11-18" data-level="2" data-tip="2 contributions on November 18, 2025"></td>
+    <td class="contrib-day-cell level-2" data-date="2025-11-25" data-level="2" data-tip="2 contributions on November 25, 2025"></td>
+    <td class="contrib-day-cell level-0" data-date="2025-12-02" data-level="0" data-tip="No contributions on December 02, 2025"></td>
+    <td class="contrib-day-cell level-2" data-date="2025-12-09" data-level="2" data-tip="2 contributions on December 09, 2025"></td>
+    <td class="contrib-day-cell level-3" data-date="2025-12-16" data-level="3" data-tip="5 contributions on December 16, 2025"></td>
+    <td class="contrib-day-cell level-0" data-date="2025-12-23" data-level="0" data-tip="No contributions on December 23, 2025"></td>
+    <td class="contrib-day-cell level-0" data-date="2025-12-30" data-level="0" data-tip="No contributions on December 30, 2025"></td>
+    <td class="contrib-day-cell level-3" data-date="2026-01-06" data-level="3" data-tip="3 contributions on January 06, 2026"></td>
+    <td class="contrib-day-cell level-0" data-date="2026-01-13" data-level="0" data-tip="No contributions on January 13, 2026"></td>
+    <td class="contrib-day-cell level-1" data-date="2026-01-20" data-level="1" data-tip="1 contribution on January 20, 2026"></td>
+    <td class="contrib-day-cell level-3" data-date="2026-01-27" data-level="3" data-tip="4 contributions on January 27, 2026"></td>
+    <td class="contrib-day-cell level-3" data-date="2026-02-03" data-level="3" data-tip="3 contributions on February 03, 2026"></td>
+    <td class="contrib-day-cell level-1" data-date="2026-02-10" data-level="1" data-tip="1 contribution on February 10, 2026"></td>
+    <td class="contrib-day-cell level-3" data-date="2026-02-17" data-level="3" data-tip="5 contributions on February 17, 2026"></td>
+    <td class="contrib-day-cell level-4" data-date="2026-02-24" data-level="4" data-tip="10 contributions on February 24, 2026"></td>
+    <td class="contrib-day-cell level-1" data-date="2026-03-03" data-level="1" data-tip="1 contribution on March 03, 2026"></td>
+    <td class="contrib-day-cell level-2" data-date="2026-03-10" data-level="2" data-tip="2 contributions on March 10, 2026"></td>
+    <td class="contrib-day-cell level-4" data-date="2026-03-17" data-level="4" data-tip="6 contributions on March 17, 2026"></td>
+    <td class="contrib-day-cell level-1" data-date="2026-03-24" data-level="1" data-tip="1 contribution on March 24, 2026"></td>
+    <td class="contrib-day-cell level-2" data-date="2026-03-31" data-level="2" data-tip="2 contributions on March 31, 2026"></td>
+    <td class="contrib-day-cell level-4" data-date="2026-04-07" data-level="4" data-tip="7 contributions on April 07, 2026"></td>
+    <td class="contrib-day-cell level-0" data-date="2026-04-14" data-level="0" data-tip="No contributions on April 14, 2026"></td>
+    <td class="contrib-day-cell level-2" data-date="2026-04-21" data-level="2" data-tip="2 contributions on April 21, 2026"></td>
+    <td class="contrib-day-cell level-4" data-date="2026-04-28" data-level="4" data-tip="8 contributions on April 28, 2026"></td>
+    <td class="contrib-day-cell level-0" data-date="2026-05-05" data-level="0" data-tip="No contributions on May 05, 2026"></td>
+    <td class="contrib-day-cell level-2" data-date="2026-05-12" data-level="2" data-tip="2 contributions on May 12, 2026"></td>
+    <td class="contrib-day-cell level-3" data-date="2026-05-19" data-level="3" data-tip="5 contributions on May 19, 2026"></td>
+    <td class="contrib-day-cell level-0" data-date="2026-05-26" data-level="0" data-tip="No contributions on May 26, 2026"></td>
+    <td class="contrib-day-cell level-2" data-date="2026-06-02" data-level="2" data-tip="2 contributions on June 02, 2026"></td>
+    <td class="contrib-day-cell level-3" data-date="2026-06-09" data-level="3" data-tip="3 contributions on June 09, 2026"></td>
+    <td class="contrib-day-cell level-0" data-date="2026-06-16" data-level="0" data-tip="No contributions on June 16, 2026"></td>
+    <td class="contrib-day-cell level-1" data-date="2026-06-23" data-level="1" data-tip="1 contribution on June 23, 2026"></td>
+    <td class="contrib-day-cell level-3" data-date="2026-06-30" data-level="3" data-tip="4 contributions on June 30, 2026"></td>
+    <td class="contrib-day-cell level-0" data-date="2026-07-07" data-level="0" data-tip="No contributions on July 07, 2026"></td>
+    <td class="contrib-day-cell level-1" data-date="2026-07-14" data-level="1" data-tip="1 contribution on July 14, 2026"></td>
+    <td class="contrib-day-cell level-3" data-date="2026-07-21" data-level="3" data-tip="5 contributions on July 21, 2026"></td>
+    <td class="contrib-day-cell level-4" data-date="2026-07-28" data-level="4" data-tip="10 contributions on July 28, 2026"></td>
+    <td class="contrib-day-cell level-1" data-date="2026-08-04" data-level="1" data-tip="1 contribution on August 04, 2026"></td>
+    <td class="contrib-day-cell level-3" data-date="2026-08-11" data-level="3" data-tip="3 contributions on August 11, 2026"></td>
+    <td class="contrib-day-cell level-4" data-date="2026-08-18" data-level="4" data-tip="6 contributions on August 18, 2026"></td>
+    <td class="contrib-day-cell level-1" data-date="2026-08-25" data-level="1" data-tip="1 contribution on August 25, 2026"></td>
+    <td class="contrib-day-cell level-2" data-date="2026-09-01" data-level="2" data-tip="2 contributions on September 01, 2026"></td>
+    <td class="contrib-day-cell level-4" data-date="2026-09-08" data-level="4" data-tip="7 contributions on September 08, 2026"></td>
+    <td class="contrib-day-cell level-2" data-date="2026-09-15" data-level="2" data-tip="2 contributions on September 15, 2026"></td>
+    <td class="contrib-day-cell level-2" data-date="2026-09-22" data-level="2" data-tip="2 contributions on September 22, 2026"></td>
+    <td class="contrib-day-cell level-4" data-date="2026-09-29" data-level="4" data-tip="8 contributions on September 29, 2026"></td>
+    <td class="contrib-day-cell level-0" data-date="2026-10-06" data-level="0" data-tip="No contributions on October 06, 2026"></td>
+    <td class="contrib-day-cell level-2" data-date="2026-10-13" data-level="2" data-tip="2 contributions on October 13, 2026"></td>
+    <td class="contrib-day-cell level-0" data-date="2026-10-20" data-level="0" data-tip="No contributions on October 20, 2026"></td>
+    <td class="contrib-day-cell level-0" data-date="2026-10-27" data-level="0" data-tip="No contributions on October 27, 2026"></td>
+  </tr>
+  <tr style="height: 11px">
+    <td class="contrib-day-label" style="font-family: var(--font-mono); font-size: 8px; color: var(--text-muted);">Wed</td>
+    <td class="contrib-day-cell level-3" data-date="2025-10-29" data-level="3" data-tip="3 contributions on October 29, 2025"></td>
+    <td class="contrib-day-cell level-3" data-date="2025-11-05" data-level="3" data-tip="5 contributions on November 05, 2025"></td>
+    <td class="contrib-day-cell level-1" data-date="2025-11-12" data-level="1" data-tip="1 contribution on November 12, 2025"></td>
+    <td class="contrib-day-cell level-3" data-date="2025-11-19" data-level="3" data-tip="4 contributions on November 19, 2025"></td>
+    <td class="contrib-day-cell level-3" data-date="2025-11-26" data-level="3" data-tip="3 contributions on November 26, 2025"></td>
+    <td class="contrib-day-cell level-1" data-date="2025-12-03" data-level="1" data-tip="1 contribution on December 03, 2025"></td>
+    <td class="contrib-day-cell level-1" data-date="2025-12-10" data-level="1" data-tip="1 contribution on December 10, 2025"></td>
+    <td class="contrib-day-cell level-4" data-date="2025-12-17" data-level="4" data-tip="10 contributions on December 17, 2025"></td>
+    <td class="contrib-day-cell level-1" data-date="2025-12-24" data-level="1" data-tip="1 contribution on December 24, 2025"></td>
+    <td class="contrib-day-cell level-2" data-date="2025-12-31" data-level="2" data-tip="2 contributions on December 31, 2025"></td>
+    <td class="contrib-day-cell level-4" data-date="2026-01-07" data-level="4" data-tip="6 contributions on January 07, 2026"></td>
+    <td class="contrib-day-cell level-4" data-date="2026-01-14" data-level="4" data-tip="8 contributions on January 14, 2026"></td>
+    <td class="contrib-day-cell level-2" data-date="2026-01-21" data-level="2" data-tip="2 contributions on January 21, 2026"></td>
+    <td class="contrib-day-cell level-4" data-date="2026-01-28" data-level="4" data-tip="7 contributions on January 28, 2026"></td>
+    <td class="contrib-day-cell level-0" data-date="2026-02-04" data-level="0" data-tip="No contributions on February 04, 2026"></td>
+    <td class="contrib-day-cell level-2" data-date="2026-02-11" data-level="2" data-tip="2 contributions on February 11, 2026"></td>
+    <td class="contrib-day-cell level-2" data-date="2026-02-18" data-level="2" data-tip="2 contributions on February 18, 2026"></td>
+    <td class="contrib-day-cell level-0" data-date="2026-02-25" data-level="0" data-tip="No contributions on February 25, 2026"></td>
+    <td class="contrib-day-cell level-2" data-date="2026-03-04" data-level="2" data-tip="2 contributions on March 04, 2026"></td>
+    <td class="contrib-day-cell level-3" data-date="2026-03-11" data-level="3" data-tip="5 contributions on March 11, 2026"></td>
+    <td class="contrib-day-cell level-0" data-date="2026-03-18" data-level="0" data-tip="No contributions on March 18, 2026"></td>
+    <td class="contrib-day-cell level-0" data-date="2026-03-25" data-level="0" data-tip="No contributions on March 25, 2026"></td>
+    <td class="contrib-day-cell level-3" data-date="2026-04-01" data-level="3" data-tip="3 contributions on April 01, 2026"></td>
+    <td class="contrib-day-cell level-0" data-date="2026-04-08" data-level="0" data-tip="No contributions on April 08, 2026"></td>
+    <td class="contrib-day-cell level-1" data-date="2026-04-15" data-level="1" data-tip="1 contribution on April 15, 2026"></td>
+    <td class="contrib-day-cell level-3" data-date="2026-04-22" data-level="3" data-tip="4 contributions on April 22, 2026"></td>
+    <td class="contrib-day-cell level-3" data-date="2026-04-29" data-level="3" data-tip="3 contributions on April 29, 2026"></td>
+    <td class="contrib-day-cell level-1" data-date="2026-05-06" data-level="1" data-tip="1 contribution on May 06, 2026"></td>
+    <td class="contrib-day-cell level-3" data-date="2026-05-13" data-level="3" data-tip="5 contributions on May 13, 2026"></td>
+    <td class="contrib-day-cell level-4" data-date="2026-05-20" data-level="4" data-tip="10 contributions on May 20, 2026"></td>
+    <td class="contrib-day-cell level-1" data-date="2026-05-27" data-level="1" data-tip="1 contribution on May 27, 2026"></td>
+    <td class="contrib-day-cell level-2" data-date="2026-06-03" data-level="2" data-tip="2 contributions on June 03, 2026"></td>
+    <td class="contrib-day-cell level-4" data-date="2026-06-10" data-level="4" data-tip="6 contributions on June 10, 2026"></td>
+    <td class="contrib-day-cell level-1" data-date="2026-06-17" data-level="1" data-tip="1 contribution on June 17, 2026"></td>
+    <td class="contrib-day-cell level-2" data-date="2026-06-24" data-level="2" data-tip="2 contributions on June 24, 2026"></td>
+    <td class="contrib-day-cell level-4" data-date="2026-07-01" data-level="4" data-tip="7 contributions on July 01, 2026"></td>
+    <td class="contrib-day-cell level-0" data-date="2026-07-08" data-level="0" data-tip="No contributions on July 08, 2026"></td>
+    <td class="contrib-day-cell level-2" data-date="2026-07-15" data-level="2" data-tip="2 contributions on July 15, 2026"></td>
+    <td class="contrib-day-cell level-4" data-date="2026-07-22" data-level="4" data-tip="8 contributions on July 22, 2026"></td>
+    <td class="contrib-day-cell level-0" data-date="2026-07-29" data-level="0" data-tip="No contributions on July 29, 2026"></td>
+    <td class="contrib-day-cell level-2" data-date="2026-08-05" data-level="2" data-tip="2 contributions on August 05, 2026"></td>
+    <td class="contrib-day-cell level-3" data-date="2026-08-12" data-level="3" data-tip="5 contributions on August 12, 2026"></td>
+    <td class="contrib-day-cell level-0" data-date="2026-08-19" data-level="0" data-tip="No contributions on August 19, 2026"></td>
+    <td class="contrib-day-cell level-2" data-date="2026-08-26" data-level="2" data-tip="2 contributions on August 26, 2026"></td>
+    <td class="contrib-day-cell level-3" data-date="2026-09-02" data-level="3" data-tip="3 contributions on September 02, 2026"></td>
+    <td class="contrib-day-cell level-0" data-date="2026-09-09" data-level="0" data-tip="No contributions on September 09, 2026"></td>
+    <td class="contrib-day-cell level-1" data-date="2026-09-16" data-level="1" data-tip="1 contribution on September 16, 2026"></td>
+    <td class="contrib-day-cell level-3" data-date="2026-09-23" data-level="3" data-tip="4 contributions on September 23, 2026"></td>
+    <td class="contrib-day-cell level-0" data-date="2026-09-30" data-level="0" data-tip="No contributions on September 30, 2026"></td>
+    <td class="contrib-day-cell level-1" data-date="2026-10-07" data-level="1" data-tip="1 contribution on October 07, 2026"></td>
+    <td class="contrib-day-cell level-3" data-date="2026-10-14" data-level="3" data-tip="5 contributions on October 14, 2026"></td>
+    <td class="contrib-day-cell level-4" data-date="2026-10-21" data-level="4" data-tip="10 contributions on October 21, 2026"></td>
+    <td class="contrib-day-cell level-1" data-date="2026-10-28" data-level="1" data-tip="1 contribution on October 28, 2026"></td>
+  </tr>
+  <tr style="height: 11px">
+    <td class="contrib-day-label" style="font-family: var(--font-mono); font-size: 8px; color: var(--text-muted);"></td>
+    <td class="contrib-day-cell level-4" data-date="2025-10-30" data-level="4" data-tip="6 contributions on October 30, 2025"></td>
+    <td class="contrib-day-cell level-4" data-date="2025-11-06" data-level="4" data-tip="8 contributions on November 06, 2025"></td>
+    <td class="contrib-day-cell level-2" data-date="2025-11-13" data-level="2" data-tip="2 contributions on November 13, 2025"></td>
+    <td class="contrib-day-cell level-2" data-date="2025-11-20" data-level="2" data-tip="2 contributions on November 20, 2025"></td>
+    <td class="contrib-day-cell level-0" data-date="2025-11-27" data-level="0" data-tip="No contributions on November 27, 2025"></td>
+    <td class="contrib-day-cell level-2" data-date="2025-12-04" data-level="2" data-tip="2 contributions on December 04, 2025"></td>
+    <td class="contrib-day-cell level-2" data-date="2025-12-11" data-level="2" data-tip="2 contributions on December 11, 2025"></td>
+    <td class="contrib-day-cell level-0" data-date="2025-12-18" data-level="0" data-tip="No contributions on December 18, 2025"></td>
+    <td class="contrib-day-cell level-0" data-date="2025-12-25" data-level="0" data-tip="No contributions on December 25, 2025"></td>
+    <td class="contrib-day-cell level-3" data-date="2026-01-01" data-level="3" data-tip="5 contributions on January 01, 2026"></td>
+    <td class="contrib-day-cell level-0" data-date="2026-01-08" data-level="0" data-tip="No contributions on January 08, 2026"></td>
+    <td class="contrib-day-cell level-0" data-date="2026-01-15" data-level="0" data-tip="No contributions on January 15, 2026"></td>
+    <td class="contrib-day-cell level-3" data-date="2026-01-22" data-level="3" data-tip="3 contributions on January 22, 2026"></td>
+    <td class="contrib-day-cell level-3" data-date="2026-01-29" data-level="3" data-tip="5 contributions on January 29, 2026"></td>
+    <td class="contrib-day-cell level-1" data-date="2026-02-05" data-level="1" data-tip="1 contribution on February 05, 2026"></td>
+    <td class="contrib-day-cell level-3" data-date="2026-02-12" data-level="3" data-tip="4 contributions on February 12, 2026"></td>
+    <td class="contrib-day-cell level-3" data-date="2026-02-19" data-level="3" data-tip="3 contributions on February 19, 2026"></td>
+    <td class="contrib-day-cell level-1" data-date="2026-02-26" data-level="1" data-tip="1 contribution on February 26, 2026"></td>
+    <td class="contrib-day-cell level-1" data-date="2026-03-05" data-level="1" data-tip="1 contribution on March 05, 2026"></td>
+    <td class="contrib-day-cell level-4" data-date="2026-03-12" data-level="4" data-tip="10 contributions on March 12, 2026"></td>
+    <td class="contrib-day-cell level-1" data-date="2026-03-19" data-level="1" data-tip="1 contribution on March 19, 2026"></td>
+    <td class="contrib-day-cell level-2" data-date="2026-03-26" data-level="2" data-tip="2 contributions on March 26, 2026"></td>
+    <td class="contrib-day-cell level-4" data-date="2026-04-02" data-level="4" data-tip="6 contributions on April 02, 2026"></td>
+    <td class="contrib-day-cell level-4" data-date="2026-04-09" data-level="4" data-tip="8 contributions on April 09, 2026"></td>
+    <td class="contrib-day-cell level-2" data-date="2026-04-16" data-level="2" data-tip="2 contributions on April 16, 2026"></td>
+    <td class="contrib-day-cell level-4" data-date="2026-04-23" data-level="4" data-tip="7 contributions on April 23, 2026"></td>
+    <td class="contrib-day-cell level-0" data-date="2026-04-30" data-level="0" data-tip="No contributions on April 30, 2026"></td>
+    <td class="contrib-day-cell level-2" data-date="2026-05-07" data-level="2" data-tip="2 contributions on May 07, 2026"></td>
+    <td class="contrib-day-cell level-2" data-date="2026-05-14" data-level="2" data-tip="2 contributions on May 14, 2026"></td>
+    <td class="contrib-day-cell level-0" data-date="2026-05-21" data-level="0" data-tip="No contributions on May 21, 2026"></td>
+    <td class="contrib-day-cell level-2" data-date="2026-05-28" data-level="2" data-tip="2 contributions on May 28, 2026"></td>
+    <td class="contrib-day-cell level-3" data-date="2026-06-04" data-level="3" data-tip="5 contributions on June 04, 2026"></td>
+    <td class="contrib-day-cell level-0" data-date="2026-06-11" data-level="0" data-tip="No contributions on June 11, 2026"></td>
+    <td class="contrib-day-cell level-0" data-date="2026-06-18" data-level="0" data-tip="No contributions on June 18, 2026"></td>
+    <td class="contrib-day-cell level-3" data-date="2026-06-25" data-level="3" data-tip="3 contributions on June 25, 2026"></td>
+    <td class="contrib-day-cell level-0" data-date="2026-07-02" data-level="0" data-tip="No contributions on July 02, 2026"></td>
+    <td class="contrib-day-cell level-1" data-date="2026-07-09" data-level="1" data-tip="1 contribution on July 09, 2026"></td>
+    <td class="contrib-day-cell level-3" data-date="2026-07-16" data-level="3" data-tip="4 contributions on July 16, 2026"></td>
+    <td class="contrib-day-cell level-3" data-date="2026-07-23" data-level="3" data-tip="3 contributions on July 23, 2026"></td>
+    <td class="contrib-day-cell level-1" data-date="2026-07-30" data-level="1" data-tip="1 contribution on July 30, 2026"></td>
+    <td class="contrib-day-cell level-3" data-date="2026-08-06" data-level="3" data-tip="5 contributions on August 06, 2026"></td>
+    <td class="contrib-day-cell level-4" data-date="2026-08-13" data-level="4" data-tip="10 contributions on August 13, 2026"></td>
+    <td class="contrib-day-cell level-1" data-date="2026-08-20" data-level="1" data-tip="1 contribution on August 20, 2026"></td>
+    <td class="contrib-day-cell level-2" data-date="2026-08-27" data-level="2" data-tip="2 contributions on August 27, 2026"></td>
+    <td class="contrib-day-cell level-4" data-date="2026-09-03" data-level="4" data-tip="6 contributions on September 03, 2026"></td>
+    <td class="contrib-day-cell level-1" data-date="2026-09-10" data-level="1" data-tip="1 contribution on September 10, 2026"></td>
+    <td class="contrib-day-cell level-2" data-date="2026-09-17" data-level="2" data-tip="2 contributions on September 17, 2026"></td>
+    <td class="contrib-day-cell level-4" data-date="2026-09-24" data-level="4" data-tip="7 contributions on September 24, 2026"></td>
+    <td class="contrib-day-cell level-0" data-date="2026-10-01" data-level="0" data-tip="No contributions on October 01, 2026"></td>
+    <td class="contrib-day-cell level-2" data-date="2026-10-08" data-level="2" data-tip="2 contributions on October 08, 2026"></td>
+    <td class="contrib-day-cell level-4" data-date="2026-10-15" data-level="4" data-tip="8 contributions on October 15, 2026"></td>
+    <td class="contrib-day-cell level-0" data-date="2026-10-22" data-level="0" data-tip="No contributions on October 22, 2026"></td>
+    <td class="contrib-day-cell level-2" data-date="2026-10-29" data-level="2" data-tip="2 contributions on October 29, 2026"></td>
+  </tr>
+  <tr style="height: 11px">
+    <td class="contrib-day-label" style="font-family: var(--font-mono); font-size: 8px; color: var(--text-muted);">Fri</td>
+    <td class="contrib-day-cell level-3" data-date="2025-10-31" data-level="3" data-tip="4 contributions on October 31, 2025"></td>
+    <td class="contrib-day-cell level-0" data-date="2025-11-07" data-level="0" data-tip="No contributions on November 07, 2025"></td>
+    <td class="contrib-day-cell level-3" data-date="2025-11-14" data-level="3" data-tip="3 contributions on November 14, 2025"></td>
+    <td class="contrib-day-cell level-3" data-date="2025-11-21" data-level="3" data-tip="5 contributions on November 21, 2025"></td>
+    <td class="contrib-day-cell level-1" data-date="2025-11-28" data-level="1" data-tip="1 contribution on November 28, 2025"></td>
+    <td class="contrib-day-cell level-1" data-date="2025-12-05" data-level="1" data-tip="1 contribution on December 05, 2025"></td>
+    <td class="contrib-day-cell level-3" data-date="2025-12-12" data-level="3" data-tip="3 contributions on December 12, 2025"></td>
+    <td class="contrib-day-cell level-1" data-date="2025-12-19" data-level="1" data-tip="1 contribution on December 19, 2025"></td>
+    <td class="contrib-day-cell level-1" data-date="2025-12-26" data-level="1" data-tip="1 contribution on December 26, 2025"></td>
+    <td class="contrib-day-cell level-4" data-date="2026-01-02" data-level="4" data-tip="10 contributions on January 02, 2026"></td>
+    <td class="contrib-day-cell level-4" data-date="2026-01-09" data-level="4" data-tip="7 contributions on January 09, 2026"></td>
+    <td class="contrib-day-cell level-2" data-date="2026-01-16" data-level="2" data-tip="2 contributions on January 16, 2026"></td>
+    <td class="contrib-day-cell level-4" data-date="2026-01-23" data-level="4" data-tip="6 contributions on January 23, 2026"></td>
+    <td class="contrib-day-cell level-4" data-date="2026-01-30" data-level="4" data-tip="8 contributions on January 30, 2026"></td>
+    <td class="contrib-day-cell level-2" data-date="2026-02-06" data-level="2" data-tip="2 contributions on February 06, 2026"></td>
+    <td class="contrib-day-cell level-2" data-date="2026-02-13" data-level="2" data-tip="2 contributions on February 13, 2026"></td>
+    <td class="contrib-day-cell level-0" data-date="2026-02-20" data-level="0" data-tip="No contributions on February 20, 2026"></td>
+    <td class="contrib-day-cell level-2" data-date="2026-02-27" data-level="2" data-tip="2 contributions on February 27, 2026"></td>
+    <td class="contrib-day-cell level-2" data-date="2026-03-06" data-level="2" data-tip="2 contributions on March 06, 2026"></td>
+    <td class="contrib-day-cell level-0" data-date="2026-03-13" data-level="0" data-tip="No contributions on March 13, 2026"></td>
+    <td class="contrib-day-cell level-0" data-date="2026-03-20" data-level="0" data-tip="No contributions on March 20, 2026"></td>
+    <td class="contrib-day-cell level-3" data-date="2026-03-27" data-level="3" data-tip="5 contributions on March 27, 2026"></td>
+    <td class="contrib-day-cell level-0" data-date="2026-04-03" data-level="0" data-tip="No contributions on April 03, 2026"></td>
+    <td class="contrib-day-cell level-0" data-date="2026-04-10" data-level="0" data-tip="No contributions on April 10, 2026"></td>
+    <td class="contrib-day-cell level-3" data-date="2026-04-17" data-level="3" data-tip="3 contributions on April 17, 2026"></td>
+    <td class="contrib-day-cell level-3" data-date="2026-04-24" data-level="3" data-tip="5 contributions on April 24, 2026"></td>
+    <td class="contrib-day-cell level-1" data-date="2026-05-01" data-level="1" data-tip="1 contribution on May 01, 2026"></td>
+    <td class="contrib-day-cell level-3" data-date="2026-05-08" data-level="3" data-tip="4 contributions on May 08, 2026"></td>
+    <td class="contrib-day-cell level-3" data-date="2026-05-15" data-level="3" data-tip="3 contributions on May 15, 2026"></td>
+    <td class="contrib-day-cell level-1" data-date="2026-05-22" data-level="1" data-tip="1 contribution on May 22, 2026"></td>
+    <td class="contrib-day-cell level-1" data-date="2026-05-29" data-level="1" data-tip="1 contribution on May 29, 2026"></td>
+    <td class="contrib-day-cell level-4" data-date="2026-06-05" data-level="4" data-tip="10 contributions on June 05, 2026"></td>
+    <td class="contrib-day-cell level-1" data-date="2026-06-12" data-level="1" data-tip="1 contribution on June 12, 2026"></td>
+    <td class="contrib-day-cell level-2" data-date="2026-06-19" data-level="2" data-tip="2 contributions on June 19, 2026"></td>
+    <td class="contrib-day-cell level-4" data-date="2026-06-26" data-level="4" data-tip="6 contributions on June 26, 2026"></td>
+    <td class="contrib-day-cell level-4" data-date="2026-07-03" data-level="4" data-tip="8 contributions on July 03, 2026"></td>
+    <td class="contrib-day-cell level-2" data-date="2026-07-10" data-level="2" data-tip="2 contributions on July 10, 2026"></td>
+    <td class="contrib-day-cell level-4" data-date="2026-07-17" data-level="4" data-tip="7 contributions on July 17, 2026"></td>
+    <td class="contrib-day-cell level-0" data-date="2026-07-24" data-level="0" data-tip="No contributions on July 24, 2026"></td>
+    <td class="contrib-day-cell level-2" data-date="2026-07-31" data-level="2" data-tip="2 contributions on July 31, 2026"></td>
+    <td class="contrib-day-cell level-2" data-date="2026-08-07" data-level="2" data-tip="2 contributions on August 07, 2026"></td>
+    <td class="contrib-day-cell level-0" data-date="2026-08-14" data-level="0" data-tip="No contributions on August 14, 2026"></td>
+    <td class="contrib-day-cell level-2" data-date="2026-08-21" data-level="2" data-tip="2 contributions on August 21, 2026"></td>
+    <td class="contrib-day-cell level-3" data-date="2026-08-28" data-level="3" data-tip="5 contributions on August 28, 2026"></td>
+    <td class="contrib-day-cell level-0" data-date="2026-09-04" data-level="0" data-tip="No contributions on September 04, 2026"></td>
+    <td class="contrib-day-cell level-0" data-date="2026-09-11" data-level="0" data-tip="No contributions on September 11, 2026"></td>
+    <td class="contrib-day-cell level-3" data-date="2026-09-18" data-level="3" data-tip="3 contributions on September 18, 2026"></td>
+    <td class="contrib-day-cell level-0" data-date="2026-09-25" data-level="0" data-tip="No contributions on September 25, 2026"></td>
+    <td class="contrib-day-cell level-1" data-date="2026-10-02" data-level="1" data-tip="1 contribution on October 02, 2026"></td>
+    <td class="contrib-day-cell level-3" data-date="2026-10-09" data-level="3" data-tip="4 contributions on October 09, 2026"></td>
+    <td class="contrib-day-cell level-3" data-date="2026-10-16" data-level="3" data-tip="3 contributions on October 16, 2026"></td>
+    <td class="contrib-day-cell level-1" data-date="2026-10-23" data-level="1" data-tip="1 contribution on October 23, 2026"></td>
+    <td class="contrib-day-cell level-3" data-date="2026-10-30" data-level="3" data-tip="5 contributions on October 30, 2026"></td>
+  </tr>
+  <tr style="height: 11px">
+    <td class="contrib-day-label" style="font-family: var(--font-mono); font-size: 8px; color: var(--text-muted);"></td>
+    <td class="contrib-day-cell level-4" data-date="2025-11-01" data-level="4" data-tip="7 contributions on November 01, 2025"></td>
+    <td class="contrib-day-cell level-2" data-date="2025-11-08" data-level="2" data-tip="2 contributions on November 08, 2025"></td>
+    <td class="contrib-day-cell level-2" data-date="2025-11-15" data-level="2" data-tip="2 contributions on November 15, 2025"></td>
+    <td class="contrib-day-cell level-4" data-date="2025-11-22" data-level="4" data-tip="8 contributions on November 22, 2025"></td>
+    <td class="contrib-day-cell level-2" data-date="2025-11-29" data-level="2" data-tip="2 contributions on November 29, 2025"></td>
+    <td class="contrib-day-cell level-2" data-date="2025-12-06" data-level="2" data-tip="2 contributions on December 06, 2025"></td>
+    <td class="contrib-day-cell level-0" data-date="2025-12-13" data-level="0" data-tip="No contributions on December 13, 2025"></td>
+    <td class="contrib-day-cell level-0" data-date="2025-12-20" data-level="0" data-tip="No contributions on December 20, 2025"></td>
+    <td class="contrib-day-cell level-2" data-date="2025-12-27" data-level="2" data-tip="2 contributions on December 27, 2025"></td>
+    <td class="contrib-day-cell level-0" data-date="2026-01-03" data-level="0" data-tip="No contributions on January 03, 2026"></td>
+    <td class="contrib-day-cell level-0" data-date="2026-01-10" data-level="0" data-tip="No contributions on January 10, 2026"></td>
+    <td class="contrib-day-cell level-3" data-date="2026-01-17" data-level="3" data-tip="5 contributions on January 17, 2026"></td>
+    <td class="contrib-day-cell level-3" data-date="2026-01-24" data-level="3" data-tip="4 contributions on January 24, 2026"></td>
+    <td class="contrib-day-cell level-0" data-date="2026-01-31" data-level="0" data-tip="No contributions on January 31, 2026"></td>
+    <td class="contrib-day-cell level-3" data-date="2026-02-07" data-level="3" data-tip="3 contributions on February 07, 2026"></td>
+    <td class="contrib-day-cell level-3" data-date="2026-02-14" data-level="3" data-tip="5 contributions on February 14, 2026"></td>
+    <td class="contrib-day-cell level-1" data-date="2026-02-21" data-level="1" data-tip="1 contribution on February 21, 2026"></td>
+    <td class="contrib-day-cell level-1" data-date="2026-02-28" data-level="1" data-tip="1 contribution on February 28, 2026"></td>
+    <td class="contrib-day-cell level-3" data-date="2026-03-07" data-level="3" data-tip="3 contributions on March 07, 2026"></td>
+    <td class="contrib-day-cell level-1" data-date="2026-03-14" data-level="1" data-tip="1 contribution on March 14, 2026"></td>
+    <td class="contrib-day-cell level-1" data-date="2026-03-21" data-level="1" data-tip="1 contribution on March 21, 2026"></td>
+    <td class="contrib-day-cell level-4" data-date="2026-03-28" data-level="4" data-tip="10 contributions on March 28, 2026"></td>
+    <td class="contrib-day-cell level-4" data-date="2026-04-04" data-level="4" data-tip="7 contributions on April 04, 2026"></td>
+    <td class="contrib-day-cell level-2" data-date="2026-04-11" data-level="2" data-tip="2 contributions on April 11, 2026"></td>
+    <td class="contrib-day-cell level-4" data-date="2026-04-18" data-level="4" data-tip="6 contributions on April 18, 2026"></td>
+    <td class="contrib-day-cell level-4" data-date="2026-04-25" data-level="4" data-tip="8 contributions on April 25, 2026"></td>
+    <td class="contrib-day-cell level-2" data-date="2026-05-02" data-level="2" data-tip="2 contributions on May 02, 2026"></td>
+    <td class="contrib-day-cell level-2" data-date="2026-05-09" data-level="2" data-tip="2 contributions on May 09, 2026"></td>
+    <td class="contrib-day-cell level-0" data-date="2026-05-16" data-level="0" data-tip="No contributions on May 16, 2026"></td>
+    <td class="contrib-day-cell level-2" data-date="2026-05-23" data-level="2" data-tip="2 contributions on May 23, 2026"></td>
+    <td class="contrib-day-cell level-2" data-date="2026-05-30" data-level="2" data-tip="2 contributions on May 30, 2026"></td>
+    <td class="contrib-day-cell level-0" data-date="2026-06-06" data-level="0" data-tip="No contributions on June 06, 2026"></td>
+    <td class="contrib-day-cell level-0" data-date="2026-06-13" data-level="0" data-tip="No contributions on June 13, 2026"></td>
+    <td class="contrib-day-cell level-3" data-date="2026-06-20" data-level="3" data-tip="5 contributions on June 20, 2026"></td>
+    <td class="contrib-day-cell level-0" data-date="2026-06-27" data-level="0" data-tip="No contributions on June 27, 2026"></td>
+    <td class="contrib-day-cell level-0" data-date="2026-07-04" data-level="0" data-tip="No contributions on July 04, 2026"></td>
+    <td class="contrib-day-cell level-3" data-date="2026-07-11" data-level="3" data-tip="3 contributions on July 11, 2026"></td>
+    <td class="contrib-day-cell level-3" data-date="2026-07-18" data-level="3" data-tip="5 contributions on July 18, 2026"></td>
+    <td class="contrib-day-cell level-1" data-date="2026-07-25" data-level="1" data-tip="1 contribution on July 25, 2026"></td>
+    <td class="contrib-day-cell level-3" data-date="2026-08-01" data-level="3" data-tip="4 contributions on August 01, 2026"></td>
+    <td class="contrib-day-cell level-3" data-date="2026-08-08" data-level="3" data-tip="3 contributions on August 08, 2026"></td>
+    <td class="contrib-day-cell level-1" data-date="2026-08-15" data-level="1" data-tip="1 contribution on August 15, 2026"></td>
+    <td class="contrib-day-cell level-1" data-date="2026-08-22" data-level="1" data-tip="1 contribution on August 22, 2026"></td>
+    <td class="contrib-day-cell level-4" data-date="2026-08-29" data-level="4" data-tip="10 contributions on August 29, 2026"></td>
+    <td class="contrib-day-cell level-1" data-date="2026-09-05" data-level="1" data-tip="1 contribution on September 05, 2026"></td>
+    <td class="contrib-day-cell level-2" data-date="2026-09-12" data-level="2" data-tip="2 contributions on September 12, 2026"></td>
+    <td class="contrib-day-cell level-4" data-date="2026-09-19" data-level="4" data-tip="6 contributions on September 19, 2026"></td>
+    <td class="contrib-day-cell level-4" data-date="2026-09-26" data-level="4" data-tip="8 contributions on September 26, 2026"></td>
+    <td class="contrib-day-cell level-2" data-date="2026-10-03" data-level="2" data-tip="2 contributions on October 03, 2026"></td>
+    <td class="contrib-day-cell level-4" data-date="2026-10-10" data-level="4" data-tip="7 contributions on October 10, 2026"></td>
+    <td class="contrib-day-cell level-0" data-date="2026-10-17" data-level="0" data-tip="No contributions on October 17, 2026"></td>
+    <td class="contrib-day-cell level-2" data-date="2026-10-24" data-level="2" data-tip="2 contributions on October 24, 2026"></td>
+    <td class="contrib-day-cell level-2" data-date="2026-10-31" data-level="2" data-tip="2 contributions on October 31, 2026"></td>
+  </tr>
+</tbody>
+</table>
+          </div>
+
+          <div class="contrib-footer">
+            <div class="contrib-legend">
+              <span>Less</span>
+              <span class="contrib-legend-cell level-0"></span>
+              <span class="contrib-legend-cell level-1"></span>
+              <span class="contrib-legend-cell level-2"></span>
+              <span class="contrib-legend-cell level-3"></span>
+              <span class="contrib-legend-cell level-4"></span>
+              <span>More</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- SECTION 07: TRANSMISSION & CONTACT                                        -->
+    <!-- ========================================================================= -->
+    <section class="portfolio-section contact-section" id="contact" data-stage="07 // CONTACT">
+      <div class="section-container">
+        <div class="contact-header-block" style="margin-bottom: 2.5rem;">
+          <span class="section-marker-tag">[ 07 // TRANSMISSION &amp; CONTACT ]</span>
+          <h2 class="section-heading">Have an ambitious system to build?</h2>
+          <p class="contact-subheading" style="color: var(--text-secondary); max-width: 680px; font-size: 1.1rem;">
+            I'm open to connecting with researchers, quants, and engineers exploring mathematical finance, machine learning frontiers, and high-performance computation.
+          </p>
+        </div>
+
+        <!-- Direct Dispatch Email Box -->
+        <div class="dispatch-box">
+          <div class="dispatch-info">
+            <span class="dispatch-label">DIRECT DISPATCH // PRIMARY INBOX</span>
+            <a href="mailto:yuraj.math.dev@gmail.com" class="dispatch-email-link">
+              yuraj.math.dev@gmail.com
+            </a>
+          </div>
+
+          <div class="dispatch-actions">
+            <button class="btn btn-primary" id="copy-email-btn" aria-label="Copy email address to clipboard">
+              <svg class="btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <rect x="9" y="9" width="13" height="13" rx="0" ry="0"/>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+              </svg>
+              <span id="copy-btn-text">Copy Email</span>
+            </button>
+            <a href="mailto:yuraj.math.dev@gmail.com" class="btn btn-secondary">
+              <span>Mailto</span>
+              <span class="btn-arrow" aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Social Network Cards -->
+        <div class="card-grid-2">
+          <a href="https://github.com/Fr0xy0p" target="_blank" rel="noopener noreferrer" class="social-card">
+            <div>
+              <span class="social-category">DEVELOPER REPOSITORY</span>
+              <h3 class="social-title">GitHub</h3>
+              <span class="social-handle">@Fr0xy0p</span>
+            </div>
+            <span class="social-arrow" aria-hidden="true">↗</span>
+          </a>
+
+          <a href="mailto:yuraj.math.dev@gmail.com" class="social-card">
+            <div>
+              <span class="social-category">DIRECT COMMUNICATION</span>
+              <h3 class="social-title">Email Dispatch</h3>
+              <span class="social-handle">yuraj.math.dev@gmail.com</span>
+            </div>
+            <span class="social-arrow" aria-hidden="true">↗</span>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
   </main>
 
-  <!-- Modern Footer -->
-  <footer class="footer">
-    <div class="container footer-content">
-      <div class="footer-left">
-        <span class="brand-symbol">∑</span>
-        <span>Crafted with pure HTML, CSS & JavaScript • Built for <strong>Yuvraj Singh</strong></span>
+  <!-- ========================================================================= -->
+  <!-- SITE FOOTER                                                               -->
+  <!-- ========================================================================= -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-meta">
+        <p class="footer-copyright">© 2026 YUVRAJ SINGH — QUANTITATIVE SYSTEMS &amp; MACHINE LEARNING</p>
+        <p class="footer-tagline">BUILT WITH DETERMINISTIC ARCHITECTURE · MATHEMATICAL COMPUTING</p>
       </div>
-      <div class="footer-right">
-        <span>&copy; <span id="yearSpan">2026</span> Yuvraj Singh. Math Enthusiast & Quantitative Research.</span>
+      <div class="footer-status-row">
+        <div class="status-indicator-badge">
+          <span class="status-dot-mini" aria-hidden="true"></span>
+          <span>STATUS: OPTIMAL</span>
+        </div>
+        <span class="footer-sep">|</span>
+        <span class="footer-node">LOC: [SYS_NODE_01]</span>
+        <span class="footer-sep">|</span>
+        <span class="footer-sha">SHA: 7F4C82A</span>
       </div>
     </div>
   </footer>
 
-  <!-- Script -->
-  <script src="script.js"></script>
+  <!-- Vanilla Particle Engine & Interaction Logic -->
+  <script src="js/dots.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>

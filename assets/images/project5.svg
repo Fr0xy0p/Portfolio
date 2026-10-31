@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1376 768" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad5" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0a14"/>
+      <stop offset="50%" stop-color="#0c1226"/>
+      <stop offset="100%" stop-color="#05060d"/>
+    </linearGradient>
+    <linearGradient id="treeGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#00F0FF"/>
+      <stop offset="100%" stop-color="#7C5CFF"/>
+    </linearGradient>
+    <pattern id="matrixPattern" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 0 20 L 40 20 M 20 0 L 20 40" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1376" height="768" fill="url(#bgGrad5)"/>
+  <rect width="1376" height="768" fill="url(#matrixPattern)"/>
+
+  <!-- Segment Tree / Trie Visualization -->
+  <g stroke="url(#treeGrad)" stroke-width="2" stroke-linecap="round">
+    <!-- Root to L1 -->
+    <line x1="688" y1="220" x2="440" y2="340"/>
+    <line x1="688" y1="220" x2="936" y2="340"/>
+    <!-- L1 to L2 -->
+    <line x1="440" y1="340" x2="310" y2="470"/>
+    <line x1="440" y1="340" x2="570" y2="470"/>
+    <line x1="936" y1="340" x2="806" y2="470"/>
+    <line x1="936" y1="340" x2="1066" y2="470"/>
+    <!-- L2 to L3 (Leaves) -->
+    <line x1="310" y1="470" x2="240" y2="580"/>
+    <line x1="310" y1="470" x2="380" y2="580"/>
+    <line x1="570" y1="470" x2="500" y2="580"/>
+    <line x1="570" y1="470" x2="640" y2="580"/>
+    <line x1="806" y1="470" x2="736" y2="580"/>
+    <line x1="806" y1="470" x2="876" y2="580"/>
+    <line x1="1066" y1="470" x2="996" y2="580"/>
+    <line x1="1066" y1="470" x2="1136" y2="580"/>
+  </g>
+
+  <!-- Highlight Active Tree Path -->
+  <line x1="688" y1="220" x2="936" y2="340" stroke="#00F0FF" stroke-width="4" filter="drop-shadow(0 0 10px #00F0FF)"/>
+  <line x1="936" y1="340" x2="806" y2="470" stroke="#00F0FF" stroke-width="4" filter="drop-shadow(0 0 10px #00F0FF)"/>
+  <line x1="806" y1="470" x2="876" y2="580" stroke="#00F0FF" stroke-width="4" filter="drop-shadow(0 0 10px #00F0FF)"/>
+
+  <!-- Tree Nodes -->
+  <circle cx="688" cy="220" r="18" fill="#7C5CFF" filter="drop-shadow(0 0 12px #7C5CFF)"/>
+  <circle cx="440" cy="340" r="14" fill="#7C5CFF"/>
+  <circle cx="936" cy="340" r="16" fill="#00F0FF" filter="drop-shadow(0 0 12px #00F0FF)"/>
+  <circle cx="310" cy="470" r="12" fill="#7C5CFF"/>
+  <circle cx="570" cy="470" r="12" fill="#7C5CFF"/>
+  <circle cx="806" cy="470" r="14" fill="#00F0FF" filter="drop-shadow(0 0 10px #00F0FF)"/>
+  <circle cx="1066" cy="470" r="12" fill="#7C5CFF"/>
+  
+  <!-- Leaves -->
+  <circle cx="240" cy="580" r="8" fill="#8E9CB2"/>
+  <circle cx="380" cy="580" r="8" fill="#8E9CB2"/>
+  <circle cx="500" cy="580" r="8" fill="#8E9CB2"/>
+  <circle cx="640" cy="580" r="8" fill="#8E9CB2"/>
+  <circle cx="736" cy="580" r="8" fill="#8E9CB2"/>
+  <circle cx="876" cy="580" r="12" fill="#00F0FF" filter="drop-shadow(0 0 12px #00F0FF)"/>
+  <circle cx="996" cy="580" r="8" fill="#8E9CB2"/>
+  <circle cx="1136" cy="580" r="8" fill="#8E9CB2"/>
+
+  <!-- Node Text -->
+  <text x="688" y="225" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="middle">∑</text>
+  <text x="936" y="344" font-family="'Space Grotesk', sans-serif" font-size="10" font-weight="700" fill="#0A0A14" text-anchor="middle">Q</text>
+  <text x="806" y="474" font-family="'Space Grotesk', sans-serif" font-size="10" font-weight="700" fill="#0A0A14" text-anchor="middle">L</text>
+  <text x="876" y="584" font-family="'Space Grotesk', sans-serif" font-size="10" font-weight="700" fill="#0A0A14" text-anchor="middle">O(1)</text>
+
+  <!-- HUD Cards -->
+  <rect x="120" y="70" width="340" height="70" rx="8" fill="rgba(12, 18, 38, 0.85)" stroke="rgba(124, 92, 255, 0.4)" stroke-width="1"/>
+  <text x="140" y="100" font-family="'Space Grotesk', sans-serif" font-size="13" fill="#8E9CB2" letter-spacing="2">COMPETITIVE PROGRAMMING</text>
+  <text x="140" y="126" font-family="'Space Grotesk', sans-serif" font-size="19" font-weight="700" fill="#FFFFFF">Segment Tree & Range Query</text>
+
+  <rect x="940" y="70" width="320" height="70" rx="8" fill="rgba(12, 18, 38, 0.85)" stroke="rgba(0, 240, 255, 0.4)" stroke-width="1"/>
+  <text x="960" y="100" font-family="'Space Grotesk', sans-serif" font-size="13" fill="#8E9CB2" letter-spacing="2">QUERY LATENCY</text>
+  <text x="960" y="126" font-family="'Space Grotesk', sans-serif" font-size="19" font-weight="700" fill="#00F0FF">O(log N) • Zero Allocations</text>
+
+  <text x="120" y="695" font-family="'JetBrains Mono', monospace" font-size="15" fill="rgba(255,255,255,0.4)">template&lt;typename T, typename Op&gt; struct SegmentTree { ... };  // AVX2 Accelerated</text>
+</svg>
+

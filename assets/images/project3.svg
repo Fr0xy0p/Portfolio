@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1376 768" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070913"/>
+      <stop offset="50%" stop-color="#0d1124"/>
+      <stop offset="100%" stop-color="#05070e"/>
+    </linearGradient>
+    <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#7C5CFF" stop-opacity="0.2"/>
+      <stop offset="50%" stop-color="#7C5CFF" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#00F0FF" stop-opacity="1"/>
+    </linearGradient>
+    <linearGradient id="bandGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#7C5CFF" stop-opacity="0.15"/>
+      <stop offset="50%" stop-color="#7C5CFF" stop-opacity="0.02"/>
+      <stop offset="100%" stop-color="#7C5CFF" stop-opacity="0.15"/>
+    </linearGradient>
+    <pattern id="grid3" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M 48 0 L 0 0 0 48" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1376" height="768" fill="url(#bgGrad3)"/>
+  <rect width="1376" height="768" fill="url(#grid3)"/>
+  
+  <!-- Confidence Bands for Ornstein-Uhlenbeck -->
+  <path d="M 120 280 C 300 240, 500 260, 700 240 C 900 220, 1100 250, 1260 230 L 1260 510 C 1100 530, 900 500, 700 520 C 500 540, 300 510, 120 530 Z" fill="url(#bandGrad)" stroke="rgba(124, 92, 255, 0.2)" stroke-width="1.5" stroke-dasharray="4 4"/>
+  <line x1="120" y1="384" x2="1260" y2="384" stroke="rgba(0, 240, 255, 0.3)" stroke-width="1.5" stroke-dasharray="6 6"/>
+
+  <!-- High-Frequency Spread Curve -->
+  <path d="M 120 384 Q 180 320, 240 370 T 360 440 T 480 330 T 600 420 T 720 350 T 840 460 T 960 340 T 1080 390 T 1200 330 T 1260 380" fill="none" stroke="url(#lineGrad)" stroke-width="4" stroke-linecap="round"/>
+
+  <!-- Alpha Signal Points -->
+  <circle cx="360" cy="440" r="7" fill="#00F0FF" filter="drop-shadow(0 0 8px #00F0FF)"/>
+  <circle cx="480" cy="330" r="7" fill="#7C5CFF" filter="drop-shadow(0 0 8px #7C5CFF)"/>
+  <circle cx="840" cy="460" r="7" fill="#00F0FF" filter="drop-shadow(0 0 8px #00F0FF)"/>
+  <circle cx="960" cy="340" r="7" fill="#7C5CFF" filter="drop-shadow(0 0 8px #7C5CFF)"/>
+
+  <!-- HUD Overlay Elements -->
+  <rect x="120" y="80" width="300" height="70" rx="8" fill="rgba(13, 17, 36, 0.85)" stroke="rgba(124, 92, 255, 0.4)" stroke-width="1"/>
+  <text x="140" y="110" font-family="'Space Grotesk', sans-serif" font-size="14" fill="#8E9CB2" letter-spacing="2">STATISTICAL ARBITRAGE</text>
+  <text x="140" y="136" font-family="'Space Grotesk', sans-serif" font-size="20" font-weight="700" fill="#FFFFFF">Sharpe Ratio: 2.84</text>
+
+  <rect x="960" y="80" width="300" height="70" rx="8" fill="rgba(13, 17, 36, 0.85)" stroke="rgba(0, 240, 255, 0.4)" stroke-width="1"/>
+  <text x="980" y="110" font-family="'Space Grotesk', sans-serif" font-size="14" fill="#8E9CB2" letter-spacing="2">COINTEGRATION TEST</text>
+  <text x="980" y="136" font-family="'Space Grotesk', sans-serif" font-size="20" font-weight="700" fill="#00F0FF">p-value: 0.0018 (99% Conf)</text>
+
+  <text x="120" y="690" font-family="'JetBrains Mono', monospace" font-size="15" fill="rgba(255,255,255,0.4)">dX_t = θ(μ - X_t)dt + σ dW_t  // Ornstein-Uhlenbeck Mean Reversion</text>
+</svg>
+

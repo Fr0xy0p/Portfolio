@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1376 768" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080914"/>
+      <stop offset="50%" stop-color="#110d24"/>
+      <stop offset="100%" stop-color="#06050f"/>
+    </linearGradient>
+    <radialGradient id="nodeGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#7C5CFF" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#7C5CFF" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="dotGrid4" width="36" height="36" patternUnits="userSpaceOnUse">
+      <circle cx="18" cy="18" r="1" fill="rgba(255,255,255,0.08)"/>
+    </pattern>
+  </defs>
+  <rect width="1376" height="768" fill="url(#bgGrad4)"/>
+  <rect width="1376" height="768" fill="url(#dotGrid4)"/>
+
+  <!-- Graph Neural Network Connections -->
+  <g stroke="rgba(124, 92, 255, 0.25)" stroke-width="1.5">
+    <line x1="320" y1="240" x2="520" y2="180"/>
+    <line x1="320" y1="240" x2="440" y2="380"/>
+    <line x1="520" y1="180" x2="680" y2="280"/>
+    <line x1="440" y1="380" x2="680" y2="280"/>
+    <line x1="680" y1="280" x2="880" y2="200"/>
+    <line x1="680" y1="280" x2="840" y2="420"/>
+    <line x1="880" y1="200" x2="1060" y2="260"/>
+    <line x1="840" y1="420" x2="1060" y2="260"/>
+    <line x1="440" y1="380" x2="560" y2="520"/>
+    <line x1="680" y1="280" x2="560" y2="520"/>
+    <line x1="840" y1="420" x2="760" y2="560"/>
+    <line x1="560" y1="520" x2="760" y2="560"/>
+    <line x1="760" y1="560" x2="980" y2="500"/>
+    <line x1="840" y1="420" x2="980" y2="500"/>
+    <line x1="1060" y1="260" x2="980" y2="500"/>
+  </g>
+
+  <!-- Glowing Edges for High Attention Weights -->
+  <line x1="520" y1="180" x2="680" y2="280" stroke="#00F0FF" stroke-width="3" filter="drop-shadow(0 0 6px #00F0FF)"/>
+  <line x1="680" y1="280" x2="840" y2="420" stroke="#7C5CFF" stroke-width="3.5" filter="drop-shadow(0 0 8px #7C5CFF)"/>
+  <line x1="840" y1="420" x2="1060" y2="260" stroke="#00F0FF" stroke-width="2.5" opacity="0.9"/>
+  <line x1="680" y1="280" x2="880" y2="200" stroke="#FF5C8A" stroke-width="2.5" opacity="0.9"/>
+
+  <!-- Network Nodes -->
+  <circle cx="320" cy="240" r="10" fill="#7C5CFF"/>
+  <circle cx="520" cy="180" r="14" fill="#00F0FF" filter="drop-shadow(0 0 10px #00F0FF)"/>
+  <circle cx="440" cy="380" r="9" fill="#9D85FF"/>
+  <circle cx="680" cy="280" r="22" fill="#7C5CFF" filter="drop-shadow(0 0 16px #7C5CFF)"/>
+  <circle cx="880" cy="200" r="12" fill="#FF5C8A" filter="drop-shadow(0 0 10px #FF5C8A)"/>
+  <circle cx="840" cy="420" r="16" fill="#00F0FF" filter="drop-shadow(0 0 12px #00F0FF)"/>
+  <circle cx="1060" cy="260" r="13" fill="#7C5CFF"/>
+  <circle cx="560" cy="520" r="11" fill="#9D85FF"/>
+  <circle cx="760" cy="560" r="14" fill="#7C5CFF"/>
+  <circle cx="980" cy="500" r="12" fill="#00F0FF"/>
+
+  <!-- Node Labels -->
+  <text x="680" y="285" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="700" fill="#FFFFFF" text-anchor="middle">α_0</text>
+  <text x="520" y="184" font-family="'Space Grotesk', sans-serif" font-size="10" font-weight="700" fill="#080914" text-anchor="middle">ETF</text>
+  <text x="840" y="424" font-family="'Space Grotesk', sans-serif" font-size="10" font-weight="700" fill="#080914" text-anchor="middle">EQ</text>
+
+  <!-- Top HUD Card -->
+  <rect x="120" y="70" width="340" height="70" rx="8" fill="rgba(17, 13, 36, 0.85)" stroke="rgba(124, 92, 255, 0.4)" stroke-width="1"/>
+  <text x="140" y="100" font-family="'Space Grotesk', sans-serif" font-size="13" fill="#9D85FF" letter-spacing="2">GEOMETRIC DEEP LEARNING</text>
+  <text x="140" y="126" font-family="'Space Grotesk', sans-serif" font-size="19" font-weight="700" fill="#FFFFFF">Dynamic GNN Attention</text>
+
+  <rect x="940" y="70" width="320" height="70" rx="8" fill="rgba(17, 13, 36, 0.85)" stroke="rgba(0, 240, 255, 0.4)" stroke-width="1"/>
+  <text x="960" y="100" font-family="'Space Grotesk', sans-serif" font-size="13" fill="#8E9CB2" letter-spacing="2">DIVERSIFICATION BENEFIT</text>
+  <text x="960" y="126" font-family="'Space Grotesk', sans-serif" font-size="19" font-weight="700" fill="#00F0FF">+34.2% Risk Reduction</text>
+
+  <text x="120" y="695" font-family="'JetBrains Mono', monospace" font-size="15" fill="rgba(255,255,255,0.4)">h_v^{(l+1)} = σ( \sum_{u \in \mathcal{N}(v)} \alpha_{vu} W^{(l)} h_u^{(l)} )  // Graph Attention</text>
+</svg>
+
