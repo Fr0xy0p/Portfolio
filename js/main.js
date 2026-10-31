@@ -179,7 +179,7 @@
   const copyText = document.getElementById('copy-btn-text');
   if (copyBtn && copyText) {
     copyBtn.addEventListener('click', () => {
-      const email = 'yuraj.math.dev@gmail.com';
+      const email = 'yuvrajsinghhappy07@gmail.com';
       navigator.clipboard.writeText(email).then(() => {
         copyText.textContent = 'Copied to Clipboard!';
         copyBtn.style.backgroundColor = 'var(--status-emerald)';

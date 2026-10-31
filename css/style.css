@@ -171,36 +171,42 @@ button {
   position: fixed;
   top: 0;
   left: 0;
-  width: 32px;
-  height: 32px;
-  margin-left: -16px;
-  margin-top: -16px;
+  width: 26px;
+  height: 26px;
+  margin-left: -13px;
+  margin-top: -13px;
   pointer-events: none;
   z-index: 10000;
-  transition: transform 0.05s ease-out;
+  will-change: transform;
 }
 
 .cursor-dot {
   position: absolute;
-  top: 14px;
-  left: 14px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 4px;
   height: 4px;
+  border-radius: 50%;
   background-color: var(--accent-blue);
+  pointer-events: none;
 }
 
 .cursor-ring {
   position: absolute;
   inset: 0;
-  border: 1px solid var(--accent-blue);
-  opacity: 0.6;
-  transition: all var(--transition-fast);
+  border: 1.5px solid var(--accent-blue);
+  border-radius: 50%;
+  opacity: 0.7;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s ease, background-color 0.2s ease, opacity 0.2s ease;
+  pointer-events: none;
 }
 
 .custom-cursor.hovering .cursor-ring {
-  transform: scale(1.6);
+  transform: scale(1.75);
   border-color: var(--accent-bright);
-  background-color: rgba(10, 38, 238, 0.08);
+  background-color: rgba(10, 38, 238, 0.1);
+  opacity: 0.95;
 }
 
 @media (hover: none) and (pointer: coarse) {
@@ -1310,9 +1316,30 @@ button {
 .contrib-footer {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
   padding-top: 1rem;
   border-top: 1px solid var(--hairline-neutral);
+}
+
+.contrib-summary-stats {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text-tertiary);
+  letter-spacing: 0.05em;
+}
+
+.contrib-summary-stats .stat-val {
+  font-weight: 700;
+  color: var(--accent-blue);
+}
+
+.contrib-summary-stats .stat-sep {
+  opacity: 0.35;
 }
 
 .contrib-legend {
