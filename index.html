@@ -320,7 +320,7 @@
             <div class="project-details">
               <div>
                 <div class="project-meta-top">
-                  <span class="project-status-tag">[ FLAGSHIP OPEN-SOURCE REPOSITORY ]</span>
+                  <span class="project-status-tag">[ FLAGSHIP OPEN-SOURCE REPOSITORY // 01 ]</span>
                   <span class="meta-dot">·</span>
                   <span class="contrib-sync-status" id="shx-live-badge"><span class="sync-dot"></span> LIVE SYNCED</span>
                 </div>
@@ -370,7 +370,7 @@
                 <div class="project-telemetry-grid">
                   <div class="telemetry-metric-item">
                     <span class="metric-label">STARS</span>
-                    <span class="metric-val" id="shx-stars">1</span>
+                    <span class="metric-val" id="shx-stars">2</span>
                   </div>
                   <div class="telemetry-metric-item">
                     <span class="metric-label">FORKS</span>
@@ -390,7 +390,7 @@
                   </div>
                   <div class="telemetry-metric-item">
                     <span class="metric-label">LAST PUSHED</span>
-                    <span class="metric-val" id="shx-last-pushed">October 31, 2026</span>
+                    <span class="metric-val" id="shx-last-pushed">November 01, 2026</span>
                   </div>
                 </div>
 
@@ -428,9 +428,7 @@
                 <span>FIGURE 1.1: SHX EXECUTION &amp; AST SAFETY PIPELINE</span>
               </div>
 
-              <!-- High-precision Architectural Pipeline SVG Diagram -->
               <svg class="project-figure-svg" viewBox="0 0 420 320" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="shx execution and AST safety pipeline architecture diagram">
-                <!-- Background Grid -->
                 <defs>
                   <pattern id="shxGrid" width="20" height="20" patternUnits="userSpaceOnUse">
                     <path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(15,23,42,0.04)" stroke-width="0.8"/>
@@ -438,31 +436,25 @@
                 </defs>
                 <rect width="420" height="320" fill="url(#shxGrid)"/>
 
-                <!-- Stage 1: Natural Language Request -->
                 <rect x="15" y="16" width="390" height="42" rx="0" fill="var(--bg-surface-low)" stroke="var(--hairline-neutral-mid)"/>
                 <text x="28" y="33" fill="var(--accent-blue)" font-family="'JetBrains Mono', monospace" font-size="7.5" font-weight="700">INPUT // NATURAL LANGUAGE PROMPT</text>
                 <text x="28" y="47" fill="var(--text-primary)" font-family="'JetBrains Mono', monospace" font-size="9">"find files &gt; 50MB and delete older than 7d"</text>
 
-                <!-- Connector Line -->
                 <line x1="210" y1="58" x2="210" y2="78" stroke="var(--accent-blue)" stroke-width="1.2" stroke-dasharray="2 2"/>
                 <polygon points="210,82 207,76 213,76" fill="var(--accent-blue)"/>
 
-                <!-- Stage 2: Context Compilation & LLM Synthesis -->
                 <rect x="15" y="82" width="390" height="52" rx="0" fill="var(--bg-surface-low)" stroke="var(--hairline-neutral-mid)"/>
                 <text x="28" y="99" fill="var(--accent-blue)" font-family="'JetBrains Mono', monospace" font-size="7.5" font-weight="700">STAGE 01 // CONTEXT COMPILER &amp; LLM INFERENCE</text>
                 <text x="28" y="112" fill="var(--text-muted)" font-family="'JetBrains Mono', monospace" font-size="8">ENV HEURISTICS: macOS (BSD) · ZSH · DIRECTORY TREE · GIT STATUS</text>
                 <text x="28" y="125" fill="var(--text-secondary)" font-family="'JetBrains Mono', monospace" font-size="8">SYNTHESIZED: find . -type f -size +50M -mtime +7d -delete</text>
 
-                <!-- Connector Line -->
                 <line x1="210" y1="134" x2="210" y2="154" stroke="var(--accent-blue)" stroke-width="1.2" stroke-dasharray="2 2"/>
                 <polygon points="210,158 207,152 213,152" fill="var(--accent-blue)"/>
 
-                <!-- Stage 3: AST Safety Verification (bashlex) -->
                 <rect x="15" y="158" width="390" height="62" rx="0" fill="var(--bg-surface-lowest)" stroke="var(--accent-blue)" stroke-width="1.5"/>
                 <text x="28" y="176" fill="var(--accent-blue)" font-family="'JetBrains Mono', monospace" font-size="8" font-weight="700">STAGE 02 // AST STATIC SAFETY GUARD (bashlex)</text>
                 <text x="28" y="191" fill="var(--text-muted)" font-family="'JetBrains Mono', monospace" font-size="8">ABSTRACT SYNTAX TREE VALIDATION &amp; RECURSIVE HEURISTICS</text>
                 
-                <!-- Security Status Badges inside Diagram -->
                 <rect x="28" y="200" width="95" height="14" fill="rgba(34,197,94,0.12)" stroke="rgba(34,197,94,0.4)"/>
                 <text x="35" y="210" fill="#15803d" font-family="'JetBrains Mono', monospace" font-size="7" font-weight="700">✓ SAFE EXECUTION</text>
 
@@ -472,11 +464,9 @@
                 <rect x="260" y="200" width="135" height="14" fill="rgba(239,68,68,0.08)" stroke="rgba(239,68,68,0.3)"/>
                 <text x="267" y="210" fill="#b91c1c" font-family="'JetBrains Mono', monospace" font-size="7" font-weight="700">✗ BLOCKED: :(){ :|:&amp; };:</text>
 
-                <!-- Connector Line -->
                 <line x1="210" y1="220" x2="210" y2="240" stroke="var(--accent-blue)" stroke-width="1.2" stroke-dasharray="2 2"/>
                 <polygon points="210,244 207,238 213,238" fill="var(--accent-blue)"/>
 
-                <!-- Stage 4: Rich Terminal UI & Interactive Explainer -->
                 <rect x="15" y="244" width="390" height="46" rx="0" fill="var(--bg-surface-low)" stroke="var(--hairline-neutral-mid)"/>
                 <text x="28" y="261" fill="var(--accent-blue)" font-family="'JetBrains Mono', monospace" font-size="7.5" font-weight="700">OUTPUT // RICH TERMINAL EXECUTION &amp; EXPLAINER</text>
                 <text x="28" y="275" fill="var(--text-primary)" font-family="'JetBrains Mono', monospace" font-size="8">EXPLANATION: Recursively search current dir (.) for regular files (-type f)</text>
@@ -490,12 +480,169 @@
             </div>
           </article>
 
-          <!-- Flagship Repository 02: Automated-code-reviewer -->
+          <!-- Flagship Repository 02: Kavach -->
           <article class="project-card featured-flagship-card">
             <div class="project-details">
               <div>
                 <div class="project-meta-top">
-                  <span class="project-status-tag">[ FLAGSHIP OPEN-SOURCE REPOSITORY // 02 ]</span>
+                  <span class="project-status-tag">[ FLAGSHIP PRIVACY SHIELD // 02 ]</span>
+                  <span class="meta-dot">·</span>
+                  <span class="contrib-sync-status" id="kavach-live-badge"><span class="sync-dot"></span> LIVE SYNCED</span>
+                </div>
+
+                <h3 class="project-title">KAVACH: CLIENT-SIDE PRIVACY SHIELD FOR AI CHATS</h3>
+
+                <p class="project-description" id="kavach-repo-desc">
+                  A client-side local privacy proxy and browser extension for AI chatbots (ChatGPT, Gemini, Claude). Intercepts prompts and attachments locally to detect and mask Indian personal data (Aadhaar, PAN, bank account numbers, IFSC, phone numbers, addresses, names) using open-weight local ML models and regex before payloads leave the laptop, transparently de-anonymizing responses on return.
+                </p>
+
+                <!-- Architectural Capabilities -->
+                <div class="project-highlights">
+                  <div class="highlight-item">
+                    <span class="highlight-num">01 //</span>
+                    <div>
+                      <strong>Local Pre-Flight PII Redaction</strong>
+                      <p>Scans clipboard pastes, manual prompt typing, and document uploads in the browser extension before network egress.</p>
+                    </div>
+                  </div>
+                  <div class="highlight-item">
+                    <span class="highlight-num">02 //</span>
+                    <div>
+                      <strong>Indian Identity &amp; Financial NER</strong>
+                      <p>Specialized regex and open-weight tokenization for Aadhaar numbers, PAN cards, IFSC codes, bank accounts, and phone numbers.</p>
+                    </div>
+                  </div>
+                  <div class="highlight-item">
+                    <span class="highlight-num">03 //</span>
+                    <div>
+                      <strong>Two-Way Restoration De-Anonymization</strong>
+                      <p>Seamlessly maps pseudonymized tokens (<code>[PERSON_1]</code>, <code>[ID_1]</code>) back to original real-world values when the chatbot returns.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="tech-stack-row">
+                  <span class="tech-chip">Python</span>
+                  <span class="tech-chip">TypeScript</span>
+                  <span class="tech-chip">Browser Extension (MV3)</span>
+                  <span class="tech-chip">Local ML Engine</span>
+                  <span class="tech-chip">PII Redaction</span>
+                  <span class="tech-chip">Regex &amp; NER</span>
+                  <span class="tech-chip">Zero Cloud Leakage</span>
+                </div>
+
+                <!-- Live GitHub Telemetry Grid -->
+                <div class="project-telemetry-grid">
+                  <div class="telemetry-metric-item">
+                    <span class="metric-label">STARS</span>
+                    <span class="metric-val" id="kavach-stars">0</span>
+                  </div>
+                  <div class="telemetry-metric-item">
+                    <span class="metric-label">FORKS</span>
+                    <span class="metric-val" id="kavach-forks">0</span>
+                  </div>
+                  <div class="telemetry-metric-item">
+                    <span class="metric-label">OPEN ISSUES</span>
+                    <span class="metric-val" id="kavach-issues">0</span>
+                  </div>
+                  <div class="telemetry-metric-item">
+                    <span class="metric-label">LANGUAGE</span>
+                    <span class="metric-val" id="kavach-language">Python &amp; TS</span>
+                  </div>
+                  <div class="telemetry-metric-item">
+                    <span class="metric-label">LATEST COMMIT</span>
+                    <span class="metric-val mono" id="kavach-commit-hash">3736d34</span>
+                  </div>
+                  <div class="telemetry-metric-item">
+                    <span class="metric-label">LAST PUSHED</span>
+                    <span class="metric-val" id="kavach-last-pushed">November 01, 2026</span>
+                  </div>
+                </div>
+
+                <!-- Clone Command Bar -->
+                <div class="project-clone-bar">
+                  <div class="clone-code">
+                    <span class="clone-prompt">$</span>
+                    <span class="clone-cmd">git clone https://github.com/Fr0xy0p/Kavach.git</span>
+                  </div>
+                  <button class="btn-copy-clone" id="copy-kavach-clone-btn" aria-label="Copy git clone command">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                      <rect x="9" y="9" width="13" height="13" rx="0" ry="0"/>
+                      <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+                    </svg>
+                    <span id="copy-kavach-clone-text">Copy</span>
+                  </button>
+                </div>
+              </div>
+
+              <div class="project-actions" style="margin-top: 1.75rem;">
+                <a href="https://github.com/Fr0xy0p/Kavach" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                  <span>View on GitHub</span>
+                  <span class="btn-arrow" aria-hidden="true">↗</span>
+                </a>
+                <a href="https://github.com/Fr0xy0p/Kavach/blob/main/README.md" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                  <span>Read Pitch Deck</span>
+                  <span class="btn-arrow" aria-hidden="true">↗</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Architectural Blueprint Box -->
+            <div class="project-visual">
+              <div class="figure-header">
+                <span>FIGURE 2.1: KAVACH CLIENT-SIDE PRIVACY PROXY &amp; PII MASKING</span>
+              </div>
+
+              <svg class="project-figure-svg" viewBox="0 0 420 320" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Kavach client-side privacy proxy and PII masking architecture diagram">
+                <defs>
+                  <pattern id="kavachGrid" width="20" height="20" patternUnits="userSpaceOnUse">
+                    <path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(15,23,42,0.04)" stroke-width="0.8"/>
+                  </pattern>
+                </defs>
+                <rect width="420" height="320" fill="url(#kavachGrid)"/>
+
+                <rect x="15" y="16" width="390" height="44" rx="0" fill="var(--bg-surface-low)" stroke="var(--hairline-neutral-mid)"/>
+                <text x="28" y="33" fill="var(--accent-blue)" font-family="'JetBrains Mono', monospace" font-size="7.5" font-weight="700">INPUT // BROWSER PROMPT (CONTAINING SENSITIVE INDIAN PII)</text>
+                <text x="28" y="47" fill="var(--text-primary)" font-family="'JetBrains Mono', monospace" font-size="8">"Aadhaar: 4123 5812 9012, PAN: ABCDE1234F, transfer ₹50k to IFSC SBIN0001"</text>
+
+                <line x1="210" y1="60" x2="210" y2="78" stroke="var(--accent-blue)" stroke-width="1.2" stroke-dasharray="2 2"/>
+                <polygon points="210,82 207,76 213,76" fill="var(--accent-blue)"/>
+
+                <rect x="15" y="82" width="390" height="52" rx="0" fill="var(--bg-surface-lowest)" stroke="var(--accent-blue)" stroke-width="1.5"/>
+                <text x="28" y="99" fill="var(--accent-blue)" font-family="'JetBrains Mono', monospace" font-size="7.5" font-weight="700">STAGE 01 // LOCALHOST ML ENGINE &amp; REGEX REDACTION (localhost:8000)</text>
+                <text x="28" y="112" fill="var(--text-muted)" font-family="'JetBrains Mono', monospace" font-size="8">MASKING: Aadhaar -&gt; [ID_1] · PAN -&gt; [TAX_ID_1] · Bank -&gt; [ACC_1]</text>
+                <text x="28" y="125" fill="#15803d" font-family="'JetBrains Mono', monospace" font-size="7.5" font-weight="700">✓ ZERO UNENCRYPTED PII REACHES REMOTE CLOUD</text>
+
+                <line x1="210" y1="134" x2="210" y2="154" stroke="var(--accent-blue)" stroke-width="1.2" stroke-dasharray="2 2"/>
+                <polygon points="210,158 207,152 213,152" fill="var(--accent-blue)"/>
+
+                <rect x="15" y="158" width="390" height="56" rx="0" fill="var(--bg-surface-low)" stroke="var(--hairline-neutral-mid)"/>
+                <text x="28" y="175" fill="var(--accent-blue)" font-family="'JetBrains Mono', monospace" font-size="7.5" font-weight="700">STAGE 02 // SANITIZED LLM TRANSMISSION</text>
+                <text x="28" y="190" fill="var(--text-secondary)" font-family="'JetBrains Mono', monospace" font-size="8">OUTBOUND: "[ID_1] verified, process payment to [ACC_1]" -&gt; ChatGPT / Gemini</text>
+                <text x="28" y="203" fill="var(--text-muted)" font-family="'JetBrains Mono', monospace" font-size="7.5">INBOUND: Chatbot answers referring only to anonymized entity tokens</text>
+
+                <line x1="210" y1="214" x2="210" y2="234" stroke="var(--accent-blue)" stroke-width="1.2" stroke-dasharray="2 2"/>
+                <polygon points="210,238 207,232 213,232" fill="var(--accent-blue)"/>
+
+                <rect x="15" y="238" width="390" height="52" rx="0" fill="var(--bg-surface-low)" stroke="var(--hairline-neutral-mid)"/>
+                <text x="28" y="255" fill="var(--accent-blue)" font-family="'JetBrains Mono', monospace" font-size="7.5" font-weight="700">OUTPUT // LOCAL DE-ANONYMIZATION &amp; BROWSER DISPLAY</text>
+                <text x="28" y="269" fill="var(--text-primary)" font-family="'JetBrains Mono', monospace" font-size="8">RESTORED: Kavach automatically swaps [ID_1] back to real data on screen</text>
+                <text x="28" y="281" fill="var(--text-secondary)" font-family="'JetBrains Mono', monospace" font-size="7.5">PERFORMANCE: &lt; 25ms local tokenization latency · Offline open-weight models</text>
+              </svg>
+
+              <div class="figure-footer">
+                <span>LOCAL ON-DEVICE INFERENCE</span>
+                <span>INDIAN IDENTITY (PII) SHIELD</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Flagship Repository 03: Automated-code-reviewer -->
+          <article class="project-card featured-flagship-card">
+            <div class="project-details">
+              <div>
+                <div class="project-meta-top">
+                  <span class="project-status-tag">[ STATIC ANALYSIS &amp; PROFILER // 03 ]</span>
                   <span class="meta-dot">·</span>
                   <span class="contrib-sync-status" id="reviewer-live-badge"><span class="sync-dot"></span> LIVE SYNCED</span>
                 </div>
@@ -600,10 +747,9 @@
             <!-- Architectural Blueprint Box -->
             <div class="project-visual">
               <div class="figure-header">
-                <span>FIGURE 2.1: AST METRIC EXTRACTION &amp; BIG-O PROFILER</span>
+                <span>FIGURE 3.1: AST METRIC EXTRACTION &amp; BIG-O PROFILER</span>
               </div>
 
-              <!-- High-precision Architectural Pipeline SVG Diagram -->
               <svg class="project-figure-svg" viewBox="0 0 420 320" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Automated code reviewer AST metric extraction and Big-O profiler architecture diagram">
                 <defs>
                   <pattern id="reviewerGrid" width="20" height="20" patternUnits="userSpaceOnUse">
@@ -612,31 +758,25 @@
                 </defs>
                 <rect width="420" height="320" fill="url(#reviewerGrid)"/>
 
-                <!-- Stage 1: Source Submission Input -->
                 <rect x="15" y="16" width="390" height="42" rx="0" fill="var(--bg-surface-low)" stroke="var(--hairline-neutral-mid)"/>
                 <text x="28" y="33" fill="var(--accent-blue)" font-family="'JetBrains Mono', monospace" font-size="7.5" font-weight="700">INPUT // CODE SUBMISSION (PYTHON / C / C++)</text>
                 <text x="28" y="47" fill="var(--text-primary)" font-family="'JetBrains Mono', monospace" font-size="9">source: def binary_search(arr, target): ...</text>
 
-                <!-- Connector -->
                 <line x1="210" y1="58" x2="210" y2="78" stroke="var(--accent-blue)" stroke-width="1.2" stroke-dasharray="2 2"/>
                 <polygon points="210,82 207,76 213,76" fill="var(--accent-blue)"/>
 
-                <!-- Stage 2: AST Static Lexer & Metric Extraction -->
                 <rect x="15" y="82" width="390" height="52" rx="0" fill="var(--bg-surface-low)" stroke="var(--hairline-neutral-mid)"/>
                 <text x="28" y="99" fill="var(--accent-blue)" font-family="'JetBrains Mono', monospace" font-size="7.5" font-weight="700">STAGE 01 // MULTI-LANGUAGE AST STRUCTURAL PARSER</text>
                 <text x="28" y="112" fill="var(--text-muted)" font-family="'JetBrains Mono', monospace" font-size="8">METRICS: McCABE CYCLOMATIC = 3 · NESTING DEPTH = 1 · RECURSION = 0</text>
                 <text x="28" y="125" fill="var(--text-secondary)" font-family="'JetBrains Mono', monospace" font-size="8">SAFETY: 0 MEMORY LEAKS · 0 RAW DEREFERENCES · SAFE BOUNDS</text>
 
-                <!-- Connector -->
                 <line x1="210" y1="134" x2="210" y2="154" stroke="var(--accent-blue)" stroke-width="1.2" stroke-dasharray="2 2"/>
                 <polygon points="210,158 207,152 213,152" fill="var(--accent-blue)"/>
 
-                <!-- Stage 3: Asymptotic Big-O Inference -->
                 <rect x="15" y="158" width="390" height="62" rx="0" fill="var(--bg-surface-lowest)" stroke="var(--accent-blue)" stroke-width="1.5"/>
                 <text x="28" y="176" fill="var(--accent-blue)" font-family="'JetBrains Mono', monospace" font-size="8" font-weight="700">STAGE 02 // ASYMPTOTIC BIG-O COMPLEXITY INFERENCE</text>
                 <text x="28" y="191" fill="var(--text-muted)" font-family="'JetBrains Mono', monospace" font-size="8">THEORETICAL BOUND: O(log N) TIME · O(1) AUXILIARY MEMORY</text>
                 
-                <!-- Performance verification badges -->
                 <rect x="28" y="200" width="115" height="14" fill="rgba(34,197,94,0.12)" stroke="rgba(34,197,94,0.4)"/>
                 <text x="35" y="210" fill="#15803d" font-family="'JetBrains Mono', monospace" font-size="7" font-weight="700">✓ N=10^6 &lt; 1.0s BUDGET</text>
 
@@ -646,11 +786,9 @@
                 <rect x="276" y="200" width="118" height="14" fill="rgba(10,38,238,0.08)" stroke="rgba(10,38,238,0.25)"/>
                 <text x="283" y="210" fill="var(--accent-blue)" font-family="'JetBrains Mono', monospace" font-size="7" font-weight="700">★ OPTIMAL CLASS: O(log N)</text>
 
-                <!-- Connector -->
                 <line x1="210" y1="220" x2="210" y2="240" stroke="var(--accent-blue)" stroke-width="1.2" stroke-dasharray="2 2"/>
                 <polygon points="210,244 207,238 213,238" fill="var(--accent-blue)"/>
 
-                <!-- Stage 4: Adversarial Test Generation & Pair-Programming -->
                 <rect x="15" y="244" width="390" height="46" rx="0" fill="var(--bg-surface-low)" stroke="var(--hairline-neutral-mid)"/>
                 <text x="28" y="261" fill="var(--accent-blue)" font-family="'JetBrains Mono', monospace" font-size="7.5" font-weight="700">OUTPUT // ADVERSARIAL TEST SUITE &amp; SOCRATIC AI PAIR-PROGRAMMER</text>
                 <text x="28" y="275" fill="var(--text-primary)" font-family="'JetBrains Mono', monospace" font-size="8">VECTORS: [] (Empty), [42] (Singleton), [-2^31, 2^31-1] (Overflow Bound)</text>
@@ -663,7 +801,336 @@
               </div>
             </div>
           </article>
-        </div>
+
+          <!-- Flagship Repository 04: Codeforces-Questions -->
+          <article class="project-card featured-flagship-card">
+            <div class="project-details">
+              <div>
+                <div class="project-meta-top">
+                  <span class="project-status-tag">[ COMPETITIVE PROGRAMMING // 04 ]</span>
+                  <span class="meta-dot">·</span>
+                  <span class="contrib-sync-status" id="cf-live-badge"><span class="sync-dot"></span> LIVE SYNCED</span>
+                </div>
+
+                <h3 class="project-title">CODEFORCES ALGORITHMIC PROBLEM SOLVING</h3>
+
+                <p class="project-description" id="cf-repo-desc">
+                  A disciplined repository of competitive programming solutions for Codeforces contests, engineering clean, optimal, and simple Python implementations. Focuses on minimizing asymptotic runtime and space complexity across dynamic programming, number theory, greedy algorithms, two-pointer search, and graph traversal.
+                </p>
+
+                <!-- Architectural Capabilities -->
+                <div class="project-highlights">
+                  <div class="highlight-item">
+                    <span class="highlight-num">01 //</span>
+                    <div>
+                      <strong>Asymptotic Optimization &amp; Time Budgeting</strong>
+                      <p>Designed strictly for Codeforces time limits (1.0s - 2.0s), targeting optimal O(N log N) or O(N) bounds to prevent Time Limit Exceeded (TLE).</p>
+                    </div>
+                  </div>
+                  <div class="highlight-item">
+                    <span class="highlight-num">02 //</span>
+                    <div>
+                      <strong>Discrete Math &amp; Number Theory</strong>
+                      <p>High-performance mathematical routines including modular arithmetic, prime factorizations, combinatorics, and bitwise manipulations.</p>
+                    </div>
+                  </div>
+                  <div class="highlight-item">
+                    <span class="highlight-num">03 //</span>
+                    <div>
+                      <strong>Algorithmic Paradigms</strong>
+                      <p>Systematic implementations across dynamic programming with space compression, binary search over answer space, and graph traversals.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="tech-stack-row">
+                  <span class="tech-chip">Python 3</span>
+                  <span class="tech-chip">Competitive Programming</span>
+                  <span class="tech-chip">Dynamic Programming</span>
+                  <span class="tech-chip">Number Theory</span>
+                  <span class="tech-chip">Asymptotic Optimization</span>
+                  <span class="tech-chip">Discrete Math</span>
+                  <span class="tech-chip">Codeforces</span>
+                </div>
+
+                <!-- Live GitHub Telemetry Grid -->
+                <div class="project-telemetry-grid">
+                  <div class="telemetry-metric-item">
+                    <span class="metric-label">STARS</span>
+                    <span class="metric-val" id="cf-stars">0</span>
+                  </div>
+                  <div class="telemetry-metric-item">
+                    <span class="metric-label">FORKS</span>
+                    <span class="metric-val" id="cf-forks">0</span>
+                  </div>
+                  <div class="telemetry-metric-item">
+                    <span class="metric-label">OPEN ISSUES</span>
+                    <span class="metric-val" id="cf-issues">0</span>
+                  </div>
+                  <div class="telemetry-metric-item">
+                    <span class="metric-label">LANGUAGE</span>
+                    <span class="metric-val" id="cf-language">Python (100%)</span>
+                  </div>
+                  <div class="telemetry-metric-item">
+                    <span class="metric-label">LATEST COMMIT</span>
+                    <span class="metric-val mono" id="cf-commit-hash">8baa519</span>
+                  </div>
+                  <div class="telemetry-metric-item">
+                    <span class="metric-label">LAST PUSHED</span>
+                    <span class="metric-val" id="cf-last-pushed">October 28, 2026</span>
+                  </div>
+                </div>
+
+                <!-- Clone Command Bar -->
+                <div class="project-clone-bar">
+                  <div class="clone-code">
+                    <span class="clone-prompt">$</span>
+                    <span class="clone-cmd">git clone https://github.com/Fr0xy0p/Codeforces-Questions.git</span>
+                  </div>
+                  <button class="btn-copy-clone" id="copy-cf-clone-btn" aria-label="Copy git clone command">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                      <rect x="9" y="9" width="13" height="13" rx="0" ry="0"/>
+                      <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+                    </svg>
+                    <span id="copy-cf-clone-text">Copy</span>
+                  </button>
+                </div>
+              </div>
+
+              <div class="project-actions" style="margin-top: 1.75rem;">
+                <a href="https://github.com/Fr0xy0p/Codeforces-Questions" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                  <span>View on GitHub</span>
+                  <span class="btn-arrow" aria-hidden="true">↗</span>
+                </a>
+                <a href="https://codeforces.com" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                  <span>Codeforces Profile</span>
+                  <span class="btn-arrow" aria-hidden="true">↗</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Architectural Blueprint Box -->
+            <div class="project-visual">
+              <div class="figure-header">
+                <span>FIGURE 4.1: ASYMPTOTIC RUNTIME PROFILING &amp; CONTEST BENCHMARKS</span>
+              </div>
+
+              <svg class="project-figure-svg" viewBox="0 0 420 320" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Codeforces runtime profiling and contest benchmarks diagram">
+                <defs>
+                  <pattern id="cfGrid" width="20" height="20" patternUnits="userSpaceOnUse">
+                    <path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(15,23,42,0.04)" stroke-width="0.8"/>
+                  </pattern>
+                </defs>
+                <rect width="420" height="320" fill="url(#cfGrid)"/>
+
+                <rect x="15" y="16" width="390" height="42" rx="0" fill="var(--bg-surface-low)" stroke="var(--hairline-neutral-mid)"/>
+                <text x="28" y="33" fill="var(--accent-blue)" font-family="'JetBrains Mono', monospace" font-size="7.5" font-weight="700">INPUT // COMPETITIVE CONTEST PROBLEM CONSTRAINTS</text>
+                <text x="28" y="47" fill="var(--text-primary)" font-family="'JetBrains Mono', monospace" font-size="8">N &lt;= 2 * 10^5 · T &lt;= 10^4 · Time Limit: 1.0s · Memory Limit: 256MB</text>
+
+                <line x1="210" y1="58" x2="210" y2="78" stroke="var(--accent-blue)" stroke-width="1.2" stroke-dasharray="2 2"/>
+                <polygon points="210,82 207,76 213,76" fill="var(--accent-blue)"/>
+
+                <rect x="15" y="82" width="390" height="52" rx="0" fill="var(--bg-surface-low)" stroke="var(--hairline-neutral-mid)"/>
+                <text x="28" y="99" fill="var(--accent-blue)" font-family="'JetBrains Mono', monospace" font-size="7.5" font-weight="700">STAGE 01 // PARADIGM &amp; INVARIANT SELECTION</text>
+                <text x="28" y="112" fill="var(--text-muted)" font-family="'JetBrains Mono', monospace" font-size="8">APPROACH: DYNAMIC PROGRAMMING + MONOTONIC TWO-POINTER SWEEP</text>
+                <text x="28" y="125" fill="var(--text-secondary)" font-family="'JetBrains Mono', monospace" font-size="8">COMPLEXITY: O(N log N) WORST CASE · ZERO RECURSION OVERHEAD</text>
+
+                <line x1="210" y1="134" x2="210" y2="154" stroke="var(--accent-blue)" stroke-width="1.2" stroke-dasharray="2 2"/>
+                <polygon points="210,158 207,152 213,152" fill="var(--accent-blue)"/>
+
+                <rect x="15" y="158" width="390" height="62" rx="0" fill="var(--bg-surface-lowest)" stroke="var(--accent-blue)" stroke-width="1.5"/>
+                <text x="28" y="176" fill="var(--accent-blue)" font-family="'JetBrains Mono', monospace" font-size="8" font-weight="700">STAGE 02 // ASYMPTOTIC RUNTIME PROFILING</text>
+                <text x="28" y="191" fill="var(--text-muted)" font-family="'JetBrains Mono', monospace" font-size="8">TOTAL COMPUTATIONS: 3.6 * 10^6 OPS &lt;&lt; 10^8 SAFE OPERATIONS CEILING</text>
+                
+                <rect x="28" y="200" width="115" height="14" fill="rgba(34,197,94,0.12)" stroke="rgba(34,197,94,0.4)"/>
+                <text x="35" y="210" fill="#15803d" font-family="'JetBrains Mono', monospace" font-size="7" font-weight="700">✓ VERDICT: ACCEPTED</text>
+
+                <rect x="152" y="200" width="115" height="14" fill="rgba(34,197,94,0.12)" stroke="rgba(34,197,94,0.4)"/>
+                <text x="159" y="210" fill="#15803d" font-family="'JetBrains Mono', monospace" font-size="7" font-weight="700">✓ TIME: 46ms / 1000ms</text>
+
+                <rect x="276" y="200" width="118" height="14" fill="rgba(10,38,238,0.08)" stroke="rgba(10,38,238,0.25)"/>
+                <text x="283" y="210" fill="var(--accent-blue)" font-family="'JetBrains Mono', monospace" font-size="7" font-weight="700">★ MEMORY: 14.2MB</text>
+
+                <line x1="210" y1="220" x2="210" y2="240" stroke="var(--accent-blue)" stroke-width="1.2" stroke-dasharray="2 2"/>
+                <polygon points="210,244 207,238 213,238" fill="var(--accent-blue)"/>
+
+                <rect x="15" y="244" width="390" height="46" rx="0" fill="var(--bg-surface-low)" stroke="var(--hairline-neutral-mid)"/>
+                <text x="28" y="261" fill="var(--accent-blue)" font-family="'JetBrains Mono', monospace" font-size="7.5" font-weight="700">OUTPUT // IDIOMATIC &amp; ROBUST PYTHON SUBMISSION</text>
+                <text x="28" y="275" fill="var(--text-primary)" font-family="'JetBrains Mono', monospace" font-size="8">Fast I/O: sys.stdin.readline · Memory: Static single-pass allocation</text>
+                <text x="28" y="284" fill="var(--text-secondary)" font-family="'JetBrains Mono', monospace" font-size="7.5">STABILITY: Passed 100+ system test suites across pretests and final hacks</text>
+              </svg>
+
+              <div class="figure-footer">
+                <span>CONTEST BENCHMARKED</span>
+                <span>ZERO TLE ASYMPTOTICS</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Flagship Repository 05: MINI-PROJECTS -->
+          <article class="project-card featured-flagship-card">
+            <div class="project-details">
+              <div>
+                <div class="project-meta-top">
+                  <span class="project-status-tag">[ PROCEDURAL SYSTEMS &amp; CLI // 05 ]</span>
+                  <span class="meta-dot">·</span>
+                  <span class="contrib-sync-status" id="mini-live-badge"><span class="sync-dot"></span> LIVE SYNCED</span>
+                </div>
+
+                <h3 class="project-title">PYTHON COMPUTATIONAL &amp; INTERACTIVE CLI SYSTEMS</h3>
+
+                <p class="project-description" id="mini-repo-desc">
+                  A suite of interactive Python CLI applications and procedural software systems exploring fundamental programming abstractions, terminal user interaction, state machines, and algorithmic control flow. Features transaction carts, inventory management engines, numerical guessing loops, and formatted voucher receipts.
+                </p>
+
+                <!-- Architectural Capabilities -->
+                <div class="project-highlights">
+                  <div class="highlight-item">
+                    <span class="highlight-num">01 //</span>
+                    <div>
+                      <strong>Finite State Machines &amp; Control Flow</strong>
+                      <p>Robust control flow loops handling dynamic user interaction, state persistence, input sanitization, and graceful boundary exits.</p>
+                    </div>
+                  </div>
+                  <div class="highlight-item">
+                    <span class="highlight-num">02 //</span>
+                    <div>
+                      <strong>Transaction &amp; Inventory Modeling</strong>
+                      <p>Object/dictionary data modeling for shopping cart ledgers, concession stand balances, and real-time transaction tallying.</p>
+                    </div>
+                  </div>
+                  <div class="highlight-item">
+                    <span class="highlight-num">03 //</span>
+                    <div>
+                      <strong>Interactive Game Loops &amp; Probability</strong>
+                      <p>Probabilistic game systems (Rock-Paper-Scissors, Number Guessing, Quizzes) featuring replay states, score tracking, and ANSI terminal displays.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="tech-stack-row">
+                  <span class="tech-chip">Python 3</span>
+                  <span class="tech-chip">Procedural Architecture</span>
+                  <span class="tech-chip">State Machines</span>
+                  <span class="tech-chip">Interactive CLI</span>
+                  <span class="tech-chip">Data Structures</span>
+                  <span class="tech-chip">Control Flow</span>
+                  <span class="tech-chip">Exception Handling</span>
+                </div>
+
+                <!-- Live GitHub Telemetry Grid -->
+                <div class="project-telemetry-grid">
+                  <div class="telemetry-metric-item">
+                    <span class="metric-label">STARS</span>
+                    <span class="metric-val" id="mini-stars">0</span>
+                  </div>
+                  <div class="telemetry-metric-item">
+                    <span class="metric-label">FORKS</span>
+                    <span class="metric-val" id="mini-forks">0</span>
+                  </div>
+                  <div class="telemetry-metric-item">
+                    <span class="metric-label">OPEN ISSUES</span>
+                    <span class="metric-val" id="mini-issues">0</span>
+                  </div>
+                  <div class="telemetry-metric-item">
+                    <span class="metric-label">LANGUAGE</span>
+                    <span class="metric-val" id="mini-language">Python (100%)</span>
+                  </div>
+                  <div class="telemetry-metric-item">
+                    <span class="metric-label">LATEST COMMIT</span>
+                    <span class="metric-val mono" id="mini-commit-hash">72658da</span>
+                  </div>
+                  <div class="telemetry-metric-item">
+                    <span class="metric-label">LAST PUSHED</span>
+                    <span class="metric-val" id="mini-last-pushed">October 09, 2026</span>
+                  </div>
+                </div>
+
+                <!-- Clone Command Bar -->
+                <div class="project-clone-bar">
+                  <div class="clone-code">
+                    <span class="clone-prompt">$</span>
+                    <span class="clone-cmd">git clone https://github.com/Fr0xy0p/MINI-PROJECTS.git</span>
+                  </div>
+                  <button class="btn-copy-clone" id="copy-mini-clone-btn" aria-label="Copy git clone command">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                      <rect x="9" y="9" width="13" height="13" rx="0" ry="0"/>
+                      <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+                    </svg>
+                    <span id="copy-mini-clone-text">Copy</span>
+                  </button>
+                </div>
+              </div>
+
+              <div class="project-actions" style="margin-top: 1.75rem;">
+                <a href="https://github.com/Fr0xy0p/MINI-PROJECTS" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                  <span>View on GitHub</span>
+                  <span class="btn-arrow" aria-hidden="true">↗</span>
+                </a>
+                <a href="https://github.com/Fr0xy0p/MINI-PROJECTS/commits/main" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                  <span>Commit History</span>
+                  <span class="btn-arrow" aria-hidden="true">↗</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Architectural Blueprint Box -->
+            <div class="project-visual">
+              <div class="figure-header">
+                <span>FIGURE 5.1: MODULAR PROCEDURAL STATE MACHINE &amp; CLI EVENT LOOP</span>
+              </div>
+
+              <svg class="project-figure-svg" viewBox="0 0 420 320" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Mini projects procedural state machine and CLI event loop diagram">
+                <defs>
+                  <pattern id="miniGrid" width="20" height="20" patternUnits="userSpaceOnUse">
+                    <path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(15,23,42,0.04)" stroke-width="0.8"/>
+                  </pattern>
+                </defs>
+                <rect width="420" height="320" fill="url(#miniGrid)"/>
+
+                <rect x="15" y="16" width="390" height="42" rx="0" fill="var(--bg-surface-low)" stroke="var(--hairline-neutral-mid)"/>
+                <text x="28" y="33" fill="var(--accent-blue)" font-family="'JetBrains Mono', monospace" font-size="7.5" font-weight="700">INPUT // INTERACTIVE TERMINAL EVENT STDIN</text>
+                <text x="28" y="47" fill="var(--text-primary)" font-family="'JetBrains Mono', monospace" font-size="8">stdin: [item_selection, price_catalog, cart_quantity, payment_tendered]</text>
+
+                <line x1="210" y1="58" x2="210" y2="78" stroke="var(--accent-blue)" stroke-width="1.2" stroke-dasharray="2 2"/>
+                <polygon points="210,82 207,76 213,76" fill="var(--accent-blue)"/>
+
+                <rect x="15" y="82" width="390" height="52" rx="0" fill="var(--bg-surface-low)" stroke="var(--hairline-neutral-mid)"/>
+                <text x="28" y="99" fill="var(--accent-blue)" font-family="'JetBrains Mono', monospace" font-size="7.5" font-weight="700">STAGE 01 // FINITE STATE MACHINE (FSM) &amp; SANITIZATION</text>
+                <text x="28" y="112" fill="var(--text-muted)" font-family="'JetBrains Mono', monospace" font-size="8">STATES: INIT -&gt; SELECT_ITEMS -&gt; VALIDATE_INPUT -&gt; COMPUTE_TOTAL</text>
+                <text x="28" y="125" fill="var(--text-secondary)" font-family="'JetBrains Mono', monospace" font-size="8">INPUT SANITIZATION: ValueError / IndexError Guardrails</text>
+
+                <line x1="210" y1="134" x2="210" y2="154" stroke="var(--accent-blue)" stroke-width="1.2" stroke-dasharray="2 2"/>
+                <polygon points="210,158 207,152 213,152" fill="var(--accent-blue)"/>
+
+                <rect x="15" y="158" width="390" height="62" rx="0" fill="var(--bg-surface-lowest)" stroke="var(--accent-blue)" stroke-width="1.5"/>
+                <text x="28" y="176" fill="var(--accent-blue)" font-family="'JetBrains Mono', monospace" font-size="8" font-weight="700">STAGE 02 // TRANSACTION COMPUTATION ENGINE</text>
+                <text x="28" y="191" fill="var(--text-muted)" font-family="'JetBrains Mono', monospace" font-size="8">LEDGER DATA STRUCTURE: DICTIONARY MAPPING &amp; RUNNING SUM</text>
+                
+                <rect x="28" y="200" width="115" height="14" fill="rgba(34,197,94,0.12)" stroke="rgba(34,197,94,0.4)"/>
+                <text x="35" y="210" fill="#15803d" font-family="'JetBrains Mono', monospace" font-size="7" font-weight="700">✓ STATE: BALANCED</text>
+
+                <rect x="152" y="200" width="115" height="14" fill="rgba(34,197,94,0.12)" stroke="rgba(34,197,94,0.4)"/>
+                <text x="159" y="210" fill="#15803d" font-family="'JetBrains Mono', monospace" font-size="7" font-weight="700">✓ TAX CALCULATION</text>
+
+                <rect x="276" y="200" width="118" height="14" fill="rgba(10,38,238,0.08)" stroke="rgba(10,38,238,0.25)"/>
+                <text x="283" y="210" fill="var(--accent-blue)" font-family="'JetBrains Mono', monospace" font-size="7" font-weight="700">★ 0 DEPENDENCIES</text>
+
+                <line x1="210" y1="220" x2="210" y2="240" stroke="var(--accent-blue)" stroke-width="1.2" stroke-dasharray="2 2"/>
+                <polygon points="210,244 207,238 213,238" fill="var(--accent-blue)"/>
+
+                <rect x="15" y="244" width="390" height="46" rx="0" fill="var(--bg-surface-low)" stroke="var(--hairline-neutral-mid)"/>
+                <text x="28" y="261" fill="var(--accent-blue)" font-family="'JetBrains Mono', monospace" font-size="7.5" font-weight="700">OUTPUT // FORMATTED CLI RECEIPT VOUCHER &amp; REPLAY</text>
+                <text x="28" y="275" fill="var(--text-primary)" font-family="'JetBrains Mono', monospace" font-size="8">Formatted itemized ledger summary with subtotal, tax, and change returned</text>
+                <text x="28" y="284" fill="var(--text-secondary)" font-family="'JetBrains Mono', monospace" font-size="7.5">EVENT LOOP: Seamless prompt: "Play again / Next customer? [y/N]"</text>
+              </svg>
+
+              <div class="figure-footer">
+                <span>MODULAR PROCEDURAL ARCHITECTURE</span>
+                <span>ZERO DEPENDENCY PYTHON 3</span>
+              </div>
+            </div>
+          </article></div>
       </div>
     </section>
 

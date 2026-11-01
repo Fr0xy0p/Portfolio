@@ -433,7 +433,11 @@
           issuesElem.textContent = repo.open_issues_count.toLocaleString();
         }
         if (langElem && repo.language) {
-          langElem.textContent = `${repo.language} (100%)`;
+          if (repoName === 'Kavach') {
+            langElem.textContent = 'Python & TS';
+          } else {
+            langElem.textContent = `${repo.language} (100%)`;
+          }
         }
         if (lastPushedElem && repo.pushed_at) {
           lastPushedElem.textContent = formatRelativeTime(repo.pushed_at);
@@ -524,6 +528,22 @@
     copyTextId: 'copy-clone-text'
   });
 
+  // Initialize live sync for Kavach
+  setupLiveRepoSync({
+    repoUser: 'Fr0xy0p',
+    repoName: 'Kavach',
+    starsId: 'kavach-stars',
+    forksId: 'kavach-forks',
+    issuesId: 'kavach-issues',
+    langId: 'kavach-language',
+    commitHashId: 'kavach-commit-hash',
+    lastPushedId: 'kavach-last-pushed',
+    badgeId: 'kavach-live-badge',
+    descId: 'kavach-repo-desc',
+    copyBtnId: 'copy-kavach-clone-btn',
+    copyTextId: 'copy-kavach-clone-text'
+  });
+
   // Initialize live sync for Automated-code-reviewer
   setupLiveRepoSync({
     repoUser: 'Fr0xy0p',
@@ -538,6 +558,38 @@
     descId: 'reviewer-repo-desc',
     copyBtnId: 'copy-reviewer-clone-btn',
     copyTextId: 'copy-reviewer-clone-text'
+  });
+
+  // Initialize live sync for Codeforces-Questions
+  setupLiveRepoSync({
+    repoUser: 'Fr0xy0p',
+    repoName: 'Codeforces-Questions',
+    starsId: 'cf-stars',
+    forksId: 'cf-forks',
+    issuesId: 'cf-issues',
+    langId: 'cf-language',
+    commitHashId: 'cf-commit-hash',
+    lastPushedId: 'cf-last-pushed',
+    badgeId: 'cf-live-badge',
+    descId: 'cf-repo-desc',
+    copyBtnId: 'copy-cf-clone-btn',
+    copyTextId: 'copy-cf-clone-text'
+  });
+
+  // Initialize live sync for MINI-PROJECTS
+  setupLiveRepoSync({
+    repoUser: 'Fr0xy0p',
+    repoName: 'MINI-PROJECTS',
+    starsId: 'mini-stars',
+    forksId: 'mini-forks',
+    issuesId: 'mini-issues',
+    langId: 'mini-language',
+    commitHashId: 'mini-commit-hash',
+    lastPushedId: 'mini-last-pushed',
+    badgeId: 'mini-live-badge',
+    descId: 'mini-repo-desc',
+    copyBtnId: 'copy-mini-clone-btn',
+    copyTextId: 'copy-mini-clone-text'
   });
 
 })();
