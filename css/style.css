@@ -534,12 +534,12 @@ button {
   pointer-events: none;
 }
 
-/* Middle: Exact Editorial Portrait from Reference (z-index: 4) */
+/* Middle: Editorial Portrait of Yuvraj Singh (z-index: 4) */
 .card-portrait-stage {
   position: absolute;
   bottom: -2px;
-  left: 22%;
-  width: min(530px, 52vw);
+  left: 18%;
+  width: min(720px, 66vw);
   height: 112%;
   z-index: 4;
   transform: translateZ(48px);
@@ -554,7 +554,7 @@ button {
   width: 100%;
   object-fit: contain;
   object-position: bottom center;
-  filter: contrast(1.04) brightness(0.98);
+  filter: contrast(1.05) brightness(0.98);
 }
 
 /* Word 2: 'Singh' sits to the right, overlapping the neck with clear space from Yuvraj (z-index: 6) */
@@ -705,8 +705,8 @@ button {
     left: 48%;
   }
   .card-portrait-stage {
-    left: 10%;
-    width: 60vw;
+    left: 5%;
+    width: 80vw;
   }
 }
 
