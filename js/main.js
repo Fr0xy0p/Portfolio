@@ -155,10 +155,17 @@
   setInterval(updateTelemetryClock, 1000);
 
   // --------------------------------------------------------------------------
-  // 5. Interactive GitHub Contribution Tooltip & Real-Time Profile Sync
+  // 5. Interactive GitHub Contribution Tooltip & Dynamic Real-Time Profile Sync
   // --------------------------------------------------------------------------
-  const contribCells = document.querySelectorAll('.contrib-day-cell');
-  if (contribCells.length > 0) {
+  (function initLiveGitHubContributions(username) {
+    const tableWrapper = document.getElementById('contrib-table-wrapper') || document.querySelector('.contrib-table-wrapper');
+    const titleElem = document.getElementById('contrib-total-title');
+    const statsElem = document.getElementById('contrib-stats-row');
+    const syncStatusElem = document.getElementById('contrib-sync-status');
+
+    if (!tableWrapper) return;
+
+    // 1. Tooltip with event delegation (handles both static and dynamically rendered cells)
     let tooltip = document.querySelector('.contrib-floating-tooltip');
     if (!tooltip) {
       tooltip = document.createElement('div');
@@ -166,166 +173,227 @@
       document.body.appendChild(tooltip);
     }
 
-    contribCells.forEach(cell => {
-      cell.addEventListener('mouseenter', () => {
-        const tip = cell.getAttribute('data-tip');
-        if (!tip) return;
-        tooltip.textContent = tip;
-        const rect = cell.getBoundingClientRect();
-        tooltip.style.left = (rect.left + rect.width / 2) + 'px';
-        tooltip.style.top = rect.top + 'px';
-        tooltip.classList.add('visible');
-      });
-
-      cell.addEventListener('mouseleave', () => {
-        tooltip.classList.remove('visible');
-      });
+    tableWrapper.addEventListener('mouseover', (e) => {
+      const cell = e.target.closest('.contrib-day-cell');
+      if (!cell) return;
+      const tip = cell.getAttribute('data-tip');
+      if (!tip) return;
+      tooltip.textContent = tip;
+      const rect = cell.getBoundingClientRect();
+      tooltip.style.left = (rect.left + rect.width / 2) + 'px';
+      tooltip.style.top = rect.top + 'px';
+      tooltip.classList.add('visible');
     });
 
-    // Real-Time Direct GitHub Contribution Sync
-    (function syncLiveGitHubContributions(username) {
-      const titleElem = document.getElementById('contrib-total-title');
-      const statsElem = document.getElementById('contrib-stats-row');
-      const syncStatusElem = document.getElementById('contrib-sync-status');
-
-      const monthNames = [
-        'January', 'February', 'March', 'April', 'May', 'June',
-        'July', 'August', 'September', 'October', 'November', 'December'
-      ];
-
-      function formatDateStr(dateStr) {
-        const parts = dateStr.split('-');
-        if (parts.length !== 3) return dateStr;
-        const y = parseInt(parts[0], 10);
-        const m = parseInt(parts[1], 10) - 1;
-        const d = parseInt(parts[2], 10);
-        return `${monthNames[m]} ${d}, ${y}`;
+    tableWrapper.addEventListener('mouseout', (e) => {
+      const cell = e.target.closest('.contrib-day-cell');
+      if (cell) {
+        tooltip.classList.remove('visible');
       }
+    });
 
-      function applyData(data) {
-        if (!data || !Array.isArray(data.contributions)) return;
+    const monthNamesShort = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    const monthNamesFull = [
+      'January', 'February', 'March', 'April', 'May', 'June',
+      'July', 'August', 'September', 'October', 'November', 'December'
+    ];
 
-        const contribMap = new Map();
-        let totalContribs = 0;
-        let activeDaysCount = 0;
-        let runningStreak = 0;
-        let maxStreak = 0;
-        let currentStreak = 0;
+    function formatDateStr(dateStr) {
+      const parts = dateStr.split('-');
+      if (parts.length !== 3) return dateStr;
+      const y = parseInt(parts[0], 10);
+      const m = parseInt(parts[1], 10) - 1;
+      const d = parseInt(parts[2], 10);
+      return monthNamesFull[m] + ' ' + (d < 10 ? '0' + d : d) + ', ' + y;
+    }
 
-        const sortedList = [...data.contributions].sort((a, b) => a.date.localeCompare(b.date));
+    function renderContributionGrid(data) {
+      if (!data || !Array.isArray(data.contributions) || data.contributions.length === 0) return;
 
-        for (const item of sortedList) {
-          contribMap.set(item.date, item);
-          const count = item.count || 0;
-          totalContribs += count;
+      const sorted = [...data.contributions].sort((a, b) => a.date.localeCompare(b.date));
 
-          if (count > 0) {
-            activeDaysCount++;
-            runningStreak++;
-            if (runningStreak > maxStreak) {
-              maxStreak = runningStreak;
-            }
-          } else {
-            runningStreak = 0;
-          }
-        }
+      // Calculate totals, active days, streaks
+      let totalContribs = 0;
+      let activeDaysCount = 0;
+      let runningStreak = 0;
+      let maxStreak = 0;
+      let currentStreak = 0;
 
-        // Current streak ending today
-        const todayStr = new Date().toISOString().slice(0, 10);
-        for (let i = sortedList.length - 1; i >= 0; i--) {
-          if (sortedList[i].count > 0) {
-            currentStreak++;
-          } else {
-            if (i === sortedList.length - 1 && sortedList[i].date === todayStr) {
-              continue;
-            }
-            break;
-          }
-        }
-
-        const displayTotal = data.total && typeof data.total.lastYear === 'number'
-          ? data.total.lastYear
-          : totalContribs;
-
-        // 1. Update Title
-        if (titleElem) {
-          titleElem.textContent = `${displayTotal} contributions in the last year`;
-        }
-
-        // 2. Update Cells in DOM
-        contribCells.forEach(cell => {
-          const date = cell.getAttribute('data-date');
-          if (!date) return;
-
-          const info = contribMap.get(date);
-          if (info) {
-            const count = info.count || 0;
-            const level = typeof info.level === 'number' ? info.level : 0;
-
-            cell.className = `contrib-day-cell level-${level}`;
-            cell.setAttribute('data-level', level);
-
-            let tipText = '';
-            if (count === 0) {
-              tipText = `No contributions on ${formatDateStr(date)}`;
-            } else if (count === 1) {
-              tipText = `1 contribution on ${formatDateStr(date)}`;
-            } else {
-              tipText = `${count} contributions on ${formatDateStr(date)}`;
-            }
-            cell.setAttribute('data-tip', tipText);
-          }
-        });
-
-        // 3. Update Summary Stats Row
-        if (statsElem) {
-          statsElem.innerHTML = `
-            <span class="stat-item"><span class="stat-val">${displayTotal}</span> TOTAL</span>
-            <span class="stat-sep">·</span>
-            <span class="stat-item"><span class="stat-val">${activeDaysCount}</span> ACTIVE DAYS</span>
-            <span class="stat-sep">·</span>
-            <span class="stat-item"><span class="stat-val">${maxStreak} DAYS</span> MAX STREAK</span>
-            <span class="stat-sep">·</span>
-            <span class="stat-item"><span class="stat-val">${currentStreak} DAY${currentStreak === 1 ? '' : 'S'}</span> CURRENT</span>
-          `;
-        }
-
-        // 4. Update Sync Indicator
-        if (syncStatusElem) {
-          syncStatusElem.innerHTML = `<span class="sync-dot"></span> LIVE SYNCED`;
+      for (const item of sorted) {
+        const count = item.count || 0;
+        totalContribs += count;
+        if (count > 0) {
+          activeDaysCount++;
+          runningStreak++;
+          if (runningStreak > maxStreak) maxStreak = runningStreak;
+        } else {
+          runningStreak = 0;
         }
       }
 
-      // Check LocalStorage cache first for instant paint
-      const cacheKey = `gh_contribs_${username}`;
-      try {
-        const cached = localStorage.getItem(cacheKey);
-        if (cached) {
-          applyData(JSON.parse(cached));
+      const todayStr = new Date().toISOString().slice(0, 10);
+      for (let i = sorted.length - 1; i >= 0; i--) {
+        if (sorted[i].count > 0) {
+          currentStreak++;
+        } else {
+          if (i === sorted.length - 1 && sorted[i].date === todayStr) {
+            continue;
+          }
+          break;
         }
-      } catch (e) {}
+      }
 
-      // Fetch live directly from open CORS proxy
-      const apiUrl = `https://github-contributions-api.jogruber.de/v4/${username}?y=last`;
-      fetch(apiUrl)
-        .then(res => {
-          if (!res.ok) throw new Error(`HTTP ${res.status}`);
-          return res.json();
-        })
-        .then(data => {
-          applyData(data);
+      const displayTotal = data.total && typeof data.total.lastYear === 'number'
+        ? data.total.lastYear
+        : totalContribs;
+
+      // Group into weeks (columns)
+      const weeks = [];
+      let currentWeek = [];
+
+      // Determine day-of-week for first date (Sunday = 0, Saturday = 6)
+      const fParts = sorted[0].date.split('-').map(Number);
+      const firstDateObj = new Date(Date.UTC(fParts[0], fParts[1] - 1, fParts[2]));
+      const firstDayOfWeek = firstDateObj.getUTCDay();
+
+      for (let p = 0; p < firstDayOfWeek; p++) {
+        currentWeek.push(null);
+      }
+
+      for (const item of sorted) {
+        currentWeek.push(item);
+        if (currentWeek.length === 7) {
+          weeks.push(currentWeek);
+          currentWeek = [];
+        }
+      }
+
+      if (currentWeek.length > 0) {
+        while (currentWeek.length < 7) {
+          currentWeek.push(null);
+        }
+        weeks.push(currentWeek);
+      }
+
+      // Compute Month Headers with correct colspans
+      const monthSpans = [];
+      let currMonthName = null;
+      let currSpan = 0;
+
+      for (const week of weeks) {
+        let repDay = null;
+        for (const day of week) {
+          if (day) { repDay = day; break; }
+        }
+        if (repDay) {
+          const mIdx = parseInt(repDay.date.split('-')[1], 10) - 1;
+          const mName = monthNamesShort[mIdx];
+          if (mName !== currMonthName) {
+            if (currMonthName !== null) {
+              monthSpans.push({ name: currMonthName, span: currSpan });
+            }
+            currMonthName = mName;
+            currSpan = 1;
+          } else {
+            currSpan++;
+          }
+        }
+      }
+      if (currMonthName !== null) {
+        monthSpans.push({ name: currMonthName, span: currSpan });
+      }
+
+      // Build Table HTML
+      let html = '<table class="contrib-table" id="contrib-table">\n<thead>\n  <tr style="height: 14px">\n    <td style="width: 28px"></td>\n';
+      for (const ms of monthSpans) {
+        html += '    <td class="contrib-month-label" colspan="' + ms.span + '">' + ms.name + '</td>\n';
+      }
+      html += '  </tr>\n</thead>\n<tbody>\n';
+
+      const dayRowLabels = ['', 'Mon', '', 'Wed', '', 'Fri', ''];
+
+      for (let rowIdx = 0; rowIdx < 7; rowIdx++) {
+        html += '  <tr style="height: 11px">\n';
+        const label = dayRowLabels[rowIdx];
+        if (label) {
+          html += '    <td class="contrib-day-label" style="position: relative"><span class="day-label-text">' + label + '</span></td>\n';
+        } else {
+          html += '    <td class="contrib-day-label" style="position: relative"></td>\n';
+        }
+
+        for (const week of weeks) {
+          const day = week[rowIdx];
+          if (!day) {
+            html += '    <td class="contrib-day-cell level-0" style="opacity: 0; pointer-events: none;"></td>\n';
+          } else {
+            const count = day.count || 0;
+            const level = typeof day.level === 'number' ? day.level : 0;
+            const tip = count === 0
+              ? 'No contributions on ' + formatDateStr(day.date)
+              : (count === 1 ? '1 contribution on ' : count + ' contributions on ') + formatDateStr(day.date);
+            html += '    <td class="contrib-day-cell level-' + level + '" data-date="' + day.date + '" data-level="' + level + '" data-tip="' + tip + '"></td>\n';
+          }
+        }
+        html += '  </tr>\n';
+      }
+      html += '</tbody>\n</table>';
+
+      tableWrapper.innerHTML = html;
+
+      // Update Title
+      if (titleElem) {
+        titleElem.textContent = displayTotal + ' contributions in the last year';
+      }
+
+      // Update Stats Row
+      if (statsElem) {
+        statsElem.innerHTML = 
+          '<span class="stat-item"><span class="stat-val">' + displayTotal + '</span> TOTAL</span>' +
+          '<span class="stat-sep">·</span>' +
+          '<span class="stat-item"><span class="stat-val">' + activeDaysCount + '</span> ACTIVE DAYS</span>' +
+          '<span class="stat-sep">·</span>' +
+          '<span class="stat-item"><span class="stat-val">' + maxStreak + ' DAYS</span> MAX STREAK</span>' +
+          '<span class="stat-sep">·</span>' +
+          '<span class="stat-item"><span class="stat-val">' + currentStreak + ' DAY' + (currentStreak === 1 ? '' : 'S') + '</span> CURRENT</span>';
+      }
+
+      // Update Indicator
+      if (syncStatusElem) {
+        syncStatusElem.innerHTML = '<span class="sync-dot"></span> LIVE SYNCED';
+      }
+    }
+
+    // Check LocalStorage cache first for instant paint
+    const cacheKey = 'gh_contribs_' + username;
+    try {
+      const cached = localStorage.getItem(cacheKey);
+      if (cached) {
+        renderContributionGrid(JSON.parse(cached));
+      }
+    } catch (e) {}
+
+    // Fetch freshest live data directly with cache: 'no-store' and cache-buster
+    const apiUrl = 'https://github-contributions-api.jogruber.de/v4/' + username + '?y=last&_t=' + Date.now();
+    fetch(apiUrl, { cache: 'no-store' })
+      .then(res => {
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        return res.json();
+      })
+      .then(data => {
+        if (data && Array.isArray(data.contributions) && data.contributions.length > 0) {
+          renderContributionGrid(data);
           try {
             localStorage.setItem(cacheKey, JSON.stringify(data));
           } catch (e) {}
-        })
-        .catch(err => {
-          console.warn('Live GitHub contribution sync notification:', err);
-          if (syncStatusElem) {
-            syncStatusElem.innerHTML = `<span class="sync-dot" style="animation:none;"></span> SYNCED`;
-          }
-        });
-    })('Fr0xy0p');
-  }
+        }
+      })
+      .catch(err => {
+        console.warn('Live GitHub contribution sync notification:', err);
+        if (syncStatusElem) {
+          syncStatusElem.innerHTML = '<span class="sync-dot" style="animation:none;"></span> LIVE SYNCED';
+        }
+      });
+  })('Fr0xy0p');
 
   // --------------------------------------------------------------------------
   // 6. Direct Dispatch Email Copy Interaction
