@@ -30,7 +30,7 @@
     }, { passive: true });
 
     // Interactive Hover Elements
-    const interactiveElements = 'a, button, input, textarea, .project-card, .language-card, .objective-card, .timeline-card, .social-card, .contrib-day-cell, .domain-card';
+    const interactiveElements = 'a, button, input, textarea, .project-card, .language-card, .objective-card, .timeline-card, .social-card, .contrib-day-cell, .domain-card, .stage-3d-viewport-card, .card-nav-link, .card-social-item, .stage-3d-mode-btn';
     document.addEventListener('mouseover', (e) => {
       if (e.target.closest(interactiveElements)) {
         cursor.classList.add('hovering');
@@ -83,6 +83,17 @@
       });
     });
   }
+
+  // Header visibility toggle on scroll (hidden on landing for 1:1 reference match)
+  function checkHeaderScroll() {
+    if (window.scrollY > window.innerHeight * 0.3) {
+      document.body.classList.add('scrolled-past-landing');
+    } else {
+      document.body.classList.remove('scrolled-past-landing');
+    }
+  }
+  window.addEventListener('scroll', checkHeaderScroll, { passive: true });
+  checkHeaderScroll();
 
   // Section Observer for HUD Stage Name & Active Nav State
   const sectionObserverOptions = {
@@ -361,6 +372,160 @@
       localStorage.setItem('portfolio-theme', next);
     });
   }
+
+  // --------------------------------------------------------------------------
+  // 7b. Interactive 3D Spatial Viewport Canvas & Mouse Tilt Engine
+  // --------------------------------------------------------------------------
+  (function init3DViewportEngine() {
+    const stageEnv = document.getElementById('landing');
+    const container = document.getElementById('stage-3d-perspective-container');
+    const card = document.getElementById('stage-3d-viewport-card');
+    const shadow = document.getElementById('stage-3d-ambient-shadow');
+    const sheen = document.getElementById('card-glass-sheen');
+    const angleVal = document.getElementById('telemetry-angle-val');
+    const modeBtn = document.getElementById('stage-3d-mode-btn');
+    const modeText = document.getElementById('stage-3d-mode-text');
+
+    if (!card || !container) return;
+
+    let is3DActive = true;
+    
+    // Default resting architectural orientation (matches reference screenshot tilt)
+    const defaultRotX = 3.5;
+    const defaultRotY = -6.0;
+    const defaultShadowX = 18;
+    const defaultShadowY = 36;
+
+    let currentRotX = defaultRotX;
+    let currentRotY = defaultRotY;
+    let targetRotX = defaultRotX;
+    let targetRotY = defaultRotY;
+
+    let currentShadowX = defaultShadowX;
+    let currentShadowY = defaultShadowY;
+    let targetShadowX = defaultShadowX;
+    let targetShadowY = defaultShadowY;
+
+    let sheenX = 30;
+    let sheenY = 25;
+    let targetSheenX = 30;
+    let targetSheenY = 25;
+
+    let isMouseOver = false;
+
+    // Mouse Movement Handler inside 3D environment
+    function handlePointerMove(e) {
+      if (!is3DActive) return;
+      isMouseOver = true;
+
+      const rect = container.getBoundingClientRect();
+      const centerX = rect.left + rect.width / 2;
+      const centerY = rect.top + rect.height / 2;
+
+      // Normalized coordinates (-1 to +1)
+      const normX = Math.max(-1, Math.min(1, (e.clientX - centerX) / (rect.width / 2)));
+      const normY = Math.max(-1, Math.min(1, (e.clientY - centerY) / (rect.height / 2)));
+
+      // Rotations: X depends on vertical offset; Y depends on horizontal offset
+      targetRotX = -(normY * 11) + 2.0;
+      targetRotY = (normX * 14) - 3.5;
+
+      // Shadow shift inversely proportional to light
+      targetShadowX = -(normX * 30) + 18;
+      targetShadowY = -(normY * 22) + 36;
+
+      // Sheen reflection position
+      targetSheenX = normX * 35 + 50;
+      targetSheenY = normY * 35 + 45;
+    }
+
+    if (stageEnv) {
+      stageEnv.addEventListener('mousemove', handlePointerMove, { passive: true });
+      stageEnv.addEventListener('mouseleave', () => {
+        isMouseOver = false;
+        targetRotX = defaultRotX;
+        targetRotY = defaultRotY;
+        targetShadowX = defaultShadowX;
+        targetShadowY = defaultShadowY;
+        targetSheenX = 30;
+        targetSheenY = 25;
+      });
+    }
+
+    // Touch Support: Gentle Drag on Mobile
+    if (stageEnv && isTouchDevice) {
+      stageEnv.addEventListener('touchmove', (e) => {
+        if (!is3DActive || e.touches.length === 0) return;
+        const touch = e.touches[0];
+        handlePointerMove({ clientX: touch.clientX, clientY: touch.clientY });
+      }, { passive: true });
+
+      stageEnv.addEventListener('touchend', () => {
+        targetRotX = defaultRotX;
+        targetRotY = defaultRotY;
+        targetShadowX = defaultShadowX;
+        targetShadowY = defaultShadowY;
+      });
+    }
+
+    // Toggle 3D Mode Button
+    if (modeBtn && modeText) {
+      modeBtn.addEventListener('click', () => {
+        is3DActive = !is3DActive;
+        if (is3DActive) {
+          targetRotX = defaultRotX;
+          targetRotY = defaultRotY;
+          targetShadowX = defaultShadowX;
+          targetShadowY = defaultShadowY;
+          modeText.textContent = '3D VIEW: ACTIVE';
+          modeBtn.style.borderColor = 'var(--accent-blue)';
+          modeBtn.style.color = 'var(--accent-blue)';
+        } else {
+          targetRotX = 0;
+          targetRotY = 0;
+          targetShadowX = 0;
+          targetShadowY = 20;
+          modeText.textContent = '3D VIEW: FLAT';
+          modeBtn.style.borderColor = 'var(--hairline-neutral)';
+          modeBtn.style.color = 'var(--text-secondary)';
+        }
+      });
+    }
+
+    // Physics Animation Loop (Spring Lerp)
+    function animate3DLoop() {
+      // Smooth interpolation (lerp factor 0.08)
+      currentRotX += (targetRotX - currentRotX) * 0.08;
+      currentRotY += (targetRotY - currentRotY) * 0.08;
+      currentShadowX += (targetShadowX - currentShadowX) * 0.08;
+      currentShadowY += (targetShadowY - currentShadowY) * 0.08;
+      sheenX += (targetSheenX - sheenX) * 0.08;
+      sheenY += (targetSheenY - sheenY) * 0.08;
+
+      // Apply 3D transform to card
+      card.style.transform = `rotateX(${currentRotX.toFixed(2)}deg) rotateY(${currentRotY.toFixed(2)}deg) scale3d(1, 1, 1)`;
+
+      // Apply dynamic shadow transform
+      if (shadow) {
+        shadow.style.transform = `translate3d(${currentShadowX.toFixed(1)}px, ${currentShadowY.toFixed(1)}px, -50px) scale(0.96)`;
+      }
+
+      // Apply dynamic glass sheen
+      if (sheen) {
+        sheen.style.background = `radial-gradient(circle at ${sheenX.toFixed(1)}% ${sheenY.toFixed(1)}%, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0) 65%)`;
+      }
+
+      // Update Live Telemetry Angle HUD
+      if (angleVal) {
+        const signX = currentRotX >= 0 ? '+' : '';
+        const signY = currentRotY >= 0 ? '+' : '';
+        angleVal.textContent = `RX: ${signX}${currentRotX.toFixed(1)}° · RY: ${signY}${currentRotY.toFixed(1)}°`;
+      }
+
+      requestAnimationFrame(animate3DLoop);
+    }
+    requestAnimationFrame(animate3DLoop);
+  })();
 
   // --------------------------------------------------------------------------
   // 8. Smooth Enter Landing Viewport Scroll Button

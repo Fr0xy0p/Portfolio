@@ -46,52 +46,124 @@
   <div class="ambient-noise" aria-hidden="true"></div>
 
   <!-- ========================================================================= -->
-  <!-- HERO / STARTING LANDING VIEWPORT (Stage 00 // Symmetrical Ingrassia Split) -->
+  <!-- HERO / STARTING LANDING VIEWPORT (STAGE 00: 3D EDITORIAL VIEWPORT STAGE)   -->
   <!-- ========================================================================= -->
-  <section class="landing-viewport" id="landing" aria-label="Starting Presentation">
-    <!-- Top Bar: Coordinates & Availability -->
-    <div class="landing-topbar">
+  <section class="landing-viewport stage-3d-environment" id="landing" data-stage="00 // 3D VIEWPORT" aria-label="3D Editorial Presentation">
+    <!-- Top Stage Header: Telemetry, Geolocation & 3D Mode Toggle -->
+    <div class="landing-topbar stage-3d-topbar">
       <div class="topbar-coords">
         <span class="mono-badge">[ 18.5204° N — 73.8567° E ]</span>
         <span class="coord-divider">•</span>
         <span class="location-name">Pune, Maharashtra</span>
       </div>
-      <div class="topbar-status">
-        <span class="status-pulse-dot" aria-hidden="true"></span>
-        <span class="status-text">Available for selected quant &amp; ML opportunities</span>
+      <div class="stage-3d-controls">
+        <div class="telemetry-angle-badge" id="telemetry-angle-badge">
+          <span class="hud-mini-label">ROTATION:</span>
+          <span class="telemetry-angle-val" id="telemetry-angle-val">RX: +3.5° · RY: -6.0°</span>
+        </div>
+        <button class="stage-3d-mode-btn" id="stage-3d-mode-btn" aria-label="Toggle 3D interactive tilt mode" title="Toggle 3D interactive tilt">
+          <span class="status-pulse-dot" aria-hidden="true"></span>
+          <span id="stage-3d-mode-text">3D VIEW: ACTIVE</span>
+        </button>
       </div>
     </div>
 
-    <!-- Symmetrical Identity Typography (Daniel Ingrassia Reference) -->
-    <div class="landing-hero-center">
-      <div class="hero-left-col" id="hero-label-left">
-        <span class="hero-label-sub">QUANTITATIVE SYSTEMS &amp; ML</span>
-        <h1 class="landing-title">Yuvraj Singh</h1>
-      </div>
-      <div class="hero-right-col" id="hero-label-right">
-        <p class="landing-subtitle">Quant Engineer &amp;<br>ML Researcher</p>
+    <!-- 3D Perspective Stage Container -->
+    <div class="stage-3d-perspective-container" id="stage-3d-perspective-container">
+      
+      <!-- Ambient Dynamic Drop Shadow under the tilted card -->
+      <div class="stage-3d-ambient-shadow" id="stage-3d-ambient-shadow" aria-hidden="true"></div>
+
+      <!-- The Floating 3D Card (with rounded corners, sleek bezel, layered depth) -->
+      <div class="stage-3d-viewport-card" id="stage-3d-viewport-card">
+        
+        <!-- Dynamic Glass Sheen Reflection -->
+        <div class="card-glass-sheen" id="card-glass-sheen" aria-hidden="true"></div>
+
+        <!-- Card Top Bar: Copyright / Brand + Quick Navigation (Exact match to reference) -->
+        <div class="card-inner-topbar">
+          <div class="card-brand-meta">
+            <span class="brand-copyright">© Yuvraj Singh — Strategy &amp; Engineering</span>
+          </div>
+          <nav class="card-inner-nav" aria-label="Quick Section Links">
+            <a href="#formation" class="card-nav-link">About</a>
+            <a href="#exhibition" class="card-nav-link">Projects</a>
+            <a href="#contact" class="card-nav-link">Contact</a>
+          </nav>
+        </div>
+
+        <!-- Card Main Showcase: Layered Typography + Exact Editorial Portrait -->
+        <div class="card-inner-content">
+          
+          <!-- Word 1 (Behind portrait): 'Yuvraj' with 'Y' breaking out left past the card border -->
+          <div class="giant-name-segment word-first-name" aria-hidden="true">
+            <span class="giant-word">Yuvraj</span>
+          </div>
+
+          <!-- Middle: Exact Model Portrait from reference (Transparent Cutout) -->
+          <div class="card-portrait-stage" id="card-portrait-stage">
+            <img src="assets/images/alex-model.png" alt="Yuvraj Singh — Quant Researcher &amp; ML Engineer" class="card-portrait-image" id="card-portrait-image">
+          </div>
+
+          <!-- Word 2 (In Front): 'Singh' extending right with white knockout 'S' over the neck -->
+          <div class="giant-name-segment word-last-name">
+            <span class="giant-word"><span class="knockout-letter">S</span>ingh</span>
+          </div>
+
+        </div>
+
+        <!-- Card Bottom Bar: Vertical Social Icons (Left) + Subtitles (Right) -->
+        <div class="card-inner-bottombar">
+          
+          <!-- Bottom-Left: Vertical Social Stack (Exact Twitter, LinkedIn, Instagram match) -->
+          <div class="card-social-strip">
+            <a href="https://github.com/Fr0xy0p" target="_blank" rel="noopener noreferrer" class="card-social-item" aria-label="GitHub Profile">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+              </svg>
+            </a>
+            <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer" class="card-social-item" aria-label="LinkedIn Profile">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <rect x="2" y="2" width="20" height="20" rx="4" fill="currentColor"/>
+                <text x="7" y="16.5" fill="#FFFFFF" font-family="'Helvetica Neue', Arial, sans-serif" font-weight="800" font-size="12">in</text>
+              </svg>
+            </a>
+            <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" class="card-social-item" aria-label="Twitter Profile">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/>
+              </svg>
+            </a>
+          </div>
+
+          <!-- Bottom-Right: Exact Editorial Titles from reference -->
+          <div class="card-role-titles">
+            <h2 class="role-line">Quant Researcher</h2>
+            <h2 class="role-line">ML Engineer</h2>
+          </div>
+
+        </div>
+
       </div>
     </div>
 
-    <!-- Bottom Bar: Navigation & Social Prompts -->
-    <div class="landing-bottombar">
+    <!-- Bottom Stage Bar: Interaction Prompt & Scroll to Enter -->
+    <div class="landing-bottombar stage-3d-bottombar">
       <div class="bottombar-left">
         <span class="interact-cue">
           <span class="dash-line" aria-hidden="true"></span>
-          <span>INTERACT / MOVE CURSOR</span>
+          <span>SPATIAL 3D TILT · MOVE CURSOR TO ROTATE</span>
         </span>
       </div>
       <div class="bottombar-center">
-        <a href="#main-content" class="scroll-enter-btn" id="scroll-enter-btn">
-          <span>SCROLL TO ENTER</span>
+        <a href="#hero" class="scroll-enter-btn" id="scroll-enter-btn">
+          <span>SCROLL TO ENTER PORTFOLIO</span>
           <svg class="arrow-down-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
             <path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </a>
       </div>
       <div class="bottombar-right">
-        <a href="https://github.com/Fr0xy0p" target="_blank" rel="noopener noreferrer" class="quick-link">GitHub ↗</a>
-        <a href="mailto:yuvrajsinghhappy07@gmail.com" class="quick-link">Contact</a>
+        <span class="mono-meta-info">[ STAGE 00 // EDITORIAL 3D ]</span>
       </div>
     </div>
   </section>

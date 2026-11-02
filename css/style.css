@@ -225,34 +225,41 @@ button {
   height: 100vh;
 }
 
-/* --- 5. STARTING LANDING VIEWPORT (Stage 00 // Daniel Ingrassia Symmetrical Split) --- */
-.landing-viewport {
+/* --- 5. STARTING LANDING VIEWPORT (STAGE 00: 3D EDITORIAL VIEWPORT STAGE) --- */
+.landing-viewport.stage-3d-environment {
   position: relative;
   z-index: 10;
   width: 100%;
-  height: 100vh;
-  min-height: 640px;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 2.25rem 3.5rem;
-  background-color: transparent;
+  padding: 2.25rem 3.5rem 1.75rem;
+  background-color: var(--bg-canvas); /* Exact color from Pic 1: #F8F9FD */
   border-bottom: 1px solid var(--hairline-neutral);
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+[data-theme="dark"] .landing-viewport.stage-3d-environment {
+  background-color: #0B0D12;
 }
 
 @media (max-width: 768px) {
-  .landing-viewport {
-    padding: 1.5rem 1.25rem;
+  .landing-viewport.stage-3d-environment {
+    padding: 1.5rem 1.25rem 1.25rem;
+    min-height: 680px;
   }
 }
 
-/* Top Bar: Coordinates & Availability */
-.landing-topbar {
+/* Top Stage Telemetry & 3D Controls Bar */
+.stage-3d-topbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
   pointer-events: auto;
+  z-index: 25;
 }
 
 .topbar-coords {
@@ -279,15 +286,59 @@ button {
   letter-spacing: -0.01em;
 }
 
-.topbar-status {
+.stage-3d-controls {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.telemetry-angle-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text-muted);
+}
+
+.hud-mini-label {
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.telemetry-angle-val {
+  color: var(--accent-blue);
+  font-weight: 600;
+  min-width: 110px;
+}
+
+.stage-3d-mode-btn {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  background: var(--bg-surface-lowest);
+  border: 1px solid var(--hairline-neutral);
+  border-radius: 9999px;
+  padding: 0.35rem 0.95rem;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  box-shadow: var(--shadow-sm);
+}
+
+.stage-3d-mode-btn:hover {
+  border-color: var(--accent-blue);
+  color: var(--accent-blue);
+  transform: translateY(-1px);
 }
 
 .status-pulse-dot {
   width: 7px;
   height: 7px;
+  border-radius: 50%;
   background-color: var(--status-emerald);
   box-shadow: 0 0 10px var(--status-emerald);
   animation: pulse-emerald 3s infinite ease-in-out;
@@ -298,88 +349,300 @@ button {
   50% { opacity: 0.4; transform: scale(0.85); }
 }
 
-.status-text {
-  font-size: 0.75rem;
-  color: var(--text-secondary);
-  font-weight: 400;
-  letter-spacing: -0.01em;
-}
-
-/* Symmetrical Identity Center */
-.landing-hero-center {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
+/* 3D Perspective Stage Container */
+.stage-3d-perspective-container {
+  position: relative;
   width: 100%;
-  pointer-events: none;
-  gap: 2rem;
-}
-
-@media (max-width: 900px) {
-  .landing-hero-center {
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    gap: 1.5rem;
-  }
-}
-
-.hero-left-col, .hero-right-col {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 1400px;
+  perspective-origin: 50% 50%;
+  padding: 0.5rem 0;
   pointer-events: auto;
 }
 
-.hero-left-col {
-  max-width: 420px;
+/* Ambient Dynamic Drop Shadow under 3D Card */
+.stage-3d-ambient-shadow {
+  position: absolute;
+  width: min(1060px, 88vw);
+  height: min(580px, 66vh);
+  border-radius: 32px;
+  background: rgba(15, 23, 42, 0.32);
+  filter: blur(48px);
+  transform: translate3d(var(--shadow-x, 15px), var(--shadow-y, 35px), -50px) scale(0.96);
+  transition: transform 0.12s cubic-bezier(0.2, 0, 0, 1);
+  pointer-events: none;
+  z-index: 1;
 }
 
-.hero-right-col {
-  text-align: right;
-  max-width: 440px;
-  margin-left: auto;
+[data-theme="dark"] .stage-3d-ambient-shadow {
+  background: rgba(0, 0, 0, 0.85);
+  filter: blur(55px);
 }
 
-@media (max-width: 900px) {
-  .hero-right-col {
-    text-align: left;
-    margin-left: 0;
-  }
+/* The Main Floating 3D Card (Exact 1:1 match to reference) */
+.stage-3d-viewport-card {
+  position: relative;
+  width: min(1080px, 88vw);
+  height: min(590px, 68vh);
+  min-height: 500px;
+  border-radius: 24px;
+  background-color: var(--bg-canvas); /* Exact color from Pic 1: #F8F9FD */
+  border: 2.5px solid #000000;
+  box-shadow: 
+    0 40px 90px -15px rgba(0, 0, 0, 0.28),
+    0 15px 35px -10px rgba(0, 0, 0, 0.14);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.75rem 2.5rem;
+  transform-style: preserve-3d;
+  transform: rotateX(var(--tilt-x, 3.5deg)) rotateY(var(--tilt-y, -6deg)) scale3d(1, 1, 1);
+  will-change: transform;
+  transition: transform 0.18s cubic-bezier(0.1, 0, 0.1, 1);
+  z-index: 2;
+  overflow: visible; /* CRITICAL: allows giant 'A' of Alex to break past the card border on the left! */
+  box-sizing: border-box;
 }
 
-.hero-label-sub {
-  display: block;
-  font-family: var(--font-mono);
-  font-size: 0.6875rem;
-  letter-spacing: 0.1em;
+[data-theme="dark"] .stage-3d-viewport-card {
+  background-color: #0E1117;
+  border-color: rgba(255, 255, 255, 0.9);
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.15),
+    0 40px 90px -20px rgba(0, 0, 0, 0.9),
+    0 0 50px -10px rgba(10, 38, 238, 0.3);
+}
+
+/* Glass Sheen Surface Reflection (Hidden in pure editorial mode to preserve uniform canvas color) */
+.card-glass-sheen {
+  display: none;
+  position: absolute;
+  inset: 0;
+  border-radius: 22px;
+  background: radial-gradient(circle at var(--sheen-x, 30%) var(--sheen-y, 25%), rgba(255, 255, 255, 0.32) 0%, rgba(255, 255, 255, 0) 65%);
+  pointer-events: none;
+  z-index: 20;
+  mix-blend-mode: overlay;
+}
+
+/* Card Inner Topbar (© Alex Design & Strategy ... About Projects Contact) */
+.card-inner-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  z-index: 15;
+  transform: translateZ(50px);
+  transform-style: preserve-3d;
+}
+
+.card-brand-meta {
+  font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #000000;
+  letter-spacing: -0.01em;
+}
+
+[data-theme="dark"] .card-brand-meta {
+  color: #F8FAFC;
+}
+
+.card-inner-nav {
+  display: flex;
+  align-items: center;
+  gap: 2.75rem;
+}
+
+.card-nav-link {
+  font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #000000;
+  text-decoration: none;
+  transition: color 0.15s ease, transform 0.15s ease;
+  position: relative;
+}
+
+.card-nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 1.5px;
+  background-color: var(--accent-blue);
+  transition: width 0.2s ease;
+}
+
+.card-nav-link:hover::after {
+  width: 100%;
+}
+
+[data-theme="dark"] .card-nav-link {
+  color: #F8FAFC;
+}
+
+.card-nav-link:hover {
   color: var(--accent-blue);
-  margin-bottom: 0.4rem;
-  text-transform: uppercase;
+  transform: translateY(-1px);
 }
 
-.landing-title {
-  font-size: clamp(2.4rem, 4.2vw, 4.5rem);
-  font-weight: 700;
-  letter-spacing: -0.03em;
-  color: var(--text-pure);
-  line-height: 1.05;
+/* Card Main Showcase: Layered Typography & Portrait */
+.card-inner-content {
+  position: relative;
+  flex: 1;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  transform-style: preserve-3d;
 }
 
-.landing-subtitle {
-  font-size: clamp(1.4rem, 2.2vw, 2.3rem);
-  font-weight: 300;
-  letter-spacing: -0.025em;
-  color: var(--text-secondary);
-  line-height: 1.25;
+/* Giant Typography Segments */
+.giant-name-segment {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  user-select: none;
+  white-space: nowrap;
 }
 
-/* Bottom Bar */
-.landing-bottombar {
+.giant-word {
+  font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  font-size: clamp(5.2rem, 10.4vw, 10.5rem);
+  font-weight: 800;
+  line-height: 0.85;
+  letter-spacing: -0.05em;
+  color: #000000;
+}
+
+[data-theme="dark"] .giant-word {
+  color: #FFFFFF;
+}
+
+/* Word 1: 'Yuvraj' sits BEHIND the portrait (z-index: 2) */
+/* The capital 'Y' breaks past the card border on the left */
+.word-first-name {
+  left: 0;
+  margin-left: -4.8vw;
+  z-index: 2;
+  transform: translateY(-50%) translateZ(25px);
+  pointer-events: none;
+}
+
+/* Middle: Exact Editorial Portrait from Reference (z-index: 4) */
+.card-portrait-stage {
+  position: absolute;
+  bottom: -2px;
+  left: 22%;
+  width: min(530px, 52vw);
+  height: 112%;
+  z-index: 4;
+  transform: translateZ(48px);
+  pointer-events: none;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.card-portrait-image {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+  object-position: bottom center;
+  filter: contrast(1.04) brightness(0.98);
+}
+
+/* Word 2: 'Singh' sits to the right, overlapping the neck with clear space from Yuvraj (z-index: 6) */
+.word-last-name {
+  left: 47%;
+  z-index: 6;
+  transform: translateY(-50%) translateZ(68px);
+  pointer-events: none;
+}
+
+/* Signature Knockout: The 'S' turns white over dark neck/hair and black over light card! */
+.knockout-letter {
+  display: inline-block;
+  color: #FFFFFF;
+  mix-blend-mode: difference;
+  filter: drop-shadow(0 0 1px rgba(0, 0, 0, 0.4));
+}
+
+/* Card Inner Bottombar */
+.card-inner-bottombar {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  width: 100%;
+  z-index: 15;
+  transform: translateZ(60px);
+  transform-style: preserve-3d;
+}
+
+/* Bottom-Left: Vertical Social Strip (Exact Twitter, LinkedIn, Instagram) */
+.card-social-strip {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  align-items: center;
+}
+
+.card-social-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  color: #000000;
+  transition: transform 0.15s ease, color 0.15s ease;
+}
+
+[data-theme="dark"] .card-social-item {
+  color: #F8FAFC;
+}
+
+.card-social-item:hover {
+  color: var(--accent-blue);
+  transform: scale(1.15);
+}
+
+/* Bottom-Right: Exact Editorial Titles from Reference */
+.card-role-titles {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.role-line {
+  font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  font-size: clamp(1.75rem, 2.7vw, 3.1rem);
+  font-weight: 500;
+  letter-spacing: -0.04em;
+  color: #000000;
+  line-height: 1.15;
+  margin: 0;
+  white-space: nowrap;
+}
+
+[data-theme="dark"] .role-line {
+  color: #FFFFFF;
+}
+
+/* Bottom Stage Bar: Interaction Cue & Scroll Prompt */
+.stage-3d-bottombar {
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
   width: 100%;
   pointer-events: auto;
   gap: 1rem;
+  z-index: 25;
 }
 
 .interact-cue {
@@ -410,6 +673,7 @@ button {
   color: var(--text-secondary);
   text-transform: uppercase;
   transition: color var(--transition-fast);
+  text-decoration: none;
 }
 
 .scroll-enter-btn:hover {
@@ -425,21 +689,38 @@ button {
   50% { transform: translateY(5px); }
 }
 
-.bottombar-right {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
+@media (max-width: 900px) {
+  .stage-3d-viewport-card {
+    height: auto;
+    min-height: 480px;
+    padding: 1.5rem 1.5rem;
+  }
+  .giant-word {
+    font-size: clamp(4.2rem, 12vw, 6rem);
+  }
+  .word-first-name {
+    margin-left: -2vw;
+  }
+  .word-last-name {
+    left: 48%;
+  }
+  .card-portrait-stage {
+    left: 10%;
+    width: 60vw;
+  }
 }
 
-.quick-link {
-  font-size: 0.78rem;
-  color: var(--text-secondary);
-  font-weight: 500;
-  transition: color var(--transition-fast);
+/* Smooth Site Header Visibility Transition: Hidden on #landing for 1:1 reference purity */
+body:not(.scrolled-past-landing) .site-header {
+  transform: translateY(-100%);
+  pointer-events: none;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.quick-link:hover {
-  color: var(--accent-blue);
+body.scrolled-past-landing .site-header {
+  transform: translateY(0);
+  pointer-events: auto;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* --- 6. FIXED ARCHITECTURAL SITE HEADER & TELEMETRY HUD --- */
